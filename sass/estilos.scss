@@ -18,7 +18,7 @@ body {
 }
 
 .pixelNoche{
-    background-image: url('https://download.hipwallpaper.com/desktop/1920/1080/15/19/ZG9Nk2.png'); //16bit noche
+    background-image: url('https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaperNoche.png'); //16bit noche
 }
 .pixelDia{ 
     background-image: url('https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaper1.png'); //16 bit soleado
@@ -154,6 +154,7 @@ footer{
     background-color: rgb(106, 107, 201);
     padding: 20px;
     filter: drop-shadow(10px 10px 30px rgb(68, 68, 68));
+    border-radius: 5px 5px 0px 0px;
     
 
     h2{

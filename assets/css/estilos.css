@@ -16,7 +16,7 @@ body h3 {
 }
 
 .pixelNoche {
-  background-image: url("https://download.hipwallpaper.com/desktop/1920/1080/15/19/ZG9Nk2.png");
+  background-image: url("https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaperNoche.png");
 }
 
 .pixelDia {
@@ -123,6 +123,7 @@ footer {
   background-color: #6a6bc9;
   padding: 20px;
   filter: drop-shadow(10px 10px 30px #444444);
+  border-radius: 5px 5px 0px 0px;
 }
 footer h2 {
   font-size: 16px;
