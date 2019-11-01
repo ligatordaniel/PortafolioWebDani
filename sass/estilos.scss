@@ -1,26 +1,28 @@
 body {
-    
+
     background-color: rgb(255, 255, 255);
     color: rgb(102, 101, 101);
     font-family: 'Ubuntu', sans-serif;
-    h3{
+
+    h3 {
         text-align: center;
-    }        
+    }
 }
 
 //modo nocturno
-.nocheNegra{
+.nocheNegra {
     background-color: rgb(56, 56, 56);
 }
 
 .nocheGris {
-    background-color: rgb(184, 181, 181);
+    background-color: rgb(230, 230, 230);
 }
 
-.pixelNoche{
+.pixelNoche {
     background-image: url('https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaperNoche.png'); //16bit noche
 }
-.pixelDia{ 
+
+.pixelDia {
     background-image: url('https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaper1.png'); //16 bit soleado
 }
 
@@ -32,7 +34,8 @@ body {
     text-align: center;
     width: 598px;
 }
-.tipo2{
+
+.tipo2 {
     background-color: grey;
     font-size: 40px;
     height: 100px;
@@ -51,10 +54,11 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    h3{
+
+    h3 {
         text-shadow: 2px 2px 40px rgb(255, 255, 255)
     }
-  }
+}
 
 
 
@@ -63,18 +67,19 @@ body {
 .presentacion {
     background-color: rgb(106, 107, 201);
     padding: 55px;
-    color:rgb(231, 231, 231);
+    color: rgb(231, 231, 231);
 
     h1 {
         color: rgb(243, 243, 243);
-        text-align: left;        
-        
+        text-align: left;
+
     }
 
     p {
         color: rgb(223, 222, 222);
         text-align: left;
     }
+
     .descripcionPerfil {
         padding: 5px;
         text-align: left;
@@ -82,10 +87,10 @@ body {
     }
 
     .fotoPerfil {
-        
+
         border-radius: 100%;
-        width:100%;
-        max-width:250px;
+        width: 100%;
+        max-width: 250px;
         height: auto;
         display: block;
         margin: auto;
@@ -96,91 +101,98 @@ body {
 
 
 
-nav{
+nav {
     border-radius: 1px 1px 5px 5px;
     filter: drop-shadow(10px 10px 30px #444);
     background-color: rgb(106, 107, 201);
     color: rgb(223, 222, 222);
-           
+
 }
 
-.img1{
+.img1 {
     width: 100px;
     height: auto;
-    }
-    
-.caja1{
-     text-align: center;
-     padding: 15px;
-     h2{
-         font-size: 25px;
-     }
-    }
+}
 
-.img2{
+.caja1 {
+    text-align: center;
+    padding: 15px;
+
+
+    h2 {
+        font-size: 25px;
+    }
+}
+
+.img2 {
     border-radius: 2%;
-    width:100%;
-    max-width:400px;
+    width: 100%;
+    max-width: 400px;
     height: auto;
     display: block;
     margin: auto;
 
-    }
+}
 
 
 
 
 
-.img3{
+.img3 {
     width: 100px;
     height: auto;
 
-    }
-    
-    
-.caja3{
+}
+
+
+.caja3 {
     text-align: center;
-    
+
     padding: 10px;
-    
-    }
-  
-  
-  
+
+}
 
 
 
-footer{
+
+
+
+footer {
     background-color: rgb(106, 107, 201);
     padding: 20px;
     filter: drop-shadow(10px 10px 30px rgb(68, 68, 68));
     border-radius: 5px 5px 0px 0px;
-    
 
-    h2{
+
+    h2 {
         font-size: 16px;
         text-align: right;
-        color:rgb(231, 231, 231);
+        color: rgb(231, 231, 231);
     }
 }
 
-
+.bordeNegro {
+    padding: 3px 10px;
+    border: PowderBlue 5px solid;
+    border-radius: 20px;
+}
 
 
 .thumbnail {
     max-width: 300px;
-    display:block;
-    margin:auto;
-    
+    display: block;
+    margin: auto;
+
+
 
 }
 
-.imgThumbnail{
-    width:100%;
+.imgThumbnail {
+    width: 100%;
     height: 200px;
-    display:block;
-    margin:auto;
-    
+    display: block;
+    margin: auto;
+
 }
 
 .gallery-container h1 {
@@ -206,9 +218,10 @@ footer{
     margin-bottom: 30px;
     background-color: #fff;
     border-radius: 4px;
-    border: none;
+    border: rgb(228, 226, 226) 1px solid;
     transition: 0.15s ease-in-out;
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 5px 20px 5px rgb(190, 189, 189);
+    
 }
 
 .tz-gallery .thumbnail:hover {
@@ -219,7 +232,7 @@ footer{
     border-radius: 4px 4px 0 0;
 }
 
-.tz-gallery .caption{
+.tz-gallery .caption {
     padding: 26px 30px;
     text-align: center;
 }
@@ -239,5 +252,3 @@ footer{
 .baguetteBox-button {
     background-color: transparent !important;
 }
-
-
