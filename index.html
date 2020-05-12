@@ -6,10 +6,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap and CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/estilos.css">
   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png"> <!-- Favicon -->
   <link rel="icon" href="assets/img/favicon.png" type="image/png"> <!-- icono que en la pestaña del chrome-->
@@ -22,13 +22,13 @@
 <body>
 
 
-  <!-- barra de navegacion-->
-  <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+  <!--************** Barra de navegacion ******************-->
+  <nav class="navbar navbar-expand-lg sticky-top navbar-dark modoDiaPurpura" id="miNavbar">
 
     <!-- switch -->
-    <div class="custom-control custom-switch ">
+    <div class="custom-control custom-switch">
       <input type="checkbox" class="custom-control-input" id="customSwitch1">
-      <label class="custom-control-label" for="customSwitch1">Modo Nocturno</label>
+      <label class="custom-control-label" for="customSwitch1">NightMode</label>
     </div>
     <!-- switch-->
 
@@ -41,325 +41,296 @@
 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav mr-auto ml-auto text-center">
+        <a class="nav-item nav-link" href="#">Inicio</a>
         <a class="nav-item nav-link" href="#sobreMi">Sobre mí</a>
         <a class="nav-item nav-link" href="#habilidades">Habilidades</a>
         <a class="nav-item nav-link" href="#proyectos">Proyectos</a>
         <a class="nav-item nav-link active" href="#contacto">Contacto</a>
-
-        <div>
-
-
-          <!-- descomitear para otros botones
-            <div class="flex flex-row justify-content-center">
-              <a href="#" class="btn btn-outline-primary mr-2">F</a>
-              <a href="#" class="btn btn-outline-danger">Y</a>
-            -->
-        </div>
       </div>
-
-
     </div>
   </nav>
+  <!--************** Barra de navegacion ******************-->
 
 
 
+  <!--************** Pantalla bienvenido ******************-->
+  <header class="masthead wallpaperDia" id="masterhead">
+    <div class="container">
+      <div class="row align-items-center">
 
-
-  <!-- Full Page Image Header with Vertically Centered Content -->
-  <header class="masthead pixelDia" id="masterhead">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-12 text-center">
-          <h3 class="display-4">Bienvenido</h3>
-          <a href="indexEn.html"><button type="button" id="boton2" class="btn btn-secondary">See me on English
-            </button></a>
-
-
+        <div class="col-12 text-center @keyframes slide-top bienvenidoDisplay">
+          <h3>Bienvenido</h3>
+          <!-- switch language -->
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="customSwitch2">
+            <label class="custom-control-label" for="customSwitch2">
+              <p>See me on English</p>
+            </label><br>
+          </div>
+          <!-- switch language-->
         </div>
       </div>
     </div>
+    <!--<img id="latiaPokemon" class="latiaPokemon" src="assets/img/latia.png" alt="pokemonLatia">
+
+      <img id="latioPokemon" class="latioPokemon" src="assets/img/latio.png" alt="pokemonLatio">
+   -->
   </header>
+  <!--************** Pantalla bienvenido ******************-->
 
 
 
+  <!--************** Pantalla Sobre Mi ******************-->
+  <div class="sobreMi modoDiaPurpura" id="sobreMi">
 
 
-  <div class="presentacion " id="sobreMi">
-  </div> <!-- pequeño margen azul-->
+    <div class="row">
 
-  <!-- Descripcion Principal -->
-  <div class="presentacion " id="presentacion">
-    <h3 class="display-4" id="sobreMi">Sobre mí</h3>
-    <hr>
-    <br>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <img src="assets/img/fotoperfil2.jpg" class="fotoPerfil js-tilt-container" id="fotoPerfil" alt="imgpPerfil">
-        </div>
-
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <h1 class="display-5">Daniel Ulloa Vásquez</h1>
-          <p>Frontend Developer</p>
-          <p>Danielulloa256@gmail.com</p>
-
-
-          <p class="descripcionPerfil">Hola, soy Daniel, apasionado por la tecnología como herramienta para crear
-            soluciones innovadoras. Como Electrónico y Profesor de Inglés, me encanta aprender cosas nuevas y quiero
-            seguir perfeccionándome más como Desarrollador Frontend.</p>
-        </div>
-
-
-
+      <div class="col-sm-12 col-md-4 col-lg-4">
+        <img src="assets/img/fotoperfil2.jpg" class="fotoPerfil" id="fotoPerfil" alt="imgPerfil">
       </div>
+
+      <div class="col-sm-12 col-md-8 col-lg-8">
+        <h3>Hola, soy Daniel</h3>
+        <p>Desarrollador Front End y fanático por tecnología para crear soluciones.
+          En mi tiempo libre soy un hobbista de Arduino y gamer. Me gusta mucho no parar
+          de aprender por lo que quiero perfeccionarme y trabajar como desarrollador
+          fullstack en un futuro cercano.</p>
+
+        <p>¿Que es un desarrollador Front End?
+          Encargado de desarrollar la conversión de datos a una interfaz gráfica para que
+          el usuario pueda interactuar de manera intuitiva y atractiva.</p>
+        <p>
+      </div>
+
     </div>
-    <br>
-    <hr>
+
   </div>
-
-  <div class="presentacion">
-    <br><br><br>
-  </div> <!-- pequeño margen azul-->
+  <!--************** Pantalla Sobre Mi ******************-->
 
 
-
-  <!-- barra de navegacion-->
-
-
-
-  <!-- Galeria 3x3lenguajes-->
+  <!--************** Pantalla Habilidades ******************-->
   <div class="habilidades" id="habilidades">
-  </div>
-
-  <br><br><br><br><br>
-
-  <div class="habilidades">
-    <h3 class="display-4">Habilidades</h3>
-    <br>
+    <h2>Habilidades</h2>
     <div class="container">
+      <!--1x3-->
       <div class="row">
 
-        <br>
-        <div class="col-sm-12 col-md-46 col-lg-4">
-          <div class="caja1">
-            <h2>Html 5<br /><span></span></h2>
-            <div>
-              <img src="assets/img/htmllogo2.png" id="img1" class=" image-shadow img1" alt="Responsive image">
-            </div>
-            <div class="light"></div>
-          </div>
-        </div>
-
-
-        <br>
         <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja1">
-            <h2>CSS 3<br /><span></span></h2>
+          <class class="caja1">
             <div>
-              <img src="assets/img/logocss2.png" id="img2" class=" image-shadow img1" alt="Responsive image">
+              <h5>Html5</h5>
+              <div>
+                <img src="assets/img/logoHtml.png" alt="Responsive image">
+              </div>
+              <div>
+                <span>Lenguaje markup<br> para estructurar web</span>
+              </div>
             </div>
-            <div class="light"></div>
-          </div>
         </div>
 
-
-        <br>
         <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja1">
-            <h2>JavaScript Es6<br /><span></span></h2>
+          <class class="caja1">
             <div>
-              <img src="assets/img/javascriptlogo.png" id="img2" class=" image-shadow img1" alt="Responsive image">
+              <h5>Css3</h5>
+              <div>
+                <img src="assets/img/logoCss.png" alt="Responsive image">
+              </div>
+              <div>
+                <span>Lenguaje de diseño </br>grafico para definir web</span>
+              </div>
             </div>
-            <div class="light"></div>
-          </div>
         </div>
 
-
-      </div>
-    </div>
-
-
-
-    <br>
-    <div class="container">
-      <div class="row">
-
-
-        <br>
         <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja1">
-            <h2>Materialize<br /><span></span></h2>
+          <class class="caja1">
             <div>
-              <img src="assets/img/materializelogo.png" id="img3" class=" image-shadow img1" alt="Responsive image">
+              <h5>JavaScript Es6</h5>
+              <div>
+                <img src="assets/img/logoJavascript.png" alt="Responsive image">
+              </div>
+              <div>
+                <span>lenguaje de programación</br> interpretado</span>
+              </div>
             </div>
-            <div class="light"></div>
-          </div>
-        </div>
-
-
-        <br>
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja1">
-            <h2>Bootstrap<br /><span></span></h2>
-            <div>
-              <img src="assets/img/boostraplogo.png" id="img4" class=" image-shadow img1" alt="Responsive image">
-            </div>
-            <div class="light"></div>
-          </div>
-        </div>
-
-        <br>
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja1">
-            <h2>Sass<br /><span></span></h2>
-            <div>
-              <img src="assets/img/sasslogo.png" id="img4" class=" image-shadow img1" alt="Responsive image">
-            </div>
-            <div class="light"></div>
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-
-
-
-    <br>
-    <div class="container">
-      <div class="row">
-
-
-        <br>
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <div class="caja1">
-            <h2>Github<br /><span></span></h2>
-            <div>
-              <img src="assets/img/logogithub.svg" width="400" height="100" id="img5" class=" image-shadow img1"
-                alt="Responsive image">
-            </div>
-            <div class="light"></div>
-          </div>
-        </div>
-
-
-        <br>
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <div class="caja1">
-            <h2>Angular 9<br /><span></span></h2>
-            <div>
-              <img src="assets/img/angularlogo.png" id="img6" class=" image-shadow img1" alt="Responsive image">
-            </div>
-            <div class="light"></div>
-          </div>
         </div>
 
       </div>
-    </div>
+      <!--1x3-->
 
-
-
-
-  </div>
-
-
-
-  </div>
-  </div>
-  <!-- Galeria 3x3 lenguajes-->
-
-  <br><br>
-  <hr>
-
-  <!-- galeria proyectos-->
-  <div class="proyectos" id="proyectos">
-    <br><br><br><br><br><br>
-  </div>
-
-  <div class="container gallery-container">
-    <h3 class="display-4">Proyectos</h3>
-    <p class="page-description text-center"></p>
-    <div class="tz-gallery">
-
-      <!-- fila 1 -->
+      <!--2x1-->
       <div class="row">
 
         <div class="col-sm-12 col-md-6 col-lg-6">
-          <div class="thumbnail">
-            <a class="lightbox" href="https://ligatordaniel.github.io/Galeria-IOS-chile/" target="_blank">
-              <img src="assets/img/thumbnailios2.png" class="imgThumbnail" alt="Bridge">
-            </a>
-            <div class="caption">
+          <class class="caja1">
+            <div>
+              <h5>Github</h5>
+              <div>
+                <img src="assets/img/logoGit.png" alt="Responsive image">
+              </div>
+              <div>
+                <span>Web con control <br> de versiones git</span>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-6">
+          <class class="caja1">
+            <div>
+              <h5>Angular 9</h5>
+              <div>
+                <img src="assets/img/angularlogo.png" alt="Responsive image">
+              </div>
+              <div>
+                <span>framework de javascript<br> para aplicaciones SPA</span>
+              </div>
+            </div>
+        </div>
+
+      </div>
+      <!--2x1-->
+      <!--3x1-->
+      <div class="row">
+
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <class class="caja1">
+            <div>
+              <h5>Materialize</h5>
+              <div>
+                <img src="assets/img/materializelogo.png" alt="Responsive image">
+              </div>
+              <div>
+                <span>Framework basado en material<br> Design hecho por Google</span>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <class class="caja1">
+            <div>
+              <h5>Bootstrap</h5>
+              <div>
+                <img src="assets/img/boostraplogo.png" alt="Responsive image">
+              </div>
+              <div>
+                <span>herramientas de código <br>abierto para diseños web</span>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <class class="caja1">
+            <div>
+              <h5>Bootstrap</h5>
+              <div>
+                <img src="assets/img/sasslogo.png" alt="Responsive image">
+              </div>
+              <div>
+                <span>lenguaje de script simple<br> enfocado en diseño web</span>
+              </div>
+            </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <!--************** Pantalla Habilidades ******************-->
+
+  <!--************** Pantalla Proyectos ******************-->
+  <div class="proyectos modoDiaBlanco" id="proyectos">
+    <h2>Proyectos</h2>
+    <div class="container">
+      <!--3x1-->
+      <div class="row">
+
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <div class="caja2">
+            <div class="titulo modoDiaPurpura">
               <h3>Galeria IOS</h3>
-              <p>Pagina responsive que utilizando la temática de Mac. las imágenes siguen el cursor del mouse.</p>
+              <a href="https://ligatordaniel.github.io/Galeria-IOS-chile/" target="_blank">
+                <img src="assets/img/thumbnailios2.png" class="imgThumbnail" alt="proyecto"></a>
+            </div>
+            <div class="p-2">
+              <p>Web responsive que utilizando la temática de Mac.
+                Las imágenes de la galeria se mueven y siguen el cursor del mouse</p>
             </div>
           </div>
         </div>
 
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <div class="thumbnail">
-            <a class="lightbox" href="https://ligatordaniel.github.io/RelojJS/" target="_blank">
-              <img src="assets/img/thumbnailreloj.png" class="imgThumbnail" alt="Park">
-            </a>
-            <div class="caption">
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <div class="caja2">
+            <div class="titulo modoDiaPurpura">
               <h3>Reloj JS</h3>
-              <p>Reloj construido con JavaScript hecho para funcionar extrayendo de tu dispositivo. Siempre carga una
-                imagen aleatoria.</p>
+              <a href="https://ligatordaniel.github.io/RelojJS/" target="_blank">
+                <img src="assets/img/thumbnailreloj.png" class="imgThumbnail" alt="proyecto"></a>
+            </div>
+            <div class="p-2">
+              <p>Reloj construido con JavaScript hecho para funcionar extrayendo la hora
+                de tu dispositivo. Siempre carga una
+                imagen aleatoria como fondo</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <div class="caja2">
+            <div class="titulo modoDiaPurpura">
+              <h3>Pokédex</h3>
+              <a href="https://ligatordaniel.github.io/Pokedex/" target="_blank">
+                <img src="assets/img/thumbnailpokedex.png" class="imgThumbnail" alt="proyecto"></a>
+            </div>
+            <div class="p-2">
+              <p>Creada con PokéAPI, una herramienta educativa vinculada a una extensa base de datos
+                en la que puedes traer informacion de un pokemon con su nombre ó numero id</p>
             </div>
           </div>
         </div>
 
       </div>
-      <!-- fila 1 -->
-      <!-- fila 2 -->
+      <!--3x1-->
+
+      <!--3x1-->
       <div class="row">
 
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <div class="thumbnail">
-            <a class="lightbox" href="https://ligatordaniel.github.io/Pokedex/" target="_blank">
-              <img src="assets/img/thumbnailpokedex.png" class="imgThumbnail" alt="Tunnel">
-            </a>
-            <div class="caption">
-              <h3>Pokédex</h3>
-              <p>Creada con PokéAPI, una herramienta educativa completa vinculada a una extensa base de datos.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <div class="thumbnail">
-            <a class="lightbox" href="https://basedatos-735c2.firebaseapp.com/" target="_blank">
-              <img src="assets/img/thumbnailmytrello.png" class="imgThumbnail" alt="img Mytrello">
-            </a>
-            <div class="caption">
-              <h3>MyTrello</h3>
-              <p>Realizada con Angular y Firebase. Crea y edita notas que puedes almacenar en una base de datos en
-                tiempo real.</p>
-            </div>
-          </div>
-        </div>
-        <!-- fila 2 -->
-        <!-- fila 3 -->
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <div class="thumbnail">
-            <a class="lightbox" href="https://dolarvuecalendario.firebaseapp.com/" target="_blank">
-              <img src="assets/img/thumbnailCalendarioDolar.png" class="imgThumbnail" alt="img Mytrello">
-            </a>
-            <div class="caption">
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <div class="caja2">
+            <div class="titulo modoDiaPurpura">
               <h3>USD a CLP Calendario</h3>
-              <p>Realizada con Vue y Vuetify. Consulta una API publica trayendo el precio del dólar con fecha que el
-                usuario necesite.</p>
+              <a href="https://dolarvuecalendario.firebaseapp.com/" target="_blank">
+                <img src="assets/img/thumbnailCalendarioDolar.png" class="imgThumbnail" alt="proyecto"></a>
+            </div>
+            <div class="p-2">
+              <p>Realizada con Vue y Vuetify. Consulta una API publica, extrayendo
+                el precio del dólar convertido a pesos chilenos en cualquier fecha</p>
             </div>
           </div>
         </div>
 
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <div class="thumbnail">
-            <a class="lightbox" href="https://ligatordaniel.github.io/CuponaticTest2/" target="_blank">
-              <img src="assets/img/thumbnailCuponatic.png" class="imgThumbnail" alt="img Cuponatic">
-            </a>
-            <div class="caption">
-              <h3>App Tienda Online para Móviles</h3>
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <div class="caja2">
+            <div class="titulo modoDiaPurpura">
+              <h3>MyTrello</h3>
+              <a href="https://basedatos-735c2.firebaseapp.com/" target="_blank">
+                <img src="assets/img/thumbnailmytrello.png" class="imgThumbnail" alt="proyecto"></a>
+            </div>
+            <div class="p-2">
+              <p>Inspirada en Trello, sirve para crea y edita notas que puedes
+                almacenar en una base de datos en tiempo real. Creada con Angular y Firebase</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <div class="caja2">
+            <div class="titulo modoDiaPurpura">
+              <h3>App Tienda para Móviles</h3>
+              <a href="https://ligatordaniel.github.io/CuponaticTest2/" target="_blank">
+                <img src="assets/img/thumbnailCuponatic.png" class="imgThumbnail" alt="proyecto"></a>
+            </div>
+            <div class="p-2">
               <p>Realizada con Boostrap, Sass, Vainilla JS para crear interaciones e integranción con Api de GoogleMaps.
               </p>
             </div>
@@ -367,117 +338,95 @@
         </div>
 
       </div>
-      <!-- fila 3 -->
-
-
-
-
 
     </div>
   </div>
+  <!--3x1-->
+
+  <!--************** Pantalla Proyectos ******************-->
 
 
-  <!-- galeria proyectos-->
+  <!--************** Pantalla Contacto ******************-->
 
-  <hr>
-
-  <!-- Contacto-->
-  <div id=contacto>
-    <br><br><br><br>
-  </div>
-  <h3>I'm available and ready to work together!
-
-  </h3>
-  <div class="container">
-    <h3 class="display-4">Contacto</h2>
+  <div class="contacto modoDiaBlanco" id="contacto">
+    <h2>Contacto</h2>
+    <h3>I'm available and ready to work together!</h3>
+    <div class="container">
+      <!--2x1-->
       <div class="row">
-
 
         <div class="col-sm-12 col-md-6 col-lg-6">
           <div class="caja3">
-            <img class="img3" src="assets/img/gmaillogo.png" alt=""></a>
+            <img src="assets/img/logoGmail.png" alt="imgclase3">
             <p>Danielulloa256@gmail.com</p>
           </div>
         </div>
 
         <div class="col-sm-12 col-md-6 col-lg-6">
           <div class="caja3">
-            <img class="img3" src="assets/img/whatsapp2.png" alt="">
+            <img src="assets/img/whatsapp2.png" alt="imgclase3">
             <p>+569 77 21 6059</p>
           </div>
         </div>
 
+      </div>
+      <!--2x1-->
+
+      <!--2x1-->
+      <div class="row">
+
         <div class="col-sm-12 col-md-6 col-lg-6">
           <div class="caja3">
-            <a href="https://www.linkedin.com/in/daniel-ulloa-b23b37b5/" target="_blank"><img class="img3"
-                src="assets/img/linkedin.svg" alt=""></a>
-            <p>My Linkedin</p>
+            <a href="https://www.linkedin.com/in/daniel-ulloa-b23b37b5/" target="_blank">
+              <img src="assets/img/linkedinLogo.png" alt="imgclase3"></a>
+            <p>Linkedin Perfil</p>
           </div>
         </div>
 
         <div class="col-sm-12 col-md-6 col-lg-6">
           <div class="caja3">
-            <a href="assets/docs/CurriculumDanielUlloa.pdf" download><img class="img3" src="assets/img/download.png"
-                alt=""></a>
+            <a href="assets/docs/CurriculumDanielUlloa.pdf" download>
+              <img src="assets/img/download.png" alt="imgclase3"></a>
             <p>Descargar Curriculum</p>
           </div>
         </div>
 
+      </div>
+      <!--2x1-->
+
+      <!--1x1-->
+      <div class="row">
+
         <div class="col-sm-12 col-md-12 col-lg-12">
           <div class="caja3">
-            <a href="https://github.com/ligatordaniel/" target="_blank"><img class="img3" src="assets/img/gitlogo2.png"
-                alt=""></a>
-            <p>ligatordaniel</p>
+            <a href="https://github.com/ligatordaniel" target="_blank">
+              <img src="assets/img/logoGit.png" alt="imgclase3"></a>
+            <p>Github Perfil</p>
           </div>
         </div>
-
-
+        <!--1x1-->
 
       </div>
+    </div>
   </div>
-  <!-- Contacto-->
+  <!--************** Pantalla Contacto ******************-->
 
-
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <!-- Footer -->
-  <footer>
-
-
-    <h2>Made by @Daniel all rights reserved ;)</h2>
-
-
+  <!--************** Pantalla Footer ******************-->
+  <footer class="modoDiaPurpura" id="myFooter">
+    <p>Made by @DanielUlloa</br>Optimized for Chrome</p>
   </footer>
-  <!-- Footer -->
+  <!--************** Pantalla Footer ******************-->
 
-
-
-
-
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
   </script>
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
   </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
-  <script src="assets/js/ios.js"></script>
-  <script src="assets/js/nocturno.js"></script>
-  <script src="assets/js/smoove.js"></script>
-  <script src="assets/js/app.js"></script>
-
-
+  <script src="assets/js/nocturno.js" type="text/javascript"></script>
 
 
 </body>

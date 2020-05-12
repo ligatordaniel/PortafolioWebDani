@@ -1,8 +1,3 @@
-/*!
-* jQuery Smoove v0.2.9 (http://smoove.js.org/)
-* Copyright (c) 2016 Adam Bouqdib
-* Licensed under GPL-2.0 (http://abemedia.co.uk/license)
-*/
 
 (function ($, window, document){
 

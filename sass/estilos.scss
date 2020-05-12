@@ -1,255 +1,251 @@
+/********* Configuracion General *********/
 body {
 
-    background-color: rgb(255, 255, 255);
-    color: rgb(102, 101, 101);
+    color: rgb(87, 86, 86);
     font-family: 'Ubuntu', sans-serif;
-
-    h3 {
+    
+    h1 {
         text-align: center;
+        font-size: 16px;
     }
+    
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-
-//modo nocturno
-.nocheNegra {
-    background-color: rgb(56, 56, 56);
+/* Track */
+::-webkit-scrollbar-track {
+  background: #dadada; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
 }
 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.selector {
+    /* definir una altura pequeña para forzar el scroll */
+    height: 100px;
+    overflow-y: scroll;
+    width: 300px;
+
+    /* cambiar el estilo por defecto de la barra de scroll */
+    scrollbar-color: yellow #800080;
+    scrollbar-width: 10px;
+}
+/********* Configuracion General *********/
+
+
+/********* modo nocturno switch *********/
+.modoDiaPurpura {
+    background-color: rgb(106, 107, 201); 
+    transition: 1s ease all;
+}
+.modoDiaBlanco {
+    background-color: rgb(255, 255, 255);
+    transition: 1s ease all;
+}
+
+.modoNocheNegro {
+    background-color: rgb(31, 31, 31); 
+    transition: 1s ease all;
+}
 .nocheGris {
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(184, 184, 184);
+    transition: 1s ease all;
+
 }
 
-.pixelNoche {
+
+.wallpaperNoche {
     background-image: url('https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaperNoche.png'); //16bit noche
+    transition: .5s ease all;
 }
 
-.pixelDia {
+.wallpaperDia {
     background-image: url('https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaper1.png'); //16 bit soleado
+    transition: .5s ease all;
 }
+/********* modo nocturno *********/
 
-.tipo1 {
-    background-color: red;
-    font-size: 20px;
-    height: 100px;
-    margin: 10px;
-    text-align: center;
-    width: 598px;
+/********* Navbar **********/
+nav {
+    filter: drop-shadow(3px 3px 3px rgb(95, 95, 95));
+    color: rgb(223, 222, 222);
 }
+/********* Navbar **********/
 
-.tipo2 {
-    background-color: grey;
-    font-size: 40px;
-    height: 100px;
-    margin: 10px;
-    text-align: center;
-    width: 500px;
-}
-
-//modo nocturno
-
-
+/********* Pantalla Bienvenido *********/
 .masthead {
-    height: 100vh;
-    min-height: 500px;
+    height: 90vh;
     //background-image: url('https://source.unsplash.com/random');       //img aleatorio
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
+    position: relative; /*-relative- referencia su posicion real en el html*/
+    
+    .bienvenidoDisplay{
+        margin-top: 20%;
+    }
     h3 {
-        text-shadow: 2px 2px 40px rgb(255, 255, 255)
+        font-size: 300%;
+        text-shadow: 2px 2px 40px rgb(58, 88, 173);
+        color: rgb(63, 63, 63);
+    }
+    p{
+        color: rgb(66, 66, 66);
     }
 }
+/*AnimacionBienvenida*/
 
+.slide-top {animation: slide-top 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s infinite alternate both;} 
+@keyframes slide-top { 0% {transform: translateY(0);} 100% {transform: translateY(-20px); } }
 
+/* Animacion Js Latia*/ /*
+.latiaPokemon{
+    width: 50px;
+    height: auto;
+    position: absolute;
+  }
+.latioPokemon{
+    width: 120px;
+    height: auto;
+    position: absolute;
+  }
+*/
+/********* Pantalla Bienvenido *********/
 
+/******** Pantalla Presentacion ***********/
+.sobreMi {
+    color: rgb(223, 222, 222);
+    height: 100vh;
+    padding: 15%;
 
-
-.presentacion {
-    background-color: rgb(106, 107, 201);
-    padding: 55px;
-    color: rgb(231, 231, 231);
-
-    h1 {
-        color: rgb(243, 243, 243);
-        text-align: left;
-
+    h3 {
+        text-align: center;
+        font-size: 30px;
     }
-
     p {
-        color: rgb(223, 222, 222);
-        text-align: left;
-    }
-
-    .descripcionPerfil {
-        padding: 5px;
-        text-align: left;
-        text-align: justify;
+        text-align: center;
+        text-align: justify;        
     }
 
     .fotoPerfil {
-
-        border-radius: 100%;
-        width: 100%;
-        max-width: 250px;
-        height: auto;
-        display: block;
-        margin: auto;
-        filter: drop-shadow(10px 10px 30px rgb(68, 68, 68));
-
+        border-radius: 50%;
+        width: 80%;
+        filter: drop-shadow(3px 3px 3px rgb(68, 68, 68));
     }
 }
+/******** Pantalla Presentacion ***********/
 
+/******** Pantalla Habilidades ***********/
+.habilidades{
 
-
-nav {
+    height: 100vh;
+    text-align: center;
     
-    filter: drop-shadow(5px 5px 5px rgb(95, 95, 95));
-    background-color: rgb(106, 107, 201);
-    color: rgb(223, 222, 222);
-
-}
-
-.img1 {
-    width: 100px;
-    height: auto;
-}
-
-.caja1 {
-    text-align: center;
-    padding: 15px;
-
-
-    h2 {
-        font-size: 25px;
+    h2{ 
+        padding-top: 3%;
+        font-size: 150%;
+    }
+    .caja1{
+        
+        h5{
+            font-size: 20px;
+            color: rgb(61, 61, 61);
+        }
+        span{
+            font-size: 13px;
+            color: rgb(78, 78, 78);
+        }
+        img{
+            width: 80px;
+            filter: drop-shadow(2px 2px 1px rgb(68, 68, 68));
+        }
     }
 }
+/******** Pantalla Habilidades ***********/
 
-.img2 {
-    border-radius: 2%;
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    display: block;
-    margin: auto;
+/******** Pantalla Proyectos ***********/
+.proyectos{
 
+    h2{
+        text-align: center;
+        padding: 2%;
+        font-size: 150%;
+    }
+
+    .caja2{
+        width: 300px;
+        height: 350px;
+        border: 1px solid rgb(207, 207, 207);
+        background-color: rgb(207, 209, 248);
+        border-radius: 2%;
+        filter: drop-shadow(3px 3px 5px rgb(68, 68, 68));
+        margin-bottom: 8%;
+
+        .titulo{
+            text-align: center;
+            color: rgb(238, 238, 238);
+            border-radius: 2%;
+        }
+        h3{
+            font-size: 100%;
+            padding: 5px;
+        }
+        img{
+            width: 298px;
+            max-height: 170px;
+        }
+        p{
+            font-size: 70%;
+        }
+
+    }
 }
+/******** Pantalla Contacto ***********/
 
+/******** Pantalla Contacto ***********/
 
-
-
-
-.img3 {
-    width: 100px;
-    height: auto;
-
-}
-
-
-.caja3 {
+.contacto {
+    color: rgb(107, 107, 107);
+    height: 100vh;
     text-align: center;
-
-    padding: 10px;
-
+    h2{
+        font-size: 150%;
+        padding-top: 2%;
+    }
+    h3{
+        font-size: 140%;
+    }
+    .caja3{
+        img{
+            width: 100px;
+            filter: drop-shadow(3px 3px 1px rgb(68, 68, 68));
+        }
+        p{
+            font-size: 80%;
+        }
+    }
 }
-
-
-
-
 
 
 footer {
-    background-color: rgb(106, 107, 201);
-    padding: 20px;
-    filter: drop-shadow(10px 10px 30px rgb(68, 68, 68));
-    border-radius: 5px 5px 0px 0px;
+
+    padding: 15px;
+    filter: drop-shadow(3px 3px 5px rgb(68, 68, 68));
 
 
-    h2 {
-        font-size: 16px;
+    p {
+        font-size: 14px;
         text-align: right;
-        color: rgb(231, 231, 231);
+        color: rgb(223, 222, 222);
     }
-}
-
-.bordeNegro {
-    padding: 3px 10px;
-    border: PowderBlue 5px solid;
-    border-radius: 20px;
-}
-
-
-.thumbnail {
-    max-width: 300px;
-    display: block;
-    margin: auto;
-
-
-
-}
-
-.imgThumbnail {
-    width: 100%;
-    height: 200px;
-    display: block;
-    margin: auto;
-
-}
-
-.gallery-container h1 {
-    text-align: center;
-    margin-top: 70px;
-    font-weight: bold;
-    color: #58595a;
-}
-
-.gallery-container p.page-description {
-    text-align: center;
-    margin: 30px auto;
-    font-size: 18px;
-    color: #85878c;
-}
-
-.tz-gallery {
-    padding: 40px;
-}
-
-.tz-gallery .thumbnail {
-    padding: 0;
-    margin-bottom: 30px;
-    background-color: #fff;
-    border-radius: 4px;
-    border: rgb(228, 226, 226) 1px solid;
-    transition: 0.15s ease-in-out;
-    box-shadow: 0px 5px 20px 5px rgb(190, 189, 189);
-    
-}
-
-.tz-gallery .thumbnail:hover {
-    transform: translateY(-10px) scale(1.02);
-}
-
-.tz-gallery .lightbox img {
-    border-radius: 4px 4px 0 0;
-}
-
-.tz-gallery .caption {
-    padding: 26px 30px;
-    text-align: center;
-}
-
-.tz-gallery .caption h3 {
-    font-size: 14px;
-    font-weight: bold;
-    margin-top: 0;
-}
-
-.tz-gallery .caption p {
-    font-size: 12px;
-    color: #7b7d7d;
-    margin: 0;
-}
-
-.baguetteBox-button {
-    background-color: transparent !important;
 }
