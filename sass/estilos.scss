@@ -8,6 +8,10 @@ body {
         text-align: center;
         font-size: 16px;
     }
+
+    .containerDeAnimacion{
+        overflow:hidden; //esto hara que las animacion no agranden la pagina
+    }
     
 }
 /* width */
@@ -41,6 +45,79 @@ body {
     scrollbar-width: 10px;
 }
 /********* Configuracion General *********/
+
+/********* Animaciones General CSS *********/
+
+//animacion 
+
+.slide-right {
+    animation: slide-right 2.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    
+
+}
+@keyframes slide-right {
+    0% {
+      transform: translateX(-500px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+.slide-left {
+    animation: slide-left 2.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+}
+@keyframes slide-left {
+    0% {
+      transform: translateX(500px);
+      overflow:hidden; //esto hara que las animacion no agranden la pagina
+    }
+    100% {
+      transform: translateX(0);
+      overflow:hidden; //esto hara que las animacion no agranden la pagina
+    }
+  }
+
+  .slide-top {
+    animation: slide-top 2.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+}
+@keyframes slide-top {
+    0% {
+      transform: translateY(1000px);
+      overflow:hidden; //esto hara que las animacion no agranden la pagina
+    }
+    100% {
+      transform: translateY(0);
+      overflow:hidden; //esto hara que las animacion no agranden la pagina
+    }
+  }
+
+
+
+
+
+
+
+
+//animacion Bienvenido
+.efectoFlotar {animation: efectoFlotar 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s infinite alternate both;} 
+@keyframes efectoFlotar { 0% {transform: translateY(0);} 100% {transform: translateY(-20px); } }
+
+/* Animacion Js Latia*/ /*
+.latiaPokemon{
+    width: 50px;
+    height: auto;
+    position: absolute;
+  }
+.latioPokemon{
+    width: 120px;
+    height: auto;
+    position: absolute;
+  }
+*/
+/********* Animaciones General CSS *********/
 
 
 /********* modo nocturno switch *********/
@@ -103,23 +180,7 @@ nav {
         color: rgb(66, 66, 66);
     }
 }
-/*AnimacionBienvenida*/
 
-.slide-top {animation: slide-top 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s infinite alternate both;} 
-@keyframes slide-top { 0% {transform: translateY(0);} 100% {transform: translateY(-20px); } }
-
-/* Animacion Js Latia*/ /*
-.latiaPokemon{
-    width: 50px;
-    height: auto;
-    position: absolute;
-  }
-.latioPokemon{
-    width: 120px;
-    height: auto;
-    position: absolute;
-  }
-*/
 /********* Pantalla Bienvenido *********/
 
 /******** Pantalla Presentacion ***********/

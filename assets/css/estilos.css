@@ -8,6 +8,9 @@ body h1 {
   text-align: center;
   font-size: 16px;
 }
+body .containerDeAnimacion {
+  overflow: hidden;
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -40,6 +43,73 @@ body h1 {
 }
 
 /********* Configuracion General *********/
+/********* Animaciones General CSS *********/
+.slide-right {
+  animation: slide-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-500px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.slide-left {
+  animation: slide-left 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(500px);
+    overflow: hidden;
+  }
+  100% {
+    transform: translateX(0);
+    overflow: hidden;
+  }
+}
+.slide-top {
+  animation: slide-top 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-top {
+  0% {
+    transform: translateY(1000px);
+    overflow: hidden;
+  }
+  100% {
+    transform: translateY(0);
+    overflow: hidden;
+  }
+}
+.efectoFlotar {
+  animation: efectoFlotar 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s infinite alternate both;
+}
+
+@keyframes efectoFlotar {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+/* Animacion Js Latia*/
+/*
+.latiaPokemon{
+    width: 50px;
+    height: auto;
+    position: absolute;
+  }
+.latioPokemon{
+    width: 120px;
+    height: auto;
+    position: absolute;
+  }
+*/
+/********* Animaciones General CSS *********/
 /********* modo nocturno switch *********/
 .modoDiaPurpura {
   background-color: #6a6bc9;
@@ -100,32 +170,6 @@ nav {
   color: #424242;
 }
 
-/*AnimacionBienvenida*/
-.slide-top {
-  animation: slide-top 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s infinite alternate both;
-}
-
-@keyframes slide-top {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-20px);
-  }
-}
-/* Animacion Js Latia*/
-/*
-.latiaPokemon{
-    width: 50px;
-    height: auto;
-    position: absolute;
-  }
-.latioPokemon{
-    width: 120px;
-    height: auto;
-    position: absolute;
-  }
-*/
 /********* Pantalla Bienvenido *********/
 /******** Pantalla Presentacion ***********/
 .sobreMi {
