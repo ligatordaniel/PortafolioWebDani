@@ -9,9 +9,6 @@ body {
         font-size: 16px;
     }
 
-    .containerDeAnimacion{
-        overflow:hidden; //esto hara que las animacion no agranden la pagina
-    }
     
 }
 /* width */
@@ -34,89 +31,127 @@ body {
   background: #555; 
 }
 
-.selector {
-    /* definir una altura pequeña para forzar el scroll */
-    height: 100px;
-    overflow-y: scroll;
-    width: 300px;
-
-    /* cambiar el estilo por defecto de la barra de scroll */
-    scrollbar-color: yellow #800080;
-    scrollbar-width: 10px;
-}
 /********* Configuracion General *********/
 
 /********* Animaciones General CSS *********/
 
-//animacion 
-
-.slide-right {
-    animation: slide-right 2.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    
-
+//animacion derecha js
+.animadoDerecha{
+    opacity: 0;
+    animation: mostrarDerecha 4s; //tiempo
 }
-@keyframes slide-right {
-    0% {
-      transform: translateX(-500px);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
 
-.slide-left {
-    animation: slide-left 2.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-
+@keyframes mostrarDerecha{
+    0%{
+        transform: translateX(-100px); //configuracion 0%
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);      //configuracion 100%
+        opacity: 1;
+    }
 }
-@keyframes slide-left {
-    0% {
-      transform: translateX(500px);
-      overflow:hidden; //esto hara que las animacion no agranden la pagina
-    }
-    100% {
-      transform: translateX(0);
-      overflow:hidden; //esto hara que las animacion no agranden la pagina
-    }
-  }
-
-  .slide-top {
-    animation: slide-top 2.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-
-}
-@keyframes slide-top {
-    0% {
-      transform: translateY(1000px);
-      overflow:hidden; //esto hara que las animacion no agranden la pagina
-    }
-    100% {
-      transform: translateY(0);
-      overflow:hidden; //esto hara que las animacion no agranden la pagina
-    }
-  }
-
-
-
-
-
-
-
+//animacion derecha js
 
 //animacion Bienvenido
 .efectoFlotar {animation: efectoFlotar 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s infinite alternate both;} 
 @keyframes efectoFlotar { 0% {transform: translateY(0);} 100% {transform: translateY(-20px); } }
 
-/* Animacion Js Latia*/ /*
-.latiaPokemon{
-    width: 50px;
-    height: auto;
-    position: absolute;
+.efectoParpadear{
+    animation: efectoParpadear 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s infinite alternate both;
+} 
+@keyframes efectoParpadear { 
+    0% {
+        opacity: 0.1;
+    } 
+    100% {
+        opacity: 1;
+    } 
+}
+//animacion Bienvenido
+
+//Animacion LatiA
+.animacionLatia{
+    animation-name: animacionLatia;
+    animation-duration: 15s; //regular 15
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+    opacity: 0;
+    animation-timing-function: ease-in;
+    width: 90px;
+}
+@keyframes animacionLatia {
+    0% {			/*posicion inicial 0%*/
+      position: absolute; 	/*-absolute- referencial elemento mas cercano*/
+      margin-top: 0px;    	/*-relative- debe ser div padre*/
+      margin-left: 95%;
+      opacity: 0;
+
+    }
+    1% {		
+        opacity: 1;
+    }
+    9% {		
+        opacity: 0.8;
+    }
+    10% {			/*posicion final animacion*/
+        position:  absolute; 	
+        margin-top: -200px;
+        margin-left: 0%;
+    }
+    10% {		    /*posicion final hidden*/
+        opacity: 0;
+    }
+    100% {			/*posicion final hidden*/
+        position:  absolute; 	
+        margin-top: -200px;
+        margin-left: 0%;
+        opacity: 0;
+    }
   }
-.latioPokemon{
-    width: 120px;
-    height: auto;
-    position: absolute;
+
+//Animacion LatiO
+
+.animacionLatio{
+    animation-name: animacionLatio;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    animation-delay: 8s;
+    animation-timing-function: ease-in;
+    width: 140px;
+}
+@keyframes animacionLatio {
+    0% {			/*posicion inicial 0%*/
+      position: absolute; 	/*-absolute- referencial elemento mas cercano*/
+      margin-top: 0px;    	/*-relative- debe ser div padre*/
+      margin-left: 95%;
+      opacity: 0;
+
+    }
+    1% {		
+        opacity: 1;
+    }
+    9% {		
+        opacity: 0.8;
+    }
+    10% {			/*posicion final animacion*/
+        position:  absolute; 	
+        margin-top: -50px;
+        margin-left: 0%;
+    }
+    10% {		    /*posicion final hidden*/
+        opacity: 0;
+    }
+    100% {			/*posicion final hidden*/
+        position:  absolute; 	
+        margin-top: -200px;
+        margin-left: 0%;
+        opacity: 0;
+    }
   }
-*/
+
+
 /********* Animaciones General CSS *********/
 
 
@@ -134,21 +169,20 @@ body {
     background-color: rgb(31, 31, 31); 
     transition: 1s ease all;
 }
-.nocheGris {
+.ModoNocheGris {
     background-color: rgb(184, 184, 184);
     transition: 1s ease all;
 
 }
 
-
 .wallpaperNoche {
     background-image: url('https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaperNoche.png'); //16bit noche
-    transition: .5s ease all;
+    transition: 1s ease all;
 }
 
 .wallpaperDia {
     background-image: url('https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaper1.png'); //16 bit soleado
-    transition: .5s ease all;
+    transition: 1s ease all;
 }
 /********* modo nocturno *********/
 
@@ -217,17 +251,17 @@ nav {
         font-size: 150%;
     }
     .caja1{
-        
+        padding-bottom: 2%;
         h5{
             font-size: 20px;
             color: rgb(61, 61, 61);
         }
-        span{
-            font-size: 13px;
+        .spanHabilidades{
+            font-size: 16px;
             color: rgb(78, 78, 78);
         }
         img{
-            width: 80px;
+            width: 70px;
             filter: drop-shadow(2px 2px 1px rgb(68, 68, 68));
         }
     }
@@ -246,7 +280,7 @@ nav {
     .caja2{
         width: 300px;
         height: 350px;
-        border: 1px solid rgb(207, 207, 207);
+        border: 1px solid rgb(128, 128, 128);
         background-color: rgb(207, 209, 248);
         border-radius: 2%;
         filter: drop-shadow(3px 3px 5px rgb(68, 68, 68));
@@ -254,8 +288,10 @@ nav {
 
         .titulo{
             text-align: center;
-            color: rgb(238, 238, 238);
+            color: rgb(223, 223, 223);
             border-radius: 2%;
+            background-color: rgb(58, 58, 58);
+            
         }
         h3{
             font-size: 100%;

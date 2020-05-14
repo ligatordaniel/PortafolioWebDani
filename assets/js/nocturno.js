@@ -1,12 +1,3 @@
-/*modoDiaPurpura {background-color: rgb(106, 107, 201);}
-modoDiaBlanco {background-color: rgb(255, 255, 255);}
-modoNocheNegro {background-color: rgb(31, 31, 31);}
-nocheGris {background-color: rgb(207, 207, 207);}
-pixelNoche {background-image: url('https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaperNoche.png'); //16bit noche}
-pixelDia {background-image: url('https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaper1.png'); //16 bit soleado}
-*/
-
-
 const btnSwitch1 = document.getElementById('customSwitch1');
 const navbar = document.getElementById('miNavbar');
 const masterhead = document.getElementById('masterhead');
@@ -20,9 +11,9 @@ const footer= document.getElementById('myFooter');
 btnSwitch1.addEventListener('click', () => {
   navbar.classList.toggle('modoNocheNegro')
   sobreMi.classList.toggle('modoNocheNegro')
-  habilidades.classList.toggle('nocheGris')
-  proyectos.classList.toggle('modoNocheNegro')
-  contacto.classList.toggle('nocheGris')
+  habilidades.classList.toggle('ModoNocheGris')
+  proyectos.classList.toggle('ModoNocheGris')
+  contacto.classList.toggle('ModoNocheGris')
   footer.classList.toggle('modoNocheNegro')
   cambiarImagen()
 

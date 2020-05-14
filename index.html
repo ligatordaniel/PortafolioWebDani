@@ -14,8 +14,6 @@
   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png"> <!-- Favicon -->
   <link rel="icon" href="assets/img/favicon.png" type="image/png"> <!-- icono que en la pestaña del chrome-->
 
-
-
   <title>Daniel Frontend</title>
 </head>
 
@@ -62,21 +60,23 @@
           <h3>Bienvenido</h3>
           <!-- switch language -->
           <div class="custom-control custom-switch">
-            <!--(Descomitear para switch de idioma)
+
             <input type="checkbox" class="custom-control-input" id="customSwitch2">
             <label class="custom-control-label" for="customSwitch2">
               <p>See me on English</p>
             </label><br>
-            -->
+
           </div>
           <!-- switch language-->
         </div>
       </div>
     </div>
-    <!--<img id="latiaPokemon" class="latiaPokemon" src="assets/img/latia.png" alt="pokemonLatia">
+    <img id="latiaPokemon" class="@keyframes animacionLatia" 
+    src="assets/img/latia.png" alt="pokemonLatia">
 
-      <img id="latioPokemon" class="latioPokemon" src="assets/img/latio.png" alt="pokemonLatio">
-   -->
+    <img id="latioPokemon" class="@keyframes animacionLatio" 
+    src="assets/img/latio.png" alt="pokemonLatio">
+
   </header>
   <!--************** Pantalla bienvenido ******************-->
 
@@ -89,11 +89,10 @@
     <div class="row">
 
       <div class="col-sm-12 col-md-4 col-lg-4">
-        <img src="assets/img/fotoperfil2.jpg" class="fotoPerfil @keyframes slide-right"
-         id="fotoPerfil" alt="imgPerfil">
+        <img src="assets/img/fotoperfil2.jpg" class="fotoPerfil animadoDerecha" id="fotoPerfil" alt="imgPerfil">
       </div>
 
-      <div class="col-sm-12 col-md-8 col-lg-8 @keyframes @keyframes slide-left">
+      <div class="col-sm-12 col-md-8 col-lg-8">
         <h3>Hola, soy Daniel</h3>
         <p>Desarrollador Front End y fanático por tecnología para crear soluciones.
           En mi tiempo libre soy un hobbista de Arduino y gamer. Me gusta mucho no parar
@@ -102,7 +101,7 @@
 
         <p>¿Que es un desarrollador Front End?
           Encargado de desarrollar la conversión de datos a una interfaz gráfica para que
-          el usuario pueda interactuar de manera intuitiva y atractiva.</p>
+          el usuario pueda interactuar de forma atractiva e intuitiva.</p>
         <p>
       </div>
 
@@ -113,128 +112,140 @@
 
 
   <!--************** Pantalla Habilidades ******************-->
-  <div class="habilidades containerDeAnimacion" id="habilidades">
+  <div class="habilidades " id="habilidades">
     <h2>Habilidades</h2>
     <div class="container">
       <!--1x3-->
       <div class="row">
 
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <class class="caja1">
-            <div>
-              <h5>Html5</h5>
-              <div>
-                <img src="assets/img/logoHtml.png" alt="Responsive image">
-              </div>
-              <div>
-                <span>Lenguaje markup<br> para estructurar web</span>
+        <div class="col-sm-12 col-md-4 col-lg-4 caja1">
+          <h5>Html5</h5>
+          <a data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false"
+            aria-controls="multiCollapseExample1">
+            <img src="assets/img/logoHtml.png" alt="Responsive image"></a>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <spam class="spanHabilidades">Lenguaje markup<br>para estructurar web</spam>
               </div>
             </div>
+          </div>
         </div>
 
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <class class="caja1">
-            <div>
-              <h5>Css3</h5>
-              <div>
-                <img src="assets/img/logoCss.png" alt="Responsive image">
-              </div>
-              <div>
-                <span>Lenguaje de diseño </br>grafico para definir web</span>
+        <div class="col-sm-12 col-md-4 col-lg-4 caja1">
+          <h5>Css3</h5>
+          <a data-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false"
+            aria-controls="multiCollapseExample1">
+            <img src="assets/img/logoCss.png" alt="Responsive image"></a>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample2">
+                <spam class="spanHabilidades">Lenguaje de diseño </br>grafico para definir web</spam>
               </div>
             </div>
+          </div>
         </div>
 
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <class class="caja1">
-            <div>
-              <h5>JavaScript Es6</h5>
-              <div>
-                <img src="assets/img/logoJavascript.png" alt="Responsive image">
-              </div>
-              <div>
-                <span>lenguaje de programación</br> interpretado</span>
+        <div class="col-sm-12 col-md-4 col-lg-4 caja1">
+          <h5>JavaScript Es6</h5>
+          <a data-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false"
+            aria-controls="multiCollapseExample1">
+            <img src="assets/img/logoJavascript.png" alt="Responsive image"></a>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample3">
+                <spam class="spanHabilidades">lenguaje de programación</br> interpretado</spam>
               </div>
             </div>
+          </div>
         </div>
 
       </div>
       <!--1x3-->
 
-      <!--2x1-->
-      <div class="row">
-
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <class class="caja1">
-            <div>
-              <h5>Github</h5>
-              <div>
-                <img src="assets/img/logoGit.png" alt="Responsive image">
-              </div>
-              <div>
-                <span>Web con control <br> de versiones git</span>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <class class="caja1">
-            <div>
-              <h5>Angular 9</h5>
-              <div>
-                <img src="assets/img/angularlogo.png" alt="Responsive image">
-              </div>
-              <div>
-                <span>framework de javascript<br> para aplicaciones SPA</span>
-              </div>
-            </div>
-        </div>
-
-      </div>
-      <!--2x1-->
       <!--3x1-->
       <div class="row">
 
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <class class="caja1">
-            <div>
-              <h5>Materialize</h5>
-              <div>
-                <img src="assets/img/materializelogo.png" alt="Responsive image">
-              </div>
-              <div>
-                <span>Framework basado en material<br> Design hecho por Google</span>
+        <div class="col-sm-12 col-md-4 col-lg-4 caja1">
+          <h5>Bootstrap</h5>
+          <a data-toggle="collapse" href="#multiCollapseExample4" role="button" aria-expanded="false"
+            aria-controls="multiCollapseExample1">
+            <img src="assets/img/boostraplogo.png" alt="Responsive image"></a>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample4">
+                <spam class="spanHabilidades">herramientas de código <br>abierto para diseños web</spam>
               </div>
             </div>
+          </div>
         </div>
 
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <class class="caja1">
-            <div>
-              <h5>Bootstrap</h5>
-              <div>
-                <img src="assets/img/boostraplogo.png" alt="Responsive image">
-              </div>
-              <div>
-                <span>herramientas de código <br>abierto para diseños web</span>
+        <div class="col-sm-12 col-md-4 col-lg-4 caja1">
+          <h5>Sass</h5>
+          <a data-toggle="collapse" href="#multiCollapseExample5" role="button" aria-expanded="false"
+            aria-controls="multiCollapseExample1">
+            <img src="assets/img/sasslogo.png" alt="Responsive image"></a>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample5">
+                <spam class="spanHabilidades">lenguaje de script simple<br> enfocado en diseño web</spam>
               </div>
             </div>
+          </div>
         </div>
 
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <class class="caja1">
-            <div>
-              <h5>Bootstrap</h5>
-              <div>
-                <img src="assets/img/sasslogo.png" alt="Responsive image">
-              </div>
-              <div>
-                <span>lenguaje de script simple<br> enfocado en diseño web</span>
+
+        <div class="col-sm-12 col-md-4 col-lg-4 caja1">
+          <h5>Materialize</h5>
+          <a data-toggle="collapse" href="#multiCollapseExample6" role="button" aria-expanded="false"
+            aria-controls="multiCollapseExample1">
+            <img src="assets/img/materializelogo.png" alt="Responsive image"></a>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample6">
+                <spam class="spanHabilidades">Framework CSS de google<br> enfocado en diseño responsive</spam>
               </div>
             </div>
+          </div>
+        </div>
+
+
+      </div>
+      <!--3x1-->
+
+      <!--2x1-->
+      <div class="row">
+
+        <div class="col-sm-12 col-md-6 col-lg-6 caja1">
+          <h5>Github</h5>
+          <a data-toggle="collapse" href="#multiCollapseExample7" role="button" aria-expanded="false"
+            aria-controls="multiCollapseExample1">
+            <img src="assets/img/logoGit.png" alt="Responsive image"></a>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample7">
+                <spam class="spanHabilidades">Web con control <br> de versiones git</spam>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-6 caja1">
+          <h5>Angular 9</h5>
+          <a data-toggle="collapse" href="#multiCollapseExample8" role="button" aria-expanded="false"
+            aria-controls="multiCollapseExample1">
+            <img src="assets/img/angularlogo.png" alt="Responsive image"></a>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample8">
+                <spam class="spanHabilidades">Framework de javascript<br> para aplicaciones SPA</spam>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
+      <!--2x1-->
 
 
     </div>
@@ -243,15 +254,15 @@
   <!--************** Pantalla Habilidades ******************-->
 
   <!--************** Pantalla Proyectos ******************-->
-  <div class="proyectos modoDiaBlanco containerDeAnimacion" id="proyectos">
+  <div class="proyectos containerDeAnimacion modoDiaBlanco" id="proyectos">
     <h2>Proyectos</h2>
     <div class="container">
       <!--3x1-->
       <div class="row">
 
         <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja2">
-            <div class="titulo modoDiaPurpura">
+          <div class="caja2 animadoDerecha">
+            <div class="titulo">
               <h3>Galeria IOS</h3>
               <a href="https://ligatordaniel.github.io/Galeria-IOS-chile/" target="_blank">
                 <img src="assets/img/thumbnailios2.png" class="imgThumbnail" alt="proyecto"></a>
@@ -264,8 +275,8 @@
         </div>
 
         <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja2">
-            <div class="titulo modoDiaPurpura">
+          <div class="caja2 animadoDerecha">
+            <div class="titulo">
               <h3>Reloj JS</h3>
               <a href="https://ligatordaniel.github.io/RelojJS/" target="_blank">
                 <img src="assets/img/thumbnailreloj.png" class="imgThumbnail" alt="proyecto"></a>
@@ -279,8 +290,8 @@
         </div>
 
         <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja2">
-            <div class="titulo modoDiaPurpura">
+          <div class="caja2 animadoDerecha">
+            <div class="titulo">
               <h3>Pokédex</h3>
               <a href="https://ligatordaniel.github.io/Pokedex/" target="_blank">
                 <img src="assets/img/thumbnailpokedex.png" class="imgThumbnail" alt="proyecto"></a>
@@ -299,8 +310,8 @@
       <div class="row">
 
         <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja2">
-            <div class="titulo modoDiaPurpura">
+          <div class="caja2 animadoDerecha">
+            <div class="titulo">
               <h3>USD a CLP Calendario</h3>
               <a href="https://dolarvuecalendario.firebaseapp.com/" target="_blank">
                 <img src="assets/img/thumbnailCalendarioDolar.png" class="imgThumbnail" alt="proyecto"></a>
@@ -313,8 +324,8 @@
         </div>
 
         <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja2">
-            <div class="titulo modoDiaPurpura">
+          <div class="caja2 animadoDerecha">
+            <div class="titulo">
               <h3>MyTrello</h3>
               <a href="https://basedatos-735c2.firebaseapp.com/" target="_blank">
                 <img src="assets/img/thumbnailmytrello.png" class="imgThumbnail" alt="proyecto"></a>
@@ -327,8 +338,8 @@
         </div>
 
         <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja2">
-            <div class="titulo modoDiaPurpura">
+          <div class="caja2 animadoDerecha">
+            <div class="titulo">
               <h3>App Tienda para Móviles</h3>
               <a href="https://ligatordaniel.github.io/CuponaticTest2/" target="_blank">
                 <img src="assets/img/thumbnailCuponatic.png" class="imgThumbnail" alt="proyecto"></a>
@@ -351,14 +362,14 @@
 
   <!--************** Pantalla Contacto ******************-->
 
-  <div class="contacto modoDiaBlanco" id="contacto">
+  <div class="contacto modoDiaBlanco modoDiaBlanco" id="contacto">
     <h2>Contacto</h2>
-    <h3>I'm available and ready to work together!</h3>
+    <h3 class="@keyframes efectoParpadear">I'm available and ready to work together!</h3>
     <div class="container">
       <!--2x1-->
       <div class="row">
 
-        <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="col-sm-12 col-md-6 col-lg-6 ">
           <div class="caja3">
             <img src="assets/img/logoGmail.png" alt="imgclase3">
             <p>Danielulloa256@gmail.com</p>
@@ -430,6 +441,7 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
   <script src="assets/js/nocturno.js" type="text/javascript"></script>
+  <script src="assets/js/animacionesScroll.js" type="text/javascript"></script>
 
 
 </body>
