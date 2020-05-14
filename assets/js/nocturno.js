@@ -5,7 +5,13 @@ const sobreMi = document.getElementById('sobreMi');
 const habilidades = document.getElementById('habilidades');
 const proyectos = document.getElementById('proyectos');
 const contacto = document.getElementById('contacto');
-const footer= document.getElementById('myFooter');
+const footer = document.getElementById('myFooter');
+const cajaProyectos1 = document.getElementById('cajaProyectos1');
+const cajaProyectos2 = document.getElementById('cajaProyectos2');
+const cajaProyectos3 = document.getElementById('cajaProyectos3');
+const cajaProyectos4 = document.getElementById('cajaProyectos4');
+const cajaProyectos5 = document.getElementById('cajaProyectos5');
+const cajaProyectos6 = document.getElementById('cajaProyectos6');
 
 
 btnSwitch1.addEventListener('click', () => {
@@ -15,6 +21,12 @@ btnSwitch1.addEventListener('click', () => {
   proyectos.classList.toggle('ModoNocheGris')
   contacto.classList.toggle('ModoNocheGris')
   footer.classList.toggle('modoNocheNegro')
+  cajaProyectos1.classList.toggle('modoNocheNegro')
+  cajaProyectos2.classList.toggle('modoNocheNegro')
+  cajaProyectos3.classList.toggle('modoNocheNegro')
+  cajaProyectos4.classList.toggle('modoNocheNegro')
+  cajaProyectos5.classList.toggle('modoNocheNegro')
+  cajaProyectos6.classList.toggle('modoNocheNegro')
   cambiarImagen()
 
 });
@@ -29,8 +41,6 @@ let cambiarImagen = () => {
     masterhead.classList.add('wallpaperDia');
   }
 };
-
-
 
 
 

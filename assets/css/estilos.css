@@ -86,7 +86,7 @@ body h1 {
     /*-absolute- referencial elemento mas cercano*/
     margin-top: 0px;
     /*-relative- debe ser div padre*/
-    margin-left: 95%;
+    margin-left: 90%;
     opacity: 0;
   }
   1% {
@@ -120,7 +120,7 @@ body h1 {
   opacity: 0;
   animation-delay: 8s;
   animation-timing-function: ease-in;
-  width: 140px;
+  width: 150px;
 }
 
 @keyframes animacionLatio {
@@ -130,7 +130,7 @@ body h1 {
     /*-absolute- referencial elemento mas cercano*/
     margin-top: 0px;
     /*-relative- debe ser div padre*/
-    margin-left: 95%;
+    margin-left: 89%;
     opacity: 0;
   }
   1% {
@@ -285,7 +285,6 @@ nav {
   text-align: center;
   color: #dfdfdf;
   border-radius: 2%;
-  background-color: #3a3a3a;
 }
 .proyectos .caja2 h3 {
   font-size: 100%;
