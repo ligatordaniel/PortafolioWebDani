@@ -105,12 +105,11 @@ body h1 {
     /*posicion final hidden*/
     opacity: 0;
   }
+  12% {
+    display: none;
+  }
   100% {
-    /*posicion final hidden*/
-    position: absolute;
-    margin-top: -200px;
-    margin-left: 0%;
-    opacity: 0;
+    display: none;
   }
 }
 .animacionLatio {
@@ -149,12 +148,11 @@ body h1 {
     /*posicion final hidden*/
     opacity: 0;
   }
+  12% {
+    display: none;
+  }
   100% {
-    /*posicion final hidden*/
-    position: absolute;
-    margin-top: -200px;
-    margin-left: 0%;
-    opacity: 0;
+    display: none;
   }
 }
 /********* Animaciones General CSS *********/

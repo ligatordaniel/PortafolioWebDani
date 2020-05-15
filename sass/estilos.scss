@@ -3,32 +3,33 @@ body {
 
     color: rgb(87, 86, 86);
     font-family: 'Ubuntu', sans-serif;
-    
+
     h1 {
         text-align: center;
         font-size: 16px;
     }
 
-    
+
 }
+
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #dadada; 
+    background: #dadada;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+    background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+    background: #555;
 }
 
 /********* Configuracion General *********/
@@ -36,42 +37,58 @@ body {
 /********* Animaciones General CSS *********/
 
 //animacion derecha js
-.animadoDerecha{
+.animadoDerecha {
     opacity: 0;
     animation: mostrarDerecha 4s; //tiempo
 }
 
-@keyframes mostrarDerecha{
-    0%{
+@keyframes mostrarDerecha {
+    0% {
         transform: translateX(-100px); //configuracion 0%
         opacity: 0;
     }
-    100%{
-        transform: translateY(0);      //configuracion 100%
+
+    100% {
+        transform: translateY(0); //configuracion 100%
         opacity: 1;
     }
 }
+
 //animacion derecha js
 
 //animacion Bienvenido
-.efectoFlotar {animation: efectoFlotar 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s infinite alternate both;} 
-@keyframes efectoFlotar { 0% {transform: translateY(0);} 100% {transform: translateY(-20px); } }
+.efectoFlotar {
+    animation: efectoFlotar 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s infinite alternate both;
+}
 
-.efectoParpadear{
+@keyframes efectoFlotar {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+.efectoParpadear {
     animation: efectoParpadear 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s infinite alternate both;
-} 
-@keyframes efectoParpadear { 
+}
+
+@keyframes efectoParpadear {
     0% {
         opacity: 0.1;
-    } 
+    }
+
     100% {
         opacity: 1;
-    } 
+    }
 }
+
 //animacion Bienvenido
 
 //Animacion LatiA
-.animacionLatia{
+.animacionLatia {
     animation-name: animacionLatia;
     animation-duration: 15s; //regular 15
     animation-iteration-count: infinite;
@@ -80,39 +97,50 @@ body {
     animation-timing-function: ease-in;
     width: 90px;
 }
+
 @keyframes animacionLatia {
-    0% {			/*posicion inicial 0%*/
-      position: absolute; 	/*-absolute- referencial elemento mas cercano*/
-      margin-top: 0px;    	/*-relative- debe ser div padre*/
-      margin-left: 89%;
-      opacity: 0;
+    0% {
+        /*posicion inicial 0%*/
+        position: absolute;
+        /*-absolute- referencial elemento mas cercano*/
+        margin-top: 0px;
+        /*-relative- debe ser div padre*/
+        margin-left: 89%;
+        opacity: 0;
 
     }
-    1% {		
+
+    1% {
         opacity: 1;
     }
-    9% {		
+
+    9% {
         opacity: 0.8;
     }
-    10% {			/*posicion final animacion*/
-        position:  absolute; 	
+
+    10% {
+        /*posicion final animacion*/
+        position: absolute;
         margin-top: -200px;
         margin-left: 0%;
     }
-    11% {		    /*posicion final hidden*/
+
+    11% {
+        /*posicion final hidden*/
         opacity: 0;
     }
-    100% {			/*posicion final hidden*/
-        position:  absolute; 	
-        margin-top: -200px;
-        margin-left: 0%;
-        opacity: 0;
+    12% {
+        display: none;
     }
-  }
+
+    100% {
+        display: none;
+    }
+}
 
 //Animacion LatiO
 
-.animacionLatio{
+.animacionLatio {
     animation-name: animacionLatio;
     animation-duration: 15s;
     animation-iteration-count: infinite;
@@ -121,35 +149,47 @@ body {
     animation-timing-function: ease-in;
     width: 150px;
 }
+
 @keyframes animacionLatio {
-    0% {			/*posicion inicial 0%*/
-      position: absolute; 	/*-absolute- referencial elemento mas cercano*/
-      margin-top: 0px;    	/*-relative- debe ser div padre*/
-      margin-left: 89%;
-      opacity: 0;
+    0% {
+        /*posicion inicial 0%*/
+        position: absolute;
+        /*-absolute- referencial elemento mas cercano*/
+        margin-top: 0px;
+        /*-relative- debe ser div padre*/
+        margin-left: 89%;
+        opacity: 0;
 
     }
-    1% {		
+
+    1% {
         opacity: 1;
     }
-    9% {		
+
+    9% {
         opacity: 0.8;
     }
-    10% {			/*posicion final animacion*/
-        position:  absolute; 	
+
+    10% {
+        /*posicion final animacion*/
+        position: absolute;
         margin-top: -50px;
         margin-left: 0%;
     }
-    11% {		    /*posicion final hidden*/
+
+    11% {
+        /*posicion final hidden*/
         opacity: 0;
     }
-    100% {			/*posicion final hidden*/
-        position:  absolute; 	
-        margin-top: -200px;
-        margin-left: 0%;
-        opacity: 0;
+
+    12% {
+        display: none;
     }
-  }
+
+    100% {
+        display: none;
+    }
+}
 
 
 /********* Animaciones General CSS *********/
@@ -157,18 +197,20 @@ body {
 
 /********* modo nocturno switch *********/
 .modoDiaPurpura {
-    background-color: rgb(106, 107, 201); 
+    background-color: rgb(106, 107, 201);
     transition: 1s ease all;
 }
+
 .modoDiaBlanco {
     background-color: rgb(255, 255, 255);
     transition: 1s ease all;
 }
 
 .modoNocheNegro {
-    background-color: rgb(31, 31, 31); 
+    background-color: rgb(31, 31, 31);
     transition: 1s ease all;
 }
+
 .ModoNocheGris {
     background-color: rgb(184, 184, 184);
     transition: 1s ease all;
@@ -184,6 +226,7 @@ body {
     background-image: url('https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaper1.png'); //16 bit soleado
     transition: 1s ease all;
 }
+
 /********* modo nocturno *********/
 
 /********* Navbar **********/
@@ -191,6 +234,7 @@ nav {
     filter: drop-shadow(3px 3px 3px rgb(95, 95, 95));
     color: rgb(223, 222, 222);
 }
+
 /********* Navbar **********/
 
 /********* Pantalla Bienvenido *********/
@@ -200,17 +244,20 @@ nav {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative; /*-relative- referencia su posicion real en el html*/
-    
-    .bienvenidoDisplay{
+    position: relative;
+    /*-relative- referencia su posicion real en el html*/
+
+    .bienvenidoDisplay {
         margin-top: 20%;
     }
+
     h3 {
         font-size: 300%;
         text-shadow: 2px 2px 40px rgb(58, 88, 173);
         color: rgb(63, 63, 63);
     }
-    p{
+
+    p {
         color: rgb(66, 66, 66);
     }
 }
@@ -227,59 +274,66 @@ nav {
         text-align: center;
         font-size: 30px;
     }
+
     p {
         text-align: center;
-        text-align: justify;        
+        text-align: justify;
     }
 
     .fotoPerfil {
         border-radius: 50%;
         width: 80%;
         filter: drop-shadow(3px 3px 3px rgb(68, 68, 68));
-        display:block;
-        margin:auto;
+        display: block;
+        margin: auto;
     }
 }
+
 /******** Pantalla Presentacion ***********/
 
 /******** Pantalla Habilidades ***********/
-.habilidades{
+.habilidades {
 
     height: 100vh;
     text-align: center;
-    
-    h2{ 
+
+    h2 {
         padding-top: 26px;
         font-size: 150%;
     }
-    .caja1{
+
+    .caja1 {
         padding-bottom: 2%;
-        h5{
+
+        h5 {
             font-size: 20px;
             color: rgb(61, 61, 61);
         }
-        .spanHabilidades{
+
+        .spanHabilidades {
             font-size: 16px;
             color: rgb(78, 78, 78);
         }
-        img{
+
+        img {
             width: 70px;
             filter: drop-shadow(2px 2px 1px rgb(68, 68, 68));
         }
     }
 }
+
 /******** Pantalla Habilidades ***********/
 
 /******** Pantalla Proyectos ***********/
-.proyectos{
+.proyectos {
 
-    h2{
+    h2 {
         text-align: center;
         padding: 2%;
         font-size: 150%;
     }
 
-    .caja2{
+    .caja2 {
         width: 300px;
         height: 350px;
         max-width: 100%;
@@ -289,26 +343,30 @@ nav {
         filter: drop-shadow(3px 3px 5px rgb(68, 68, 68));
         margin-bottom: 8%;
 
-        .titulo{
+        .titulo {
             text-align: center;
             color: rgb(223, 223, 223);
             border-radius: 2%;
-            
+
         }
-        h3{
+
+        h3 {
             font-size: 100%;
             padding: 5px;
         }
-        img{
+
+        img {
             width: 100%;
             height: 150px;
         }
-        p{
+
+        p {
             font-size: 70%;
         }
 
     }
 }
+
 /******** Pantalla Contacto ***********/
 
 /******** Pantalla Contacto ***********/
@@ -317,19 +375,23 @@ nav {
     color: rgb(107, 107, 107);
     height: 100vh;
     text-align: center;
-    h2{
+
+    h2 {
         font-size: 150%;
         padding-top: 2%;
     }
-    h3{
+
+    h3 {
         font-size: 140%;
     }
-    .caja3{
-        img{
+
+    .caja3 {
+        img {
             width: 100px;
             filter: drop-shadow(3px 3px 1px rgb(68, 68, 68));
         }
-        p{
+
+        p {
             font-size: 80%;
         }
     }
@@ -355,44 +417,48 @@ footer {
     .sobreMi {
 
         height: 100%;
-    
+
         .fotoPerfil {
             border-radius: 50%;
             width: 30%;
             filter: drop-shadow(3px 3px 3px rgb(68, 68, 68));
-            display:block;
-            margin:auto;
+            display: block;
+            margin: auto;
             margin-bottom: 20px;
         }
     }
 
-    .habilidades{
+    .habilidades {
 
         height: 100%;
         text-align: center;
-    
-        .caja1{
+
+        .caja1 {
             padding-bottom: 5%;
-            h5{
+
+            h5 {
                 font-size: 90%;
                 color: rgb(61, 61, 61);
             }
-            .spanHabilidades{
+
+            .spanHabilidades {
                 font-size: 60%;
                 color: rgb(78, 78, 78);
             }
-            img{
+
+            img {
                 width: 70px;
                 filter: drop-shadow(1px 1px 2px rgb(68, 68, 68));
             }
         }
-    
+
     }
 
 
     .contacto {
         height: 80%;
-        h2{ 
+
+        h2 {
             margin-top: 5%;
             font-size: 120%;
             padding-top: 2%;
@@ -400,6 +466,7 @@ footer {
         }
     }
 }
+
 /*****************************Tablet config*************************************/
 
 /*****************************Phone config*************************************/
@@ -407,135 +474,149 @@ footer {
 
 
 
-/********* Pantalla Bienvenido *********/
+    /********* Pantalla Bienvenido *********/
 
-.masthead {
+    .masthead {
 
-    .bienvenidoDisplay{
-        margin-top: 50%;
-    }
- 
-    h3 {
-        font-size: 200%;
-    }
-
-}
-
-/******** Pantalla Presentacion ***********/
-.sobreMi {
-
-    height: 100%;
-
-    .fotoPerfil {
-        border-radius: 50%;
-        width: 70%;
-        filter: drop-shadow(3px 3px 3px rgb(68, 68, 68));
-        display:block;
-        margin:auto;
-    }
-    h3 {
-        font-size: 120%;
-    }
-    p{
-        font-size: 80%;
-    }
-}
-/******** Pantalla Presentacion ***********/
-
-/******** Pantalla Habilidades ***********/
-.habilidades{
-
-    height: 100%;
-    text-align: center;
-
-    .caja1{
-        padding-bottom: 5%;
-        h5{
-            font-size: 90%;
-            color: rgb(61, 61, 61);
+        .bienvenidoDisplay {
+            margin-top: 50%;
         }
-        .spanHabilidades{
-            font-size: 60%;
-            color: rgb(78, 78, 78);
+
+        h3 {
+            font-size: 200%;
         }
-        img{
-            width: 70px;
-            filter: drop-shadow(1px 1px 2px rgb(68, 68, 68));
+
+    }
+
+    /******** Pantalla Presentacion ***********/
+    .sobreMi {
+
+        height: 100%;
+
+        .fotoPerfil {
+            border-radius: 50%;
+            width: 70%;
+            filter: drop-shadow(3px 3px 3px rgb(68, 68, 68));
+            display: block;
+            margin: auto;
+        }
+
+        h3 {
+            font-size: 120%;
+        }
+
+        p {
+            font-size: 80%;
         }
     }
 
-}
-/******** Pantalla Habilidades ***********/
+    /******** Pantalla Presentacion ***********/
 
-/******** Pantalla Proyectos ***********/
-.proyectos{
+    /******** Pantalla Habilidades ***********/
+    .habilidades {
 
-    height: 100%;
-    h2{
+        height: 100%;
         text-align: center;
-        padding: 2%;
-        font-size: 130%;
-        margin-bottom: 10%;
+
+        .caja1 {
+            padding-bottom: 5%;
+
+            h5 {
+                font-size: 90%;
+                color: rgb(61, 61, 61);
+            }
+
+            .spanHabilidades {
+                font-size: 60%;
+                color: rgb(78, 78, 78);
+            }
+
+            img {
+                width: 70px;
+                filter: drop-shadow(1px 1px 2px rgb(68, 68, 68));
+            }
+        }
+
     }
 
-    .caja2{
-        width: 250px;
-        height: 320px;
-        margin: 0px auto;
-        margin-bottom: 15px;
+    /******** Pantalla Habilidades ***********/
 
-        h3{
+    /******** Pantalla Proyectos ***********/
+    .proyectos {
+
+        height: 100%;
+
+        h2 {
+            text-align: center;
+            padding: 2%;
+            font-size: 130%;
+            margin-bottom: 10%;
+        }
+
+        .caja2 {
+            width: 250px;
+            height: 320px;
+            margin: 0px auto;
+            margin-bottom: 15px;
+
+            h3 {
+                font-size: 100%;
+                padding: 5px;
+            }
+
+            img {
+                width: 100%;
+                height: 150px;
+            }
+
+            p {
+                font-size: 65%;
+            }
+
+        }
+    }
+
+    /******** Pantalla Contacto ***********/
+
+    /******** Pantalla Contacto ***********/
+
+    .contacto {
+        margin-top: 8%;
+        height: 100%;
+
+        h2 {
+            font-size: 120%;
+            padding-top: 2%;
+            margin-bottom: 10%;
+        }
+
+        h3 {
             font-size: 100%;
-            padding: 5px;
-        }
-        img{
-            width: 100%;
-            height: 150px;
-        }
-        p{
-            font-size: 65%;
         }
 
+        .caja3 {
+
+            img {
+                width: 70px;
+                filter: drop-shadow(3px 3px 1px rgb(68, 68, 68));
+            }
+
+            p {
+                font-size: 70%;
+            }
+        }
     }
-}
-/******** Pantalla Contacto ***********/
 
-/******** Pantalla Contacto ***********/
 
-.contacto {
-    margin-top: 8%;
-    height: 100%;
+    footer {
 
-    h2{
-        font-size: 120%;
-        padding-top: 2%;
-        margin-bottom: 10%;
-    }
-    h3{
-        font-size: 100%;
-    }
-    .caja3{
+        padding: 15px;
+        filter: drop-shadow(3px 3px 5px rgb(68, 68, 68));
 
-        img{
-            width: 70px;
-            filter: drop-shadow(3px 3px 1px rgb(68, 68, 68));
-        }
-        p{
-            font-size: 70%;
+        p {
+            font-size: 14px;
+            text-align: right;
+            color: rgb(223, 222, 222);
         }
     }
 }
-
-
-footer {
-
-    padding: 15px;
-    filter: drop-shadow(3px 3px 5px rgb(68, 68, 68));
-
-    p {
-        font-size: 14px;
-        text-align: right;
-        color: rgb(223, 222, 222);
-    }
-}
-  }
