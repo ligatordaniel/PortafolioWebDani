@@ -15,6 +15,7 @@ const cajaProyectos6 = document.getElementById('cajaProyectos6');
 
 
 btnSwitch1.addEventListener('click', () => {
+  cambiarImagen()
   navbar.classList.toggle('modoNocheNegro')
   sobreMi.classList.toggle('modoNocheNegro')
   habilidades.classList.toggle('ModoNocheGris')
@@ -27,7 +28,6 @@ btnSwitch1.addEventListener('click', () => {
   cajaProyectos4.classList.toggle('modoNocheNegro')
   cajaProyectos5.classList.toggle('modoNocheNegro')
   cajaProyectos6.classList.toggle('modoNocheNegro')
-  cambiarImagen()
 
 });
 
