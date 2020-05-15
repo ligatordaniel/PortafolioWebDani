@@ -31,7 +31,7 @@ btnSwitch1.addEventListener('click', () => {
 
 });
 
-let cambiarImagen = () => {
+const cambiarImagen = () => {
   if (masterhead.classList.contains('wallpaperDia')){
     masterhead.classList.remove('wallpaperDia');
     masterhead.classList.add('wallpaperNoche');
