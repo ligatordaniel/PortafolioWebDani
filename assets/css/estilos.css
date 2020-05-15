@@ -31,7 +31,7 @@ body h1 {
 /********* Configuracion General *********/
 /********* Animaciones General CSS *********/
 .animadoDerecha {
-  opacity: 0;
+  opacity: 1;
 }
 
 .mostrarDerecha {

@@ -1,4 +1,4 @@
-
+/*
 function apareceScroll(){
     const html = document.getElementsByTagName('html')[0];
     const elementoAparece = document.getElementsByClassName('animadoDerecha');      
@@ -20,7 +20,7 @@ function apareceScroll(){
 
 apareceScroll(); 
 
-
+*/
 
 /*var intervalID = window.setInterval(miFuncion, 500);
 
