@@ -251,7 +251,6 @@ nav {
     h2{ 
         padding-top: 3%;
         font-size: 150%;
-        margin-bottom: 10%;
     }
     .caja1{
         padding-bottom: 2%;
@@ -349,9 +348,23 @@ footer {
     }
 }
 
-/*****************************Phone config*************************************/
+/*****************************Tablet config*************************************/
 
 @media (max-width: 800px) {
+
+    .sobreMi {
+
+        height: 100%;
+    
+        .fotoPerfil {
+            border-radius: 50%;
+            width: 30%;
+            filter: drop-shadow(3px 3px 3px rgb(68, 68, 68));
+            display:block;
+            margin:auto;
+            margin-bottom: 20px;
+        }
+    }
 
     .habilidades{
 
