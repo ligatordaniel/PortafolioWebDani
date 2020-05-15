@@ -84,7 +84,7 @@ body {
     0% {			/*posicion inicial 0%*/
       position: absolute; 	/*-absolute- referencial elemento mas cercano*/
       margin-top: 0px;    	/*-relative- debe ser div padre*/
-      margin-left: 90%;
+      margin-left: 89%;
       opacity: 0;
 
     }
@@ -99,7 +99,7 @@ body {
         margin-top: -200px;
         margin-left: 0%;
     }
-    10% {		    /*posicion final hidden*/
+    11% {		    /*posicion final hidden*/
         opacity: 0;
     }
     100% {			/*posicion final hidden*/
@@ -140,7 +140,7 @@ body {
         margin-top: -50px;
         margin-left: 0%;
     }
-    10% {		    /*posicion final hidden*/
+    11% {		    /*posicion final hidden*/
         opacity: 0;
     }
     100% {			/*posicion final hidden*/
