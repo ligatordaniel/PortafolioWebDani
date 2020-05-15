@@ -32,6 +32,9 @@ body h1 {
 /********* Animaciones General CSS *********/
 .animadoDerecha {
   opacity: 0;
+}
+
+.mostrarDerecha {
   animation: mostrarDerecha 4s;
 }
 

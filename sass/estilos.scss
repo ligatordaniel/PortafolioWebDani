@@ -38,9 +38,10 @@ body {
 //animacion derecha js
 .animadoDerecha {
     opacity: 0;
+}
+.mostrarDerecha {
     animation: mostrarDerecha 4s; //tiempo
 }
-
 @keyframes mostrarDerecha {
     0% {
         transform: translateX(-100px); //configuracion 0%
