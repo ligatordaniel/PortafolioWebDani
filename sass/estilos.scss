@@ -58,7 +58,7 @@ body {
 
 //animacion Bienvenido
 .efectoFlotar {
-    animation: efectoFlotar 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s infinite alternate both;
+    animation: efectoFlotar 5s 1s infinite alternate both;
 }
 
 @keyframes efectoFlotar {
@@ -72,7 +72,7 @@ body {
 }
 
 .efectoParpadear {
-    animation: efectoParpadear 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s infinite alternate both;
+    animation: efectoParpadear 0.8s 1s infinite alternate both;
 }
 
 @keyframes efectoParpadear {

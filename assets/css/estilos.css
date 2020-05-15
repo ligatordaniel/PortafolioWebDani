@@ -49,7 +49,7 @@ body h1 {
   }
 }
 .efectoFlotar {
-  animation: efectoFlotar 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s infinite alternate both;
+  animation: efectoFlotar 5s 1s infinite alternate both;
 }
 
 @keyframes efectoFlotar {
@@ -61,7 +61,7 @@ body h1 {
   }
 }
 .efectoParpadear {
-  animation: efectoParpadear 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s infinite alternate both;
+  animation: efectoParpadear 0.8s 1s infinite alternate both;
 }
 
 @keyframes efectoParpadear {
