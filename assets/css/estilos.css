@@ -213,11 +213,12 @@ nav {
 }
 .masthead h3 {
   font-size: 300%;
-  text-shadow: 2px 2px 40px #3a58ad;
-  color: #3f3f3f;
+  text-shadow: 2px 2px 40px #ececec;
+  color: #5a5cb4;
 }
 .masthead p {
   color: #424242;
+  text-shadow: 2px 2px 40px #ececec;
 }
 
 /********* Pantalla Bienvenido *********/
