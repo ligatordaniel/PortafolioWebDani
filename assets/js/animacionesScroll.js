@@ -22,7 +22,7 @@ function animacioneLatia() {
     //console.log(window.pageYOffset);
     let ubicacionY = window.pageYOffset;
     let el = document.getElementById('latiaPokemon');
-    if(ubicacionY > 800){
+    if(ubicacionY > 600){
         el.classList.remove('@keyframes','animacionLatia')
     }else{
         el.classList.add('@keyframes','animacionLatia')
@@ -32,7 +32,7 @@ function animacioneLatio() {
     //console.log(window.pageYOffset);
     let ubicacionY = window.pageYOffset;
     let el = document.getElementById('latioPokemon');
-    if(ubicacionY > 800){
+    if(ubicacionY > 600){
         el.classList.remove('@keyframes','animacionLatio')
     }else{
         el.classList.add('@keyframes','animacionLatio')
