@@ -22,7 +22,7 @@ function animacioneLatia() {
     //console.log(window.pageYOffset);
     let ubicacionY = window.pageYOffset;
     let el = document.getElementById('latiaPokemon');
-    if(ubicacionY > 600){
+    if(ubicacionY > 500){
         el.classList.remove('@keyframes','animacionLatia')
     }else{
         el.classList.add('@keyframes','animacionLatia')
@@ -32,7 +32,7 @@ function animacioneLatio() {
     //console.log(window.pageYOffset);
     let ubicacionY = window.pageYOffset;
     let el = document.getElementById('latioPokemon');
-    if(ubicacionY > 600){
+    if(ubicacionY > 500){
         el.classList.remove('@keyframes','animacionLatio')
     }else{
         el.classList.add('@keyframes','animacionLatio')
@@ -40,7 +40,7 @@ function animacioneLatio() {
 }
 
 function animacioneFotoPerfil() {
-    console.log(window.pageYOffset);
+    //console.log(window.pageYOffset);
     let ubicacionY = window.pageYOffset;
     let el = document.getElementById('fotoPerfil');
     if(ubicacionY > 220 && ubicacionY < 1200){
