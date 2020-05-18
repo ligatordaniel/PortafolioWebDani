@@ -1,3 +1,56 @@
+window.addEventListener('scroll' , function(){
+
+    animacioneBienvenido();
+    animacioneLatia();
+    animacioneLatio();
+    animacioneFotoPerfil();
+    
+})
+
+function animacioneBienvenido() {
+    //console.log(window.pageYOffset);
+    let ubicacionY = window.pageYOffset;
+    let el = document.getElementById('BienvenidoFlotante');
+    if(ubicacionY > 300){
+        el.classList.remove('@keyframes','efectoFlotar')
+    }else{
+        el.classList.add('@keyframes','efectoFlotar')
+    }
+}
+
+function animacioneLatia() {
+    //console.log(window.pageYOffset);
+    let ubicacionY = window.pageYOffset;
+    let el = document.getElementById('latiaPokemon');
+    if(ubicacionY > 800){
+        el.classList.remove('@keyframes','animacionLatia')
+    }else{
+        el.classList.add('@keyframes','animacionLatia')
+    }
+}
+function animacioneLatio() {
+    //console.log(window.pageYOffset);
+    let ubicacionY = window.pageYOffset;
+    let el = document.getElementById('latioPokemon');
+    if(ubicacionY > 800){
+        el.classList.remove('@keyframes','animacionLatio')
+    }else{
+        el.classList.add('@keyframes','animacionLatio')
+    }
+}
+
+function animacioneFotoPerfil() {
+    console.log(window.pageYOffset);
+    let ubicacionY = window.pageYOffset;
+    let el = document.getElementById('fotoPerfil');
+    if(ubicacionY > 220 && ubicacionY < 1200){
+        el.classList.add('@keyframes','mostrarDerecha')
+        el.classList.remove('animadoDerecha')
+    }else{
+        el.classList.remove('@keyframes','mostrarDerecha')
+    }
+}
+
 /*
 function apareceScroll(){
     const html = document.getElementsByTagName('html')[0];
