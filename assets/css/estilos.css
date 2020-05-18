@@ -48,6 +48,10 @@ body h1 {
     opacity: 1;
   }
 }
+.bienvenidoDisplayOpacity {
+  opacity: 0;
+}
+
 .efectoFlotar {
   animation: efectoFlotar 5s 1s infinite alternate both;
 }
@@ -177,9 +181,14 @@ body h1 {
   transition: 1s ease all;
 }
 
-.ModoNocheGris {
+.modoNocheGris {
   background-color: #b8b8b8;
   transition: 1s ease all;
+}
+
+.modoNocheTextoGris {
+  transition: 1s ease all;
+  color: #3a3a3a;
 }
 
 .wallpaperNoche {
@@ -208,19 +217,18 @@ nav {
   background-repeat: no-repeat;
   position: relative;
   background-color: #464646;
+  color: #6a6bc9;
   /*-relative- referencia su posicion real en el html*/
 }
 .masthead .bienvenidoDisplay {
   margin-top: 20%;
 }
-.masthead h3 {
+.masthead .h3 {
   font-size: 300%;
-  text-shadow: 2px 2px 40px #ececec;
-  color: #5a5cb4;
 }
 .masthead p {
   color: #424242;
-  text-shadow: 2px 2px 40px #ececec;
+  text-shadow: 2px 2px 15px #ececec;
 }
 
 /********* Pantalla Bienvenido *********/

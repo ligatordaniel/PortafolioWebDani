@@ -57,7 +57,9 @@ body {
 //animacion derecha js
 
 //animacion Bienvenido
-
+.bienvenidoDisplayOpacity{
+    opacity: 0;
+}
 .efectoFlotar {
     animation: efectoFlotar 5s 1s infinite alternate both;
 }
@@ -199,6 +201,7 @@ body {
 
 
 /********* modo nocturno switch *********/
+
 .modoDiaPurpura {
     background-color: rgb(106, 107, 201);
     transition: 1s ease all;
@@ -214,10 +217,14 @@ body {
     transition: 1s ease all;
 }
 
-.ModoNocheGris {
+.modoNocheGris {
     background-color: rgb(184, 184, 184);
     transition: 1s ease all;
 
+}
+.modoNocheTextoGris{
+    transition: 1s ease all;
+    color: rgb(58, 58, 58);
 }
 
 .wallpaperNoche {
@@ -249,21 +256,20 @@ nav {
     background-repeat: no-repeat;
     position: relative;
     background-color:rgb(70, 70, 70);
+    color: rgb(106, 107, 201);
     /*-relative- referencia su posicion real en el html*/
 
     .bienvenidoDisplay {
         margin-top: 20%;
     }
 
-    h3 {
+    .h3 {
         font-size: 300%;
-        text-shadow: 2px 2px 40px rgb(236, 236, 236);
-        color: rgb(90, 92, 180);
     }
 
     p {
         color: rgb(66, 66, 66);
-        text-shadow: 2px 2px 40px rgb(236, 236, 236);
+        text-shadow: 2px 2px 15px rgb(236, 236, 236);
     }
 }
 
@@ -418,6 +424,8 @@ footer {
 /*****************************Tablet config*************************************/
 
 @media (max-width: 800px) {
+
+
 
     .sobreMi {
 

@@ -1,6 +1,7 @@
 const btnSwitch1 = document.getElementById('customSwitch1');
 const navbar = document.getElementById('miNavbar');
 const masterhead = document.getElementById('masterhead');
+const textoBienvenido = document.getElementById('textoBienvenido');
 const sobreMi = document.getElementById('sobreMi');
 const habilidades = document.getElementById('habilidades');
 const proyectos = document.getElementById('proyectos');
@@ -15,12 +16,13 @@ const cajaProyectos6 = document.getElementById('cajaProyectos6');
 
 
 btnSwitch1.addEventListener('click', () => {
-  cambiarImagen()
   navbar.classList.toggle('modoNocheNegro')
+  cambiarImgBienvenido()
+  textoBienvenido.classList.toggle('modoNocheTextoGris')
   sobreMi.classList.toggle('modoNocheNegro')
-  habilidades.classList.toggle('ModoNocheGris')
-  proyectos.classList.toggle('ModoNocheGris')
-  contacto.classList.toggle('ModoNocheGris')
+  habilidades.classList.toggle('modoNocheGris')
+  proyectos.classList.toggle('modoNocheGris')
+  contacto.classList.toggle('modoNocheGris')
   footer.classList.toggle('modoNocheNegro')
   cajaProyectos1.classList.toggle('modoNocheNegro')
   cajaProyectos2.classList.toggle('modoNocheNegro')
@@ -31,7 +33,7 @@ btnSwitch1.addEventListener('click', () => {
 
 });
 
-const cambiarImagen = () => {
+const cambiarImgBienvenido = () => {
   if (masterhead.classList.contains('wallpaperDia')){
     masterhead.classList.remove('wallpaperDia');
     masterhead.classList.add('wallpaperNoche');
@@ -41,6 +43,7 @@ const cambiarImagen = () => {
     masterhead.classList.add('wallpaperDia');
   }
 };
+
 
 
 
