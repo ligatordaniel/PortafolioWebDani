@@ -1,3 +1,4 @@
+//sass --watch sass:assets/css
 /********* Configuracion General *********/
 body {
 
@@ -196,6 +197,21 @@ body {
     }
 }
 
+//animacion curriculum
+
+.efectoUpDown {
+    animation: efectoFlotar 1s infinite alternate both;
+}
+
+@keyframes efectoUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+}
 
 /********* Animaciones General CSS *********/
 
@@ -224,7 +240,7 @@ body {
 }
 .modoNocheTextoGris{
     transition: 1s ease all;
-    color: rgb(58, 58, 58);
+    color: rgb(53, 53, 53);
 }
 
 .wallpaperNoche {
@@ -262,14 +278,8 @@ nav {
     .bienvenidoDisplay {
         margin-top: 20%;
     }
-
-    .h3 {
+    h3{
         font-size: 300%;
-    }
-
-    p {
-        color: rgb(66, 66, 66);
-        text-shadow: 2px 2px 15px rgb(236, 236, 236);
     }
 }
 
@@ -312,7 +322,15 @@ nav {
         padding-top: 26px;
         font-size: 150%;
     }
-
+    .caja0 {
+        border: 1px solid rgb(128, 128, 128);
+        width: 200px;
+        border-radius: 5px;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 3px;
+        background-color: rgb(240, 240, 240);
+    }
     .caja1 {
         padding-bottom: 2%;
 
@@ -327,7 +345,7 @@ nav {
         }
 
         img {
-            width: 70px;
+            width: 68px;
             filter: drop-shadow(2px 2px 1px rgb(68, 68, 68));
         }
     }

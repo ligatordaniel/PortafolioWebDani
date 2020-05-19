@@ -4,13 +4,14 @@ window.addEventListener('scroll' , function(){
     animacioneLatia();
     animacioneLatio();
     animacioneFotoPerfil();
+    animacioneCurriculum();
     
 })
 
-function animacioneBienvenido() {
+const animacioneBienvenido = () => {
     //console.log(window.pageYOffset);
     let ubicacionY = window.pageYOffset;
-    let el = document.getElementById('BienvenidoFlotante');
+    let el = document.getElementById('bienvenidoFlotante');
     if(ubicacionY > 300){
         el.classList.remove('@keyframes','efectoFlotar')
     }else{
@@ -18,7 +19,7 @@ function animacioneBienvenido() {
     }
 }
 
-function animacioneLatia() {
+const animacioneLatia = () => {
     //console.log(window.pageYOffset);
     let ubicacionY = window.pageYOffset;
     let el = document.getElementById('latiaPokemon');
@@ -28,7 +29,7 @@ function animacioneLatia() {
         el.classList.add('@keyframes','animacionLatia')
     }
 }
-function animacioneLatio() {
+const animacioneLatio = () => {
     //console.log(window.pageYOffset);
     let ubicacionY = window.pageYOffset;
     let el = document.getElementById('latioPokemon');
@@ -39,7 +40,7 @@ function animacioneLatio() {
     }
 }
 
-function animacioneFotoPerfil() {
+const animacioneFotoPerfil = () => {
     //console.log(window.pageYOffset);
     let ubicacionY = window.pageYOffset;
     let el = document.getElementById('fotoPerfil');
@@ -50,6 +51,32 @@ function animacioneFotoPerfil() {
         el.classList.remove('@keyframes','mostrarDerecha')
     }
 }
+
+const animacioneCurriculum = () => {
+    //console.log(window.pageYOffset);
+    let ubicacionY = window.pageYOffset;
+    let el = document.getElementById('curriculum');
+    if(ubicacionY > 2500){
+        el.classList.add('@keyframes','efectoUpDown')
+    }else{
+        el.classList.remove('@keyframes','efectoUpDown')
+    }
+}
+/*
+
+function animacioneCurriculum() {
+    console.log(window.pageYOffset);
+    let ubicacionY = window.pageYOffset;
+    let el = document.getElementById('curriculum');
+    if(ubicacionY > 2500){
+        el.classList.add('@keyframes','efectoUpDown')
+    }else{
+        el.classList.remove('@keyframes','efectoUpDown')
+    }
+}
+
+*/
+
 
 /*
 function apareceScroll(){

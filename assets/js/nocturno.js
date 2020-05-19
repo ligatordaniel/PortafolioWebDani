@@ -2,6 +2,7 @@ const btnSwitch1 = document.getElementById('customSwitch1');
 const navbar = document.getElementById('miNavbar');
 const masterhead = document.getElementById('masterhead');
 const textoBienvenido = document.getElementById('textoBienvenido');
+const btnIdioma = document.getElementById('btnIdioma');
 const sobreMi = document.getElementById('sobreMi');
 const habilidades = document.getElementById('habilidades');
 const proyectos = document.getElementById('proyectos');
@@ -19,6 +20,7 @@ btnSwitch1.addEventListener('click', () => {
   navbar.classList.toggle('modoNocheNegro')
   cambiarImgBienvenido()
   textoBienvenido.classList.toggle('modoNocheTextoGris')
+  btnIdioma.classList.toggle('btn-outline-dark')
   sobreMi.classList.toggle('modoNocheNegro')
   habilidades.classList.toggle('modoNocheGris')
   proyectos.classList.toggle('modoNocheGris')
