@@ -32,6 +32,8 @@ body {
     background: #555;
 }
 
+
+
 /********* Configuracion General *********/
 
 /********* Animaciones General CSS *********/
@@ -347,6 +349,12 @@ nav {
         img {
             width: 68px;
             filter: drop-shadow(2px 2px 1px rgb(68, 68, 68));
+
+        }
+        img:hover{ 
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+            //transition: 1s ease all;
         }
     }
 }
@@ -371,12 +379,12 @@ nav {
         border-radius: 2%;
         filter: drop-shadow(3px 3px 5px rgb(68, 68, 68));
         margin-bottom: 8%;
+        overflow: hidden;
 
         .titulo {
             text-align: center;
             color: rgb(223, 223, 223);
             border-radius: 2%;
-
         }
 
         h3 {
@@ -387,6 +395,11 @@ nav {
         img {
             width: 100%;
             height: 150px;
+        }
+        img:hover{ 
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+            transition: 1s ease all;
         }
 
         p {
