@@ -230,6 +230,7 @@ nav {
   position: relative;
   background-color: #464646;
   color: #6a6bc9;
+  overflow: hidden;
   /*-relative- referencia su posicion real en el html*/
 }
 .masthead .bienvenidoDisplay {
