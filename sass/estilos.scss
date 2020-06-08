@@ -4,6 +4,9 @@
     font-family: 'Press Start 2P';
     font-size: 10px;
   }*/
+  $base-color: rgb(90, 92, 172);
+  $primary:#67cceb;
+  $secondary:rgb(76,83,86);
 body {
 
     color: rgb(87, 86, 86);
@@ -28,12 +31,12 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background:  $base-color;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: rgb(75, 76, 139);
 }
 
 

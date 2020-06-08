@@ -24,12 +24,12 @@ body h1 {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #5a5cac;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #4b4c8b;
 }
 
 /********* Configuracion General *********/
