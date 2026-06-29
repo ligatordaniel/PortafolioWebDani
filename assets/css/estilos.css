@@ -1,48 +1,39 @@
-/********* Configuracion General *********/
-/*{
-    font-family: 'Press Start 2P';
-    font-size: 10px;
-  }*/
 body {
-  color: #575656;
-  font-family: "Ubuntu", sans-serif;
+  color: rgb(87, 86, 86);
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 10px;
+  line-height: 1.9;
 }
 body h1 {
   text-align: center;
   font-size: 16px;
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #dadada;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #5a5cac;
+  background: rgb(90, 92, 172);
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #4b4c8b;
+  background: rgb(75, 76, 139);
 }
 
-/********* Configuracion General *********/
-/********* Animaciones General CSS *********/
-.animadoDerecha {
+.slide-from-left {
   opacity: 0;
 }
 
-.mostrarDerecha {
-  animation: mostrarDerecha 4s;
+.show-from-left {
+  animation: showFromLeft 4s;
 }
 
-@keyframes mostrarDerecha {
+@keyframes showFromLeft {
   0% {
     transform: translateX(-100px);
     opacity: 0;
@@ -52,15 +43,15 @@ body h1 {
     opacity: 1;
   }
 }
-.bienvenidoDisplayOpacity {
+.welcome-display-hidden {
   opacity: 0;
 }
 
-.efectoFlotar {
-  animation: efectoFlotar 5s 1s infinite alternate both;
+.float-animation {
+  animation: floatAnimation 5s 1s infinite alternate both;
 }
 
-@keyframes efectoFlotar {
+@keyframes floatAnimation {
   0% {
     transform: translateY(0);
     opacity: 1;
@@ -70,11 +61,11 @@ body h1 {
     opacity: 1;
   }
 }
-.efectoParpadear {
-  animation: efectoParpadear 0.8s 1s infinite alternate both;
+.blink-animation {
+  animation: blinkAnimation 0.8s 1s infinite alternate both;
 }
 
-@keyframes efectoParpadear {
+@keyframes blinkAnimation {
   0% {
     opacity: 0.1;
   }
@@ -82,23 +73,18 @@ body h1 {
     opacity: 1;
   }
 }
-.animacionLatia {
-  animation-name: animacionLatia;
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
+.latia-animation {
+  animation: latiaAnimation 15s infinite;
   animation-delay: 3s;
-  opacity: 0;
   animation-timing-function: ease-in;
+  opacity: 0;
   width: 90px;
 }
 
-@keyframes animacionLatia {
+@keyframes latiaAnimation {
   0% {
-    /*posicion inicial 0%*/
     position: absolute;
-    /*-absolute- referencial elemento mas cercano*/
-    margin-top: 0px;
-    /*-relative- debe ser div padre*/
+    margin-top: 0;
     margin-left: 89%;
     opacity: 0;
   }
@@ -109,13 +95,11 @@ body h1 {
     opacity: 0.8;
   }
   10% {
-    /*posicion final animacion*/
     position: absolute;
     margin-top: -200px;
     margin-left: 0%;
   }
   11% {
-    /*posicion final hidden*/
     opacity: 0;
   }
   12% {
@@ -125,23 +109,18 @@ body h1 {
     display: none;
   }
 }
-.animacionLatio {
-  animation-name: animacionLatio;
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
-  opacity: 0;
+.latio-animation {
+  animation: latioAnimation 15s infinite;
   animation-delay: 8s;
   animation-timing-function: ease-in;
+  opacity: 0;
   width: 150px;
 }
 
-@keyframes animacionLatio {
+@keyframes latioAnimation {
   0% {
-    /*posicion inicial 0%*/
     position: absolute;
-    /*-absolute- referencial elemento mas cercano*/
-    margin-top: 0px;
-    /*-relative- debe ser div padre*/
+    margin-top: 0;
     margin-left: 89%;
     opacity: 0;
   }
@@ -152,13 +131,11 @@ body h1 {
     opacity: 0.8;
   }
   10% {
-    /*posicion final animacion*/
     position: absolute;
     margin-top: -50px;
     margin-left: 0%;
   }
   11% {
-    /*posicion final hidden*/
     opacity: 0;
   }
   12% {
@@ -168,11 +145,11 @@ body h1 {
     display: none;
   }
 }
-.efectoUpDown {
-  animation: efectoFlotar 1s infinite alternate both;
+.up-down-animation {
+  animation: upDownAnimation 1s infinite alternate both;
 }
 
-@keyframes efectoUpDown {
+@keyframes upDownAnimation {
   0% {
     transform: translateY(0);
   }
@@ -180,357 +157,342 @@ body h1 {
     transform: translateY(-20px);
   }
 }
-/********* Animaciones General CSS *********/
-/********* modo nocturno switch *********/
-.modoDiaPurpura {
-  background-color: #6a6bc9;
+.theme-purple {
+  background-color: rgb(106, 107, 201);
   transition: 1s ease all;
 }
 
-.modoDiaBlanco {
-  background-color: white;
+.theme-white {
+  background-color: rgb(255, 255, 255);
   transition: 1s ease all;
 }
 
-.modoNocheNegro {
-  background-color: #1f1f1f;
+.night-black {
+  background-color: rgb(31, 31, 31);
   transition: 1s ease all;
 }
 
-.modoNocheGris {
-  background-color: #b8b8b8;
+.night-gray {
+  background-color: rgb(184, 184, 184);
   transition: 1s ease all;
 }
 
-.modoNocheTextoGris {
+.night-text-gray {
+  color: rgb(53, 53, 53);
   transition: 1s ease all;
-  color: #353535;
 }
 
-.wallpaperNoche {
+.wallpaper-night {
   background-image: url("https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaperNoche.png");
   transition: 1s ease all;
 }
 
-.wallpaperDia {
+.wallpaper-day {
   background-image: url("https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaper1.png");
   transition: 1s ease all;
 }
 
-/********* modo nocturno *********/
-/********* Navbar **********/
-nav {
-  filter: drop-shadow(3px 3px 3px #5f5f5f);
-  color: #dfdede;
+.pixel-font {
+  font-family: "Press Start 2P";
 }
 
-/********* Navbar **********/
-/********* Pantalla Bienvenido *********/
+nav {
+  filter: drop-shadow(3px 3px 3px rgb(95, 95, 95));
+  color: rgb(223, 222, 222);
+}
+
 .masthead {
   height: 90vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  background-color: #464646;
-  color: #6a6bc9;
+  background-color: rgb(70, 70, 70);
+  color: rgb(90, 92, 172);
   overflow: hidden;
-  /*-relative- referencia su posicion real en el html*/
 }
-.masthead .bienvenidoDisplay {
-  margin-top: 20%;
+.masthead .welcome-display {
+  margin-top: 50%;
+}
+@media (min-width: 800px) {
+  .masthead .welcome-display {
+    margin-top: 20%;
+  }
 }
 .masthead h3 {
-  font-size: 300%;
+  font-size: 200%;
+}
+@media (min-width: 800px) {
+  .masthead h3 {
+    font-size: 300%;
+  }
 }
 
-/********* Pantalla Bienvenido *********/
-/******** Pantalla Presentacion ***********/
-.sobreMi {
-  color: #dfdede;
-  height: 100vh;
-  padding: 15%;
+.about {
+  color: rgb(223, 222, 222);
+  padding: 10% 5%;
+  height: auto;
 }
-.sobreMi h3 {
+.about h3 {
   text-align: center;
-  font-size: 30px;
+  font-size: 120%;
 }
-.sobreMi p {
-  text-align: center;
+@media (min-width: 800px) {
+  .about h3 {
+    font-size: 16px;
+  }
+}
+.about p {
   text-align: justify;
+  font-size: 9px;
+  line-height: 2;
 }
-.sobreMi .fotoPerfil {
+.about .profile-photo {
   border-radius: 50%;
-  width: 80%;
-  filter: drop-shadow(3px 3px 3px #444444);
+  width: 60%;
+  filter: drop-shadow(3px 3px 3px rgb(68, 68, 68));
   display: block;
-  margin: auto;
+  margin: 0 auto 20px;
+  image-rendering: pixelated;
+}
+@media (min-width: 500px) {
+  .about .profile-photo {
+    width: 30%;
+  }
+}
+@media (min-width: 800px) {
+  .about .profile-photo {
+    width: 80%;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 800px) {
+  .about {
+    height: 100vh;
+    padding: 15%;
+  }
 }
 
-/******** Pantalla Presentacion ***********/
-/******** Pantalla Habilidades ***********/
-.habilidades {
-  height: 100vh;
-  text-align: center;
+.experience {
+  color: rgb(70, 70, 70);
+  padding: 8% 5%;
 }
-.habilidades h2 {
+@media (min-width: 800px) {
+  .experience {
+    padding: 4% 15%;
+  }
+}
+.experience h2 {
+  text-align: center;
+  font-size: 150%;
+  padding-top: 26px;
+  margin-bottom: 30px;
+}
+.experience .exp-item {
+  position: relative;
+  border-left: 3px solid rgb(90, 92, 172);
+  padding: 0 0 28px 22px;
+  margin-left: 10px;
+}
+.experience .exp-item::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: rgb(90, 92, 172);
+  border-radius: 50%;
+  position: absolute;
+  left: -8px;
+  top: 4px;
+}
+.experience .exp-item:last-child {
+  padding-bottom: 0;
+}
+.experience .exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.experience .exp-header h4 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 2px;
+  color: rgb(50, 50, 50);
+}
+.experience .exp-header .exp-period {
+  font-size: 9px;
+  font-weight: 600;
+  color: rgb(90, 92, 172);
+  white-space: nowrap;
+}
+.experience h5 {
+  font-size: 9px;
+  font-style: italic;
+  color: rgb(100, 100, 100);
+  margin-bottom: 6px;
+}
+.experience p {
+  font-size: 9px;
+  margin-bottom: 0;
+  line-height: 2;
+}
+
+.skills {
+  padding: 8% 0;
+  text-align: center;
+  background-color: rgb(248, 248, 252);
+}
+@media (min-width: 800px) {
+  .skills {
+    padding: 4% 0 5%;
+  }
+}
+.skills h2 {
   padding-top: 26px;
   font-size: 150%;
+  margin-bottom: 10px;
 }
-.habilidades .caja0 {
-  border: 1px solid gray;
-  width: 200px;
-  border-radius: 5px;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 3px;
-  background-color: #f0f0f0;
+.skills .skills-grid {
+  margin-top: 10px;
 }
-.habilidades .caja1 {
-  padding-bottom: 2%;
+.skills .skill-group {
+  padding: 10px 6px;
+  margin-bottom: 8px;
 }
-.habilidades .caja1 h5 {
-  font-size: 20px;
-  color: #3d3d3d;
+@media (min-width: 800px) {
+  .skills .skill-group {
+    padding: 16px 12px;
+    margin-bottom: 0;
+  }
 }
-.habilidades .caja1 .spanHabilidades {
-  font-size: 16px;
-  color: #4e4e4e;
+.skills .skill-group h5 {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgb(90, 92, 172);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
 }
-.habilidades .caja1 img {
-  width: 68px;
-  filter: drop-shadow(2px 2px 1px #444444);
+.skills .skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
 }
-.habilidades .caja1 img:hover {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+.skills .skill-badge {
+  background-color: rgb(90, 92, 172);
+  color: rgb(240, 240, 255);
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 8px;
+  white-space: nowrap;
 }
 
-/******** Pantalla Habilidades ***********/
-/******** Pantalla Proyectos ***********/
-.proyectos h2 {
+.projects h2 {
   text-align: center;
   padding: 2%;
-  font-size: 150%;
+  font-size: 130%;
+  margin-bottom: 10%;
 }
-.proyectos .caja2 {
-  width: 300px;
-  height: 350px;
+@media (min-width: 800px) {
+  .projects h2 {
+    font-size: 150%;
+    margin-bottom: 0;
+  }
+}
+.projects .project-card {
+  width: 250px;
+  height: 320px;
   max-width: 100%;
-  border: 1px solid gray;
-  background-color: #cfd1f8;
+  border: 1px solid rgb(128, 128, 128);
+  background-color: rgb(207, 209, 248);
   border-radius: 2%;
-  filter: drop-shadow(3px 3px 5px #444444);
-  margin-bottom: 8%;
+  filter: drop-shadow(3px 3px 5px rgb(68, 68, 68));
+  margin: 0 auto 15px;
   overflow: hidden;
 }
-.proyectos .caja2 .titulo {
+@media (min-width: 800px) {
+  .projects .project-card {
+    width: 300px;
+    height: 350px;
+    margin-bottom: 8%;
+  }
+}
+.projects .project-card .card-header {
   text-align: center;
-  color: #dfdfdf;
+  color: rgb(223, 223, 223);
   border-radius: 2%;
 }
-.proyectos .caja2 h3 {
+.projects .project-card h3 {
   font-size: 100%;
   padding: 5px;
 }
-.proyectos .caja2 img {
+.projects .project-card .card-thumbnail {
   width: 100%;
   height: 150px;
 }
-.proyectos .caja2 img:hover {
-  -webkit-transform: scale(1.1);
+.projects .project-card .card-thumbnail:hover {
   transform: scale(1.1);
   transition: 1s ease all;
 }
-.proyectos .caja2 p {
-  font-size: 70%;
+.projects .project-card p {
+  font-size: 8px;
+  line-height: 1.8;
 }
 
-/******** Pantalla Contacto ***********/
-/******** Pantalla Contacto ***********/
-.contacto {
-  color: #6b6b6b;
-  height: 100vh;
+.contact {
+  color: rgb(107, 107, 107);
+  height: auto;
   text-align: center;
+  padding-bottom: 20px;
 }
-.contacto h2 {
-  font-size: 150%;
-  padding-top: 2%;
+.contact h2 {
+  font-size: 120%;
+  padding-top: 4%;
+  margin-bottom: 10%;
 }
-.contacto h3 {
-  font-size: 140%;
+@media (min-width: 800px) {
+  .contact h2 {
+    font-size: 150%;
+    padding-top: 2%;
+    margin-bottom: 0;
+  }
 }
-.contacto .caja3 img {
-  width: 100px;
-  filter: drop-shadow(3px 3px 1px #444444);
+.contact h3 {
+  font-size: 100%;
 }
-.contacto .caja3 p {
-  font-size: 80%;
+@media (min-width: 800px) {
+  .contact h3 {
+    font-size: 140%;
+  }
+}
+.contact .contact-item img {
+  width: 70px;
+  filter: drop-shadow(3px 3px 1px rgb(68, 68, 68));
+}
+@media (min-width: 800px) {
+  .contact .contact-item img {
+    width: 100px;
+  }
+}
+.contact .contact-item p {
+  font-size: 9px;
+}
+@media (min-width: 800px) {
+  .contact {
+    height: 100vh;
+  }
 }
 
 footer {
   padding: 15px;
-  filter: drop-shadow(3px 3px 5px #444444);
+  filter: drop-shadow(3px 3px 5px rgb(68, 68, 68));
 }
 footer p {
   font-size: 14px;
   text-align: right;
-  color: #dfdede;
-}
-
-/*****************************Tablet config*************************************/
-@media (max-width: 800px) {
-  .sobreMi {
-    height: 100%;
-  }
-  .sobreMi .fotoPerfil {
-    border-radius: 50%;
-    width: 30%;
-    filter: drop-shadow(3px 3px 3px #444444);
-    display: block;
-    margin: auto;
-    margin-bottom: 20px;
-  }
-
-  .habilidades {
-    height: 100%;
-    text-align: center;
-  }
-  .habilidades .caja1 {
-    padding-bottom: 5%;
-  }
-  .habilidades .caja1 h5 {
-    font-size: 90%;
-    color: #3d3d3d;
-  }
-  .habilidades .caja1 .spanHabilidades {
-    font-size: 60%;
-    color: #4e4e4e;
-  }
-  .habilidades .caja1 img {
-    width: 70px;
-    filter: drop-shadow(1px 1px 2px #444444);
-  }
-
-  .contacto {
-    height: 80%;
-  }
-  .contacto h2 {
-    font-size: 120%;
-    padding-top: 2%;
-    margin-bottom: 2%;
-  }
-}
-/*****************************Tablet config*************************************/
-/*****************************Phone config*************************************/
-@media (max-width: 500px) {
-  /********* Pantalla Bienvenido *********/
-  .masthead .bienvenidoDisplay {
-    margin-top: 50%;
-  }
-  .masthead h3 {
-    font-size: 200%;
-  }
-
-  /******** Pantalla Presentacion ***********/
-  .sobreMi {
-    height: 100%;
-  }
-  .sobreMi .fotoPerfil {
-    border-radius: 50%;
-    width: 70%;
-    filter: drop-shadow(3px 3px 3px #444444);
-    display: block;
-    margin: auto;
-  }
-  .sobreMi h3 {
-    font-size: 120%;
-  }
-  .sobreMi p {
-    font-size: 80%;
-  }
-
-  /******** Pantalla Presentacion ***********/
-  /******** Pantalla Habilidades ***********/
-  .habilidades {
-    height: 100%;
-    text-align: center;
-  }
-  .habilidades .caja1 {
-    padding-bottom: 5%;
-  }
-  .habilidades .caja1 h5 {
-    font-size: 90%;
-    color: #3d3d3d;
-  }
-  .habilidades .caja1 .spanHabilidades {
-    font-size: 60%;
-    color: #4e4e4e;
-  }
-  .habilidades .caja1 img {
-    width: 70px;
-    filter: drop-shadow(1px 1px 2px #444444);
-  }
-
-  /******** Pantalla Habilidades ***********/
-  /******** Pantalla Proyectos ***********/
-  .proyectos {
-    height: 100%;
-  }
-  .proyectos h2 {
-    text-align: center;
-    padding: 2%;
-    font-size: 130%;
-    margin-bottom: 10%;
-  }
-  .proyectos .caja2 {
-    width: 250px;
-    height: 320px;
-    margin: 0px auto;
-    margin-bottom: 15px;
-  }
-  .proyectos .caja2 h3 {
-    font-size: 100%;
-    padding: 5px;
-  }
-  .proyectos .caja2 img {
-    width: 100%;
-    height: 150px;
-  }
-  .proyectos .caja2 p {
-    font-size: 65%;
-  }
-
-  /******** Pantalla Contacto ***********/
-  /******** Pantalla Contacto ***********/
-  .contacto {
-    height: 100%;
-  }
-  .contacto h2 {
-    font-size: 120%;
-    padding-top: 4%;
-    margin-bottom: 10%;
-  }
-  .contacto h3 {
-    font-size: 100%;
-  }
-  .contacto .caja3 img {
-    width: 70px;
-    filter: drop-shadow(3px 3px 1px #444444);
-  }
-  .contacto .caja3 p {
-    font-size: 70%;
-  }
-
-  footer {
-    padding: 15px;
-    filter: drop-shadow(3px 3px 5px #444444);
-  }
-  footer p {
-    font-size: 14px;
-    text-align: right;
-    color: #dfdede;
-  }
+  color: rgb(223, 222, 222);
 }
 
 /*# sourceMappingURL=estilos.css.map */

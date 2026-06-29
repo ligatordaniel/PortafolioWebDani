@@ -1,0 +1,7 @@
+---
+description: Project rules for PortafolioWebDani
+globs: ["**/*.html", "**/*.scss", "**/*.css", "**/*.js"]
+alwaysApply: true
+---
+
+See [CLAUDE.md](../../CLAUDE.md) for commands and architecture.

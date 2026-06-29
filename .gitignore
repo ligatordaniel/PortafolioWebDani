@@ -1,0 +1,30 @@
+# Dependencias
+node_modules/
+package-lock.json
+
+# SASS
+.sass-cache/
+*.css.map
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+

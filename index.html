@@ -2,31 +2,27 @@
 <html lang="es">
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap and CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/estilos.css">
-  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png"> <!-- Favicon -->
-  <link rel="icon" href="assets/img/favicon.png" type="image/png"> <!-- icono que en la pestaña del chrome-->
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
 
-  <title>Daniel Portafolio Frontend</title>
+  <title>Daniel Ulloa — Full Stack Developer</title>
 </head>
 
 <body>
 
-  <!--************** Barra de navegacion ******************-->
-  <nav class="navbar navbar-expand-lg sticky-top navbar-dark modoDiaPurpura" id="miNavbar">
-    <!-- switch -->
+  <!-- ── Navbar ─────────────────────────────────────────────────────────── -->
+  <nav class="navbar navbar-expand-lg sticky-top navbar-dark theme-purple" id="main-navbar">
     <div class="custom-control custom-switch">
-      <input type="checkbox" class="custom-control-input" id="customSwitch1">
-      <label class="custom-control-label" for="customSwitch1">ModoNoche</label>
+      <input type="checkbox" class="custom-control-input" id="night-mode-switch">
+      <label class="custom-control-label" for="night-mode-switch" data-i18n="nightMode">ModoNoche</label>
     </div>
-    <!-- switch-->
 
     <a class="navbar-brand" href="index.html"></a>
 
@@ -37,408 +33,311 @@
 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav mr-auto ml-auto text-center">
-        <a class="nav-item nav-link" href="#">Inicio</a>
-        <a class="nav-item nav-link" href="#sobreMi">Sobre mí</a>
-        <a class="nav-item nav-link" href="#habilidades">Habilidades</a>
-        <a class="nav-item nav-link" href="#proyectos">Proyectos</a>
-        <a class="nav-item nav-link active" href="#contacto">Contacto</a>
+        <a class="nav-item nav-link" href="#" data-i18n="navHome">Inicio</a>
+        <a class="nav-item nav-link" href="#about" data-i18n="navAbout">Sobre mí</a>
+        <a class="nav-item nav-link" href="#experience" data-i18n="navExp">Experiencia</a>
+        <a class="nav-item nav-link" href="#skills" data-i18n="navSkills">Stack</a>
+        <a class="nav-item nav-link" href="#projects" data-i18n="navProjects">Proyectos</a>
+        <a class="nav-item nav-link active" href="#contact" data-i18n="navContact">Contacto</a>
       </div>
     </div>
   </nav>
-  <!--************** Barra de navegacion ******************-->
+  <!-- ── /Navbar ────────────────────────────────────────────────────────── -->
 
 
-
-  <!--************** Pantalla bienvenido ******************-->
-
-  <header class="masthead wallpaperDia" id="masterhead">
+  <!-- ── Welcome screen ────────────────────────────────────────────────── -->
+  <header class="masthead wallpaper-day" id="masthead">
     <div class="container">
       <div class="row align-items-center">
-
-        <div class="col-12 text-center bienvenidoDisplay @keyframes efectoFlotar" id="bienvenidoFlotante">
-          <h3 id="textoBienvenido" class="textoBienvenido gameFont">Bienvenido</h3>
-          <a href="indexEn.html">
-            <button type="button" class="btn btn-outline-success btn-sm" id="btnIdioma">
-              <span>See me on English</span>
-            </button>
-          </a>
+        <div class="col-12 text-center welcome-display float-animation" id="welcome-floating">
+          <h3 id="welcome-text" class="welcome-title pixel-font" data-i18n="welcome">Bienvenido</h3>
+          <button type="button" class="btn btn-outline-success btn-sm" id="lang-btn">
+            <span data-i18n="langBtn">See me in English</span>
+          </button>
         </div>
       </div>
     </div>
-    <img id="latiaPokemon" class="@keyframes animacionLatia" src="assets/img/latia.png" alt="pokemonLatia">
-
-    <img id="latioPokemon" class="@keyframes animacionLatio" src="assets/img/latio.png" alt="pokemonLatio">
-
+    <img id="latiaPokemon" class="latia-animation" src="assets/img/latia.png" alt="Latias Pokemon">
+    <img id="latioPokemon" class="latio-animation" src="assets/img/latio.png" alt="Latios Pokemon">
   </header>
-
-  <!--************** Pantalla bienvenido ******************-->
-
+  <!-- ── /Welcome screen ───────────────────────────────────────────────── -->
 
 
-  <!--************** Pantalla Sobre Mi ******************-->
-  <div class="sobreMi modoDiaPurpura containerDeAnimacion" id="sobreMi">
-
-
+  <!-- ── About ─────────────────────────────────────────────────────────── -->
+  <div class="about theme-purple animation-container" id="about">
     <div class="row">
-
       <div class="col-sm-12 col-md-12 col-lg-4">
-        <img src="assets/img/fotoperfil2.jpg" class="fotoPerfil animadoDerecha" id="fotoPerfil" alt="imgPerfil">
+        <canvas class="profile-photo slide-from-left" id="profile-photo"
+          aria-label="Profile photo" width="160" height="160"></canvas>
       </div>
-
       <div class="col-sm-12 col-md-12 col-lg-8">
-        <h3>Hola, soy Daniel</h3>
-        <p>Desarrollador Front End y fanático por tecnología para crear soluciones.
-          En mi tiempo libre soy un hobbista de Arduino y gamer. Me gusta mucho no parar
-          de aprender por lo que quiero perfeccionarme y trabajar como desarrollador
-          fullstack en un futuro cercano.</p>
+        <h3 data-i18n="aboutTitle">Hola, soy Daniel</h3>
+        <p data-i18n="aboutP1">Desarrollador Full Stack con más de 5 años de experiencia construyendo aplicaciones web y mobile de alto tráfico para el sector financiero y telecomunicaciones en Chile. Especializado en Angular, React e Ionic en frontend, con backend en Node.js y Python. Integro herramientas de IA en el flujo de trabajo y construyo proyectos propios con arquitecturas de streaming y despliegue automatizado.</p>
+        <p data-i18n="aboutP2">Fanático de la tecnología, el gaming y los proyectos que combinan creatividad con ingeniería. Siempre aprendiendo.</p>
+      </div>
+    </div>
+  </div>
+  <!-- ── /About ────────────────────────────────────────────────────────── -->
 
-        <p>¿Que es un desarrollador Front End?
-          Encargado de desarrollar la conversión de datos a una interfaz gráfica para que
-          el usuario pueda interactuar de forma atractiva e intuitiva.</p>
-        <p>
+
+  <!-- ── Experience ────────────────────────────────────────────────────── -->
+  <div class="experience theme-white animation-container" id="experience">
+    <h2 data-i18n="expTitle">Experiencia</h2>
+    <div class="container">
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <h4>BMSoluciones</h4>
+          <span class="exp-period">Mar. 2022 – Actualidad</span>
+        </div>
+        <h5 data-i18n="exp1Role">Desarrollador de Software Front-End</h5>
+        <p data-i18n="exp1Desc">App mobile-first Tarjeta Presto LIDER (Banco BCI) con Ionic / Angular. Integración de pasarelas de pago Khipu y Servipag, flujo de recarga Bip!, notificaciones push y CMS headless con Strapi.</p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <h4>Haibu Solutions</h4>
+          <span class="exp-period">Sept. 2020 – Mar. 2022</span>
+        </div>
+        <h5 data-i18n="exp2Role">Ingeniero de Desarrollo de Software</h5>
+        <p data-i18n="exp2Desc">Full Stack para VTR Telecomunicaciones y AFP Habitat con Ionic/Angular + Node.js. App mobile cross-platform con React Native para FrogApp, desde diseño hasta producción.</p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <h4>Enlace360</h4>
+          <span class="exp-period">Dic. 2017 – Feb. 2019</span>
+        </div>
+        <h5 data-i18n="exp3Role">Desarrollador &amp; Soporte de Integración Digital</h5>
+        <p data-i18n="exp3Desc">Soluciones digitales interactivas para pantallas táctiles y señalética corporativa. Gestión remota de redes de pantallas publicitarias y canales corporativos.</p>
       </div>
 
     </div>
-
   </div>
-  <!--************** Pantalla Sobre Mi ******************-->
+  <!-- ── /Experience ───────────────────────────────────────────────────── -->
 
 
-  <!--************** Pantalla Habilidades ******************-->
-  <div class="habilidades " id="habilidades">
-    <h2>Habilidades</h2>
+  <!-- ── Skills ────────────────────────────────────────────────────────── -->
+  <div class="skills" id="skills">
+    <h2 data-i18n="skillsTitle">Stack Tecnológico</h2>
     <div class="container">
-      <!--1x3-->
-      <div class="row">
+      <div class="row skills-grid">
 
-        <div class="col-sm-12 col-md-4 col-lg-4 caja1">
-          <h5>Html5</h5>
-          <a data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false"
-            aria-controls="multiCollapseExample1">
-            <img src="assets/img/logoHtml.png" alt="Responsive image"></a>
-          <div class="row">
-            <div class="col">
-              <div class="collapse multi-collapse caja0" id="multiCollapseExample1">
-                <spam class="spanHabilidades">Lenguaje markup para estructurar web</spam>
-              </div>
-            </div>
+        <div class="col-12 col-md-6 col-lg-3 skill-group">
+          <h5 data-i18n="skillCatFront">Frontend</h5>
+          <div class="skill-badges">
+            <span class="skill-badge">Angular</span>
+            <span class="skill-badge">React</span>
+            <span class="skill-badge">React Native</span>
+            <span class="skill-badge">Ionic</span>
+            <span class="skill-badge">TypeScript</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">HTML5 / CSS3</span>
+            <span class="skill-badge">Sass</span>
           </div>
         </div>
 
-        <div class="col-sm-12 col-md-4 col-lg-4 caja1">
-          <h5>Css3</h5>
-          <a data-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false"
-            aria-controls="multiCollapseExample1">
-            <img src="assets/img/logoCss.png" alt="Responsive image"></a>
-          <div class="row">
-            <div class="col">
-              <div class="collapse multi-collapse caja0" id="multiCollapseExample2">
-                <spam class="spanHabilidades">Lenguaje de diseño grafico para definir web</spam>
-              </div>
-            </div>
+        <div class="col-12 col-md-6 col-lg-3 skill-group">
+          <h5 data-i18n="skillCatBack">Backend</h5>
+          <div class="skill-badges">
+            <span class="skill-badge">Node.js</span>
+            <span class="skill-badge">Express</span>
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">FastAPI</span>
+            <span class="skill-badge">Go</span>
+            <span class="skill-badge">Bun / Elysia</span>
+            <span class="skill-badge">Java / Spring Boot</span>
+            <span class="skill-badge">PostgreSQL</span>
           </div>
         </div>
 
-        <div class="col-sm-12 col-md-4 col-lg-4 caja1">
-          <h5>JavaScript Es6</h5>
-          <a data-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false"
-            aria-controls="multiCollapseExample1">
-            <img src="assets/img/logoJavascript.png" alt="Responsive image"></a>
-          <div class="row">
-            <div class="col">
-              <div class="collapse multi-collapse caja0" id="multiCollapseExample3">
-                <spam class="spanHabilidades">lenguaje de programación interpretado</spam>
-              </div>
-            </div>
+        <div class="col-12 col-md-6 col-lg-3 skill-group">
+          <h5 data-i18n="skillCatDevops">DevOps / Infra</h5>
+          <div class="skill-badges">
+            <span class="skill-badge">Docker</span>
+            <span class="skill-badge">Docker Compose</span>
+            <span class="skill-badge">Nginx</span>
+            <span class="skill-badge">GitHub Actions</span>
+            <span class="skill-badge">VPS</span>
+            <span class="skill-badge">Git / GitHub</span>
           </div>
         </div>
 
-      </div>
-      <!--1x3-->
-
-      <!--3x1-->
-      <div class="row">
-
-        <div class="col-sm-12 col-md-4 col-lg-4 caja1">
-          <h5>Bootstrap</h5>
-          <a data-toggle="collapse" href="#multiCollapseExample4" role="button" aria-expanded="false"
-            aria-controls="multiCollapseExample1">
-            <img src="assets/img/boostraplogo.png" alt="Responsive image"></a>
-          <div class="row">
-            <div class="col">
-              <div class="collapse multi-collapse caja0" id="multiCollapseExample4">
-                <spam class="spanHabilidades">herramientas de código abierto para diseños web</spam>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-12 col-md-4 col-lg-4 caja1">
-          <h5>Sass</h5>
-          <a data-toggle="collapse" href="#multiCollapseExample5" role="button" aria-expanded="false"
-            aria-controls="multiCollapseExample1">
-            <img src="assets/img/sasslogo.png" alt="Responsive image"></a>
-          <div class="row">
-            <div class="col">
-              <div class="collapse multi-collapse caja0" id="multiCollapseExample5">
-                <spam class="spanHabilidades">lenguaje de script simple enfocado en diseño web</spam>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-sm-12 col-md-4 col-lg-4 caja1">
-          <h5>Materialize</h5>
-          <a data-toggle="collapse" href="#multiCollapseExample6" role="button" aria-expanded="false"
-            aria-controls="multiCollapseExample1">
-            <img src="assets/img/materializelogo.png" alt="Responsive image"></a>
-          <div class="row">
-            <div class="col">
-              <div class="collapse multi-collapse caja0" id="multiCollapseExample6">
-                <spam class="spanHabilidades">Framework CSS enfocado en diseño responsive</spam>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-      <!--3x1-->
-
-      <!--2x1-->
-      <div class="row">
-
-        <div class="col-sm-12 col-md-6 col-lg-6 caja1">
-          <h5>Github</h5>
-          <a data-toggle="collapse" href="#multiCollapseExample7" role="button" aria-expanded="false"
-            aria-controls="multiCollapseExample1">
-            <img src="assets/img/logoGit.png" alt="Responsive image"></a>
-          <div class="row">
-            <div class="col">
-              <div class="collapse multi-collapse caja0" id="multiCollapseExample7">
-                <spam class="spanHabilidades">Web con control de versiones git</spam>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-12 col-md-6 col-lg-6 caja1">
-          <h5>Angular 9</h5>
-          <a data-toggle="collapse" href="#multiCollapseExample8" role="button" aria-expanded="false"
-            aria-controls="multiCollapseExample1">
-            <img src="assets/img/angularlogo.png" alt="Responsive image"></a>
-          <div class="row">
-            <div class="col">
-              <div class="collapse multi-collapse caja0" id="multiCollapseExample8">
-                <spam class="spanHabilidades">Framework de javascript para aplicaciones SPA</spam>
-              </div>
-            </div>
+        <div class="col-12 col-md-6 col-lg-3 skill-group">
+          <h5 data-i18n="skillCatAi">IA &amp; Tools</h5>
+          <div class="skill-badges">
+            <span class="skill-badge">GitHub Copilot</span>
+            <span class="skill-badge">Claude Code</span>
+            <span class="skill-badge">OpenAI Codex</span>
+            <span class="skill-badge">Scrum</span>
           </div>
         </div>
 
       </div>
-      <!--2x1-->
-
-
     </div>
   </div>
+  <!-- ── /Skills ───────────────────────────────────────────────────────── -->
 
-  <!--************** Pantalla Habilidades ******************-->
 
-  <!--************** Pantalla Proyectos ******************-->
-  <div class="proyectos containerDeAnimacion modoDiaBlanco" id="proyectos">
-    <h2>Proyectos</h2>
+  <!-- ── Projects ──────────────────────────────────────────────────────── -->
+  <div class="projects animation-container theme-white" id="projects">
+    <h2 data-i18n="projectsTitle">Proyectos</h2>
     <div class="container">
-      <!--3x1-->
       <div class="row">
 
         <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja2">
-            <div class="titulo modoDiaPurpura" id="cajaProyectos1">
-              <h3>Galeria IOS</h3>
+          <div class="project-card">
+            <div class="card-header theme-purple" id="project-card-1">
+              <h3 data-i18n="proj1Title">Galeria IOS</h3>
               <a href="https://ligatordaniel.github.io/Galeria-IOS-chile/" target="_blank">
-                <img src="assets/img/thumbnailios2.png" class="imgThumbnail" alt="proyecto"></a>
+                <img src="assets/img/thumbnailios2.png" class="card-thumbnail" alt="proyecto"></a>
             </div>
             <div class="p-2">
-              <p>Web responsive que utilizando la temática de Mac.
-                Las imágenes de la galeria se mueven y siguen el cursor del mouse</p>
+              <p data-i18n="proj1Desc">Web responsive que utilizando la temática de Mac. Las imágenes de la galeria se mueven y siguen el cursor del mouse</p>
             </div>
           </div>
         </div>
 
         <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja2">
-            <div class="titulo modoDiaPurpura" id="cajaProyectos2">
-              <h3>Reloj JS</h3>
+          <div class="project-card">
+            <div class="card-header theme-purple" id="project-card-2">
+              <h3 data-i18n="proj2Title">Reloj JS</h3>
               <a href="https://ligatordaniel.github.io/RelojJS/" target="_blank">
-                <img src="assets/img/thumbnailreloj.png" class="imgThumbnail" alt="proyecto"></a>
+                <img src="assets/img/thumbnailreloj.png" class="card-thumbnail" alt="proyecto"></a>
             </div>
             <div class="p-2">
-              <p>Reloj construido con JavaScript hecho para funcionar extrayendo la hora
-                de tu dispositivo. Siempre carga una
-                imagen aleatoria como fondo</p>
+              <p data-i18n="proj2Desc">Reloj construido con JavaScript hecho para funcionar extrayendo la hora de tu dispositivo. Siempre carga una imagen aleatoria como fondo</p>
             </div>
           </div>
         </div>
 
         <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja2 ">
-            <div class="titulo modoDiaPurpura" id="cajaProyectos3">
-              <h3>Pokédex</h3>
+          <div class="project-card">
+            <div class="card-header theme-purple" id="project-card-3">
+              <h3 data-i18n="proj3Title">Pokédex</h3>
               <a href="https://ligatordaniel.github.io/Pokedex/" target="_blank">
-                <img src="assets/img/thumbnailpokedex.png" class="imgThumbnail" alt="proyecto"></a>
+                <img src="assets/img/thumbnailpokedex.png" class="card-thumbnail" alt="proyecto"></a>
             </div>
             <div class="p-2">
-              <p>Creada con PokéAPI, una herramienta educativa vinculada a una extensa base de datos
-                en la que puedes traer información de un pokemon con su nombre ó numero id</p>
+              <p data-i18n="proj3Desc">Creada con PokéAPI, una herramienta educativa vinculada a una extensa base de datos en la que puedes traer información de un pokemon con su nombre ó numero id</p>
             </div>
           </div>
         </div>
 
       </div>
-      <!--3x1-->
-
-      <!--3x1-->
       <div class="row">
 
         <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja2 ">
-            <div class="titulo modoDiaPurpura" id="cajaProyectos4">
-              <h3>USD a CLP Calendario</h3>
+          <div class="project-card">
+            <div class="card-header theme-purple" id="project-card-4">
+              <h3 data-i18n="proj4Title">USD a CLP Calendario</h3>
               <a href="https://dolarvuecalendario.firebaseapp.com/" target="_blank">
-                <img src="assets/img/thumbnailCalendarioDolar.png" class="imgThumbnail" alt="proyecto"></a>
+                <img src="assets/img/thumbnailCalendarioDolar.png" class="card-thumbnail" alt="proyecto"></a>
             </div>
             <div class="p-2">
-              <p>Realizada con Vue y Vuetify. Consulta una API publica, extrayendo
-                el precio del dólar convertido a pesos chilenos en cualquier fecha</p>
+              <p data-i18n="proj4Desc">Realizada con Vue y Vuetify. Consulta una API publica, extrayendo el precio del dólar convertido a pesos chilenos en cualquier fecha</p>
             </div>
           </div>
         </div>
 
         <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja2 ">
-            <div class="titulo modoDiaPurpura" id="cajaProyectos5">
-              <h3>MyTrello</h3>
+          <div class="project-card">
+            <div class="card-header theme-purple" id="project-card-5">
+              <h3 data-i18n="proj5Title">MyTrello</h3>
               <a href="https://basedatos-735c2.firebaseapp.com/" target="_blank">
-                <img src="assets/img/thumbnailmytrello.png" class="imgThumbnail" alt="proyecto"></a>
+                <img src="assets/img/thumbnailmytrello.png" class="card-thumbnail" alt="proyecto"></a>
             </div>
-            <div class="p-2 ">
-              <p>Inspirada en Trello, sirve para crea y edita notas que puedes
-                almacenar en una base de datos en tiempo real. Creada con Angular y Firebase</p>
+            <div class="p-2">
+              <p data-i18n="proj5Desc">Inspirada en Trello, sirve para crear y editar notas que puedes almacenar en una base de datos en tiempo real. Creada con Angular y Firebase</p>
             </div>
           </div>
         </div>
 
         <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="caja2 ">
-            <div class="titulo modoDiaPurpura" id="cajaProyectos6">
-              <h3>Dungun PWA</h3>
+          <div class="project-card">
+            <div class="card-header theme-purple" id="project-card-6">
+              <h3 data-i18n="proj6Title">Dungun PWA</h3>
               <a href="https://dungunapp.web.app/" target="_blank">
-                <img src="assets/img/thumbnailDungun.png" class="imgThumbnail" alt="proyecto"></a>
+                <img src="assets/img/thumbnailDungun.png" class="card-thumbnail" alt="proyecto"></a>
             </div>
             <div class="p-2">
-              <p>Realizada con el stack MEAN, la aplicación busca por medio de código una sala de streaming con un
-                traductor asignado. Para una demostración usar código 'demostracion'
-              </p>
+              <p data-i18n="proj6Desc">Realizada con el stack MEAN, la aplicación busca por medio de código una sala de streaming con un traductor asignado. Para una demostración usar código 'demostracion'</p>
             </div>
           </div>
         </div>
 
       </div>
-
     </div>
   </div>
-  <!--3x1-->
-
-  <!--************** Pantalla Proyectos ******************-->
+  <!-- ── /Projects ─────────────────────────────────────────────────────── -->
 
 
-  <!--************** Pantalla Contacto ******************-->
-
-  <div class="contacto modoDiaBlanco modoDiaBlanco" id="contacto">
-    <h2>Contacto</h2>
-    <h3 class="@keyframes efectoParpadear gameFont">I'm available and ready to work together!</h3>
+  <!-- ── Contact ───────────────────────────────────────────────────────── -->
+  <div class="contact theme-white" id="contact">
+    <h2 data-i18n="contactTitle">Contacto</h2>
+    <h3 class="blink-animation pixel-font">I'm available and ready to work together!</h3>
     <div class="container">
-      <!--2x1-->
       <div class="row">
-
-        <div class="col-sm-12 col-md-6 col-lg-6 ">
-          <div class="caja3">
-            <img src="assets/img/logoGmail.png" alt="imgclase3">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+          <div class="contact-item">
+            <img src="assets/img/logoGmail.png" alt="Email">
             <p>Danielulloa256@gmail.com</p>
           </div>
         </div>
-
         <div class="col-sm-12 col-md-6 col-lg-6">
-          <div class="caja3">
-            <img src="assets/img/whatsapp2.png" alt="imgclase3">
+          <div class="contact-item">
+            <img src="assets/img/whatsapp2.png" alt="WhatsApp">
             <p>+569 77 21 6059</p>
           </div>
         </div>
-
       </div>
-      <!--2x1-->
-
-      <!--2x1-->
       <div class="row">
-
         <div class="col-sm-12 col-md-6 col-lg-6">
-          <div class="caja3">
+          <div class="contact-item">
             <a href="https://www.linkedin.com/in/daniel-ulloa-b23b37b5/" target="_blank">
-              <img src="assets/img/linkedinLogo.png" alt="imgclase3"></a>
-            <p>Linkedin Perfil</p>
+              <img src="assets/img/linkedinLogo.png" alt="LinkedIn"></a>
+            <p data-i18n="contactLinkedin">Linkedin Perfil</p>
           </div>
         </div>
-
         <div class="col-sm-12 col-md-6 col-lg-6">
-          <div class="caja3">
-            <a href="assets/docs/Curriculum_DanielUlloa.pdf" download>
-              <img id="curriculum" src="assets/img/download.png" alt="imgclase3"></a>
-            <p><span class="wallpaperNoche">|</span> Descargar Curriculum <span class="wallpaperNoche">|</span></p>
+          <div class="contact-item">
+            <a href="assets/docs/cv_daniel_ulloa.pdf" download>
+              <img id="cv-download" src="assets/img/download.png" alt="Download CV"></a>
+            <p><span data-i18n="contactCv">Descargar Curriculum</span></p>
           </div>
         </div>
-
       </div>
-      <!--2x1-->
-
-      <!--1x1-->
       <div class="row">
-
         <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="caja3">
+          <div class="contact-item">
             <a href="https://github.com/ligatordaniel" target="_blank">
-              <img src="assets/img/logoGit.png" alt="imgclase3"></a>
-            <p>Github Perfil</p>
+              <img src="assets/img/logoGit.png" alt="GitHub"></a>
+            <p data-i18n="contactGithub">Github Perfil</p>
           </div>
         </div>
-        <!--1x1-->
-
       </div>
     </div>
   </div>
-  <!--************** Pantalla Contacto ******************-->
+  <!-- ── /Contact ──────────────────────────────────────────────────────── -->
 
-  <!--************** Pantalla Footer ******************-->
-  <footer class="modoDiaPurpura" id="myFooter">
-    <p class="gameFont">Made by @DanielUlloa</br>Optimized for Chrome</p>
+
+  <!-- ── Footer ────────────────────────────────────────────────────────── -->
+  <footer class="theme-purple" id="main-footer">
+    <p class="pixel-font">Made by @DanielUlloa<br>Optimized for Chrome</p>
   </footer>
-  <!--************** Pantalla Footer ******************-->
+  <!-- ── /Footer ───────────────────────────────────────────────────────── -->
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-  </script>
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-  </script>
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="assets/js/nocturno.js" type="text/javascript"></script>
   <script src="assets/js/animacionesScroll.js" type="text/javascript"></script>
   <script src="assets/js/idioma.js" type="text/javascript"></script>
-
+  <script src="assets/js/sprite.js" type="text/javascript"></script>
 
 </body>
 

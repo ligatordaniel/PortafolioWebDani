@@ -1,455 +1,412 @@
-//sass --watch sass:assets/css
-/********* Configuracion General *********/
-/*{
-    font-family: 'Press Start 2P';
-    font-size: 10px;
-  }*/
-  $base-color: rgb(90, 92, 172);
-  $primary:#67cceb;
-  $secondary:rgb(76,83,86);
-body {
+// sass --watch sass:assets/css
 
+// ── Variables ─────────────────────────────────────────────────────────────────
+$color-primary:   rgb(90, 92, 172);
+$color-accent:    #67cceb;
+$color-secondary: rgb(76, 83, 86);
+
+// ── Base ──────────────────────────────────────────────────────────────────────
+body {
     color: rgb(87, 86, 86);
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 10px;
+    line-height: 1.9;
 
     h1 {
         text-align: center;
         font-size: 16px;
     }
-
 }
 
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
+// ── Scrollbar ─────────────────────────────────────────────────────────────────
+::-webkit-scrollbar       { width: 10px; }
+::-webkit-scrollbar-track { background: #dadada; }
+::-webkit-scrollbar-thumb { background: $color-primary; }
+::-webkit-scrollbar-thumb:hover { background: rgb(75, 76, 139); }
+
+// ── Scroll-triggered animations ───────────────────────────────────────────────
+.slide-from-left { opacity: 0; }
+
+.show-from-left { animation: showFromLeft 4s; }
+
+@keyframes showFromLeft {
+    0%   { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateY(0);      opacity: 1; }
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: #dadada;
+// ── Welcome screen animations ─────────────────────────────────────────────────
+.welcome-display-hidden { opacity: 0; }
+
+.float-animation {
+    animation: floatAnimation 5s 1s infinite alternate both;
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background:  $base-color;
+@keyframes floatAnimation {
+    0%   { transform: translateY(0);     opacity: 1; }
+    100% { transform: translateY(-20px); opacity: 1; }
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: rgb(75, 76, 139);
+.blink-animation {
+    animation: blinkAnimation 0.8s 1s infinite alternate both;
 }
 
-
-
-/********* Configuracion General *********/
-
-/********* Animaciones General CSS *********/
-
-//animacion derecha js
-.animadoDerecha {
-    opacity: 0;
-}
-.mostrarDerecha {
-    animation: mostrarDerecha 4s; //tiempo
-}
-@keyframes mostrarDerecha {
-    0% {
-        transform: translateX(-100px); //configuracion 0%
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0); //configuracion 100%
-        opacity: 1;
-    }
+@keyframes blinkAnimation {
+    0%   { opacity: 0.1; }
+    100% { opacity: 1; }
 }
 
-//animacion derecha js
-
-//animacion Bienvenido
-.bienvenidoDisplayOpacity{
-    opacity: 0;
-}
-.efectoFlotar {
-    animation: efectoFlotar 5s 1s infinite alternate both;
-}
-
-@keyframes efectoFlotar {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(-20px);
-        opacity: 1;
-    }
-}
-
-.efectoParpadear {
-    animation: efectoParpadear 0.8s 1s infinite alternate both;
-}
-
-@keyframes efectoParpadear {
-    0% {
-        opacity: 0.1;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-//animacion Bienvenido
-
-//Animacion LatiA
-.animacionLatia {
-    animation-name: animacionLatia;
-    animation-duration: 15s; 
-    animation-iteration-count: infinite;
+// ── Pokémon fly-across animations ─────────────────────────────────────────────
+.latia-animation {
+    animation: latiaAnimation 15s infinite;
     animation-delay: 3s;
-    opacity: 0;
     animation-timing-function: ease-in;
+    opacity: 0;
     width: 90px;
 }
 
-@keyframes animacionLatia {
-    0% {
-        /*posicion inicial 0%*/
-        position: absolute;
-        /*-absolute- referencial elemento mas cercano*/
-        margin-top: 0px;
-        /*-relative- debe ser div padre*/
-        margin-left: 89%;
-        opacity: 0;
-
-    }
-
-    1% {
-        opacity: 1;
-    }
-
-    9% {
-        opacity: 0.8;
-    }
-
-    10% {
-        /*posicion final animacion*/
-        position: absolute;
-        margin-top: -200px;
-        margin-left: 0%;
-    }
-
-    11% {
-        /*posicion final hidden*/
-        opacity: 0;
-    }
-    12% {
-        display: none;
-    }
-
-    100% {
-        display: none;
-    }
+@keyframes latiaAnimation {
+    0%   { position: absolute; margin-top: 0;      margin-left: 89%; opacity: 0; }
+    1%   { opacity: 1; }
+    9%   { opacity: 0.8; }
+    10%  { position: absolute; margin-top: -200px; margin-left: 0%; }
+    11%  { opacity: 0; }
+    12%  { display: none; }
+    100% { display: none; }
 }
 
-//Animacion LatiO
-
-.animacionLatio {
-    animation-name: animacionLatio;
-    animation-duration: 15s;
-    animation-iteration-count: infinite;
-    opacity: 0;
+.latio-animation {
+    animation: latioAnimation 15s infinite;
     animation-delay: 8s;
     animation-timing-function: ease-in;
+    opacity: 0;
     width: 150px;
 }
 
-@keyframes animacionLatio {
-    0% {
-        /*posicion inicial 0%*/
-        position: absolute;
-        /*-absolute- referencial elemento mas cercano*/
-        margin-top: 0px;
-        /*-relative- debe ser div padre*/
-        margin-left: 89%;
-        opacity: 0;
-
-    }
-
-    1% {
-        opacity: 1;
-    }
-
-    9% {
-        opacity: 0.8;
-    }
-
-    10% {
-        /*posicion final animacion*/
-        position: absolute;
-        margin-top: -50px;
-        margin-left: 0%;
-    }
-
-    11% {
-        /*posicion final hidden*/
-        opacity: 0;
-    }
-
-    12% {
-        display: none;
-    }
-
-    100% {
-        display: none;
-    }
+@keyframes latioAnimation {
+    0%   { position: absolute; margin-top: 0;     margin-left: 89%; opacity: 0; }
+    1%   { opacity: 1; }
+    9%   { opacity: 0.8; }
+    10%  { position: absolute; margin-top: -50px; margin-left: 0%; }
+    11%  { opacity: 0; }
+    12%  { display: none; }
+    100% { display: none; }
 }
 
-//animacion curriculum
+// ── CV download bounce ────────────────────────────────────────────────────────
+.up-down-animation { animation: upDownAnimation 1s infinite alternate both; }
 
-.efectoUpDown {
-    animation: efectoFlotar 1s infinite alternate both;
+@keyframes upDownAnimation {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
 }
 
-@keyframes efectoUpDown {
-    0% {
-        transform: translateY(0);
-    }
+// ── Theme / night-mode classes ────────────────────────────────────────────────
+.theme-purple    { background-color: rgb(106, 107, 201); transition: 1s ease all; }
+.theme-white     { background-color: rgb(255, 255, 255); transition: 1s ease all; }
+.night-black     { background-color: rgb(31, 31, 31);    transition: 1s ease all; }
+.night-gray      { background-color: rgb(184, 184, 184); transition: 1s ease all; }
+.night-text-gray { color: rgb(53, 53, 53);               transition: 1s ease all; }
 
-    100% {
-        transform: translateY(-20px);
-    }
+.wallpaper-night {
+    background-image: url('https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaperNoche.png');
+    transition: 1s ease all;
 }
-
-/********* Animaciones General CSS *********/
-
-
-/********* modo nocturno switch *********/
-
-.modoDiaPurpura {
-    background-color: rgb(106, 107, 201);
+.wallpaper-day {
+    background-image: url('https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaper1.png');
     transition: 1s ease all;
 }
 
-.modoDiaBlanco {
-    background-color: rgb(255, 255, 255);
-    transition: 1s ease all;
-}
+// ── Pixel font utility ────────────────────────────────────────────────────────
+.pixel-font { font-family: 'Press Start 2P'; }
 
-.modoNocheNegro {
-    background-color: rgb(31, 31, 31);
-    transition: 1s ease all;
-}
-
-.modoNocheGris {
-    background-color: rgb(184, 184, 184);
-    transition: 1s ease all;
-
-}
-.modoNocheTextoGris{
-    transition: 1s ease all;
-    color: rgb(53, 53, 53);
-}
-
-.wallpaperNoche {
-    background-image: url('https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaperNoche.png'); //16bit noche
-    transition: 1s ease all;
-}
-
-.wallpaperDia {
-    background-image: url('https://raw.githubusercontent.com/ligatordaniel/PortafolioWebDani/master/assets/img/wallpaper1.png'); //16 bit soleado
-    transition: 1s ease all;
-}
-
-/********* modo nocturno *********/
-
-/********* Navbar **********/
+// ── Navbar ────────────────────────────────────────────────────────────────────
 nav {
     filter: drop-shadow(3px 3px 3px rgb(95, 95, 95));
     color: rgb(223, 222, 222);
 }
 
-/********* Navbar **********/
-
-/********* Pantalla Bienvenido *********/
+// ── Masthead / Welcome screen  (mobile-first) ─────────────────────────────────
 .masthead {
     height: 90vh;
-    //background-image: url('https://source.unsplash.com/random');       //img aleatorio
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    background-color:rgb(70, 70, 70);
-    color: rgb(106, 107, 201);
-    overflow:hidden; //evita que agrande pantalla por animaciones
-    /*-relative- referencia su posicion real en el html*/
+    background-color: rgb(70, 70, 70);
+    color: $color-primary;
+    overflow: hidden;
 
-    .bienvenidoDisplay {
-        margin-top: 20%;
+    .welcome-display {
+        margin-top: 50%;     // mobile
+
+        @media (min-width: 800px) { margin-top: 20%; }
     }
-    h3{
-        font-size: 300%;
+
+    h3 {
+        font-size: 200%;     // mobile
+
+        @media (min-width: 800px) { font-size: 300%; }
     }
 }
 
-/********* Pantalla Bienvenido *********/
-
-/******** Pantalla Presentacion ***********/
-.sobreMi {
+// ── About  (mobile-first) ─────────────────────────────────────────────────────
+.about {
     color: rgb(223, 222, 222);
-    height: 100vh;
-    padding: 15%;
+    padding: 10% 5%;         // mobile
+    height: auto;
 
     h3 {
         text-align: center;
-        font-size: 30px;
+        font-size: 120%;     // mobile
+
+        @media (min-width: 800px) { font-size: 16px; }
     }
 
     p {
-        text-align: center;
         text-align: justify;
+        font-size: 9px;
+        line-height: 2;
     }
 
-    .fotoPerfil {
+    .profile-photo {
         border-radius: 50%;
-        width: 80%;
+        width: 60%;          // mobile
         filter: drop-shadow(3px 3px 3px rgb(68, 68, 68));
         display: block;
-        margin: auto;
+        margin: 0 auto 20px;
+        image-rendering: pixelated;
+
+        @media (min-width: 500px) { width: 30%; }
+        @media (min-width: 800px) { width: 80%; margin-bottom: 0; }
+    }
+
+    @media (min-width: 800px) {
+        height: 100vh;
+        padding: 15%;
     }
 }
 
-/******** Pantalla Presentacion ***********/
+// ── Experience  (mobile-first) ────────────────────────────────────────────────
+.experience {
+    color: rgb(70, 70, 70);
+    padding: 8% 5%;          // mobile
 
-/******** Pantalla Habilidades ***********/
-.habilidades {
+    @media (min-width: 800px) { padding: 4% 15%; }
 
-    height: 100vh;
+    h2 {
+        text-align: center;
+        font-size: 150%;
+        padding-top: 26px;
+        margin-bottom: 30px;
+    }
+
+    .exp-item {
+        position: relative;
+        border-left: 3px solid $color-primary;
+        padding: 0 0 28px 22px;
+        margin-left: 10px;
+
+        &::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: $color-primary;
+            border-radius: 50%;
+            position: absolute;
+            left: -8px;
+            top: 4px;
+        }
+
+        &:last-child { padding-bottom: 0; }
+    }
+
+    .exp-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 4px;
+
+        h4 {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 2px;
+            color: rgb(50, 50, 50);
+        }
+
+        .exp-period {
+            font-size: 9px;
+            font-weight: 600;
+            color: $color-primary;
+            white-space: nowrap;
+        }
+    }
+
+    h5 {
+        font-size: 9px;
+        font-style: italic;
+        color: rgb(100, 100, 100);
+        margin-bottom: 6px;
+    }
+
+    p {
+        font-size: 9px;
+        margin-bottom: 0;
+        line-height: 2;
+    }
+}
+
+// ── Skills  (mobile-first) ────────────────────────────────────────────────────
+.skills {
+    padding: 8% 0;           // mobile
     text-align: center;
+    background-color: rgb(248, 248, 252);
+
+    @media (min-width: 800px) { padding: 4% 0 5%; }
 
     h2 {
         padding-top: 26px;
         font-size: 150%;
+        margin-bottom: 10px;
     }
-    .caja0 {
-        border: 1px solid rgb(128, 128, 128);
-        width: 200px;
-        border-radius: 5px;
-        text-align: center;
-        margin: 0 auto;
-        margin-top: 3px;
-        background-color: rgb(240, 240, 240);
-    }
-    .caja1 {
-        padding-bottom: 2%;
+
+    .skills-grid { margin-top: 10px; }
+
+    .skill-group {
+        padding: 10px 6px;    // mobile
+        margin-bottom: 8px;
+
+        @media (min-width: 800px) {
+            padding: 16px 12px;
+            margin-bottom: 0;
+        }
 
         h5 {
-            font-size: 20px;
-            color: rgb(61, 61, 61);
+            font-size: 10px;
+            font-weight: 700;
+            color: $color-primary;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
         }
+    }
 
-        .spanHabilidades {
-            font-size: 16px;
-            color: rgb(78, 78, 78);
-        }
+    .skill-badges {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+    }
 
-        img {
-            width: 68px;
-            filter: drop-shadow(2px 2px 1px rgb(68, 68, 68));
-
-        }
-        img:hover{ 
-            -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-            //transition: 1s ease all;
-        }
+    .skill-badge {
+        background-color: $color-primary;
+        color: rgb(240, 240, 255);
+        padding: 5px 10px;
+        border-radius: 12px;
+        font-size: 8px;
+        white-space: nowrap;
     }
 }
 
-/******** Pantalla Habilidades ***********/
-
-/******** Pantalla Proyectos ***********/
-.proyectos {
-
+// ── Projects  (mobile-first) ──────────────────────────────────────────────────
+.projects {
     h2 {
         text-align: center;
         padding: 2%;
-        font-size: 150%;
+        font-size: 130%;     // mobile
+        margin-bottom: 10%;
+
+        @media (min-width: 800px) {
+            font-size: 150%;
+            margin-bottom: 0;
+        }
     }
 
-    .caja2 {
-        width: 300px;
-        height: 350px;
+    .project-card {
+        width: 250px;        // mobile
+        height: 320px;
         max-width: 100%;
         border: 1px solid rgb(128, 128, 128);
         background-color: rgb(207, 209, 248);
         border-radius: 2%;
         filter: drop-shadow(3px 3px 5px rgb(68, 68, 68));
-        margin-bottom: 8%;
+        margin: 0 auto 15px;
         overflow: hidden;
 
-        .titulo {
+        @media (min-width: 800px) {
+            width: 300px;
+            height: 350px;
+            margin-bottom: 8%;
+        }
+
+        .card-header {
             text-align: center;
             color: rgb(223, 223, 223);
             border-radius: 2%;
         }
 
-        h3 {
-            font-size: 100%;
-            padding: 5px;
-        }
+        h3 { font-size: 100%; padding: 5px; }
 
-        img {
+        .card-thumbnail {
             width: 100%;
             height: 150px;
-        }
-        img:hover{ 
-            -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-            transition: 1s ease all;
+
+            &:hover {
+                transform: scale(1.1);
+                transition: 1s ease all;
+            }
         }
 
         p {
-            font-size: 70%;
+            font-size: 8px;
+            line-height: 1.8;
         }
-
     }
 }
 
-/******** Pantalla Contacto ***********/
-
-/******** Pantalla Contacto ***********/
-
-.contacto {
+// ── Contact  (mobile-first) ───────────────────────────────────────────────────
+.contact {
     color: rgb(107, 107, 107);
-    height: 100vh;
+    height: auto;            // mobile
     text-align: center;
+    padding-bottom: 20px;
 
     h2 {
-        font-size: 150%;
-        padding-top: 2%;
+        font-size: 120%;     // mobile
+        padding-top: 4%;
+        margin-bottom: 10%;
+
+        @media (min-width: 800px) {
+            font-size: 150%;
+            padding-top: 2%;
+            margin-bottom: 0;
+        }
     }
 
     h3 {
-        font-size: 140%;
+        font-size: 100%;     // mobile
+
+        @media (min-width: 800px) { font-size: 140%; }
     }
 
-    .caja3 {
+    .contact-item {
         img {
-            width: 100px;
+            width: 70px;     // mobile
             filter: drop-shadow(3px 3px 1px rgb(68, 68, 68));
+
+            @media (min-width: 800px) { width: 100px; }
         }
 
         p {
-            font-size: 80%;
+            font-size: 9px;
         }
     }
+
+    @media (min-width: 800px) { height: 100vh; }
 }
 
-
+// ── Footer ────────────────────────────────────────────────────────────────────
 footer {
-
     padding: 15px;
     filter: drop-shadow(3px 3px 5px rgb(68, 68, 68));
 
@@ -457,216 +414,5 @@ footer {
         font-size: 14px;
         text-align: right;
         color: rgb(223, 222, 222);
-    }
-}
-
-/*****************************Tablet config*************************************/
-
-@media (max-width: 800px) {
-
-
-
-    .sobreMi {
-
-        height: 100%;
-
-        .fotoPerfil {
-            border-radius: 50%;
-            width: 30%;
-            filter: drop-shadow(3px 3px 3px rgb(68, 68, 68));
-            display: block;
-            margin: auto;
-            margin-bottom: 20px;
-        }
-    }
-
-    .habilidades {
-
-        height: 100%;
-        text-align: center;
-
-        .caja1 {
-            padding-bottom: 5%;
-
-            h5 {
-                font-size: 90%;
-                color: rgb(61, 61, 61);
-            }
-
-            .spanHabilidades {
-                font-size: 60%;
-                color: rgb(78, 78, 78);
-            }
-
-            img {
-                width: 70px;
-                filter: drop-shadow(1px 1px 2px rgb(68, 68, 68));
-            }
-        }
-
-    }
-
-
-    .contacto {
-        height: 80%;
-
-        h2 {
-            font-size: 120%;
-            padding-top: 2%;
-            margin-bottom: 2%;
-        }
-    }
-}
-
-/*****************************Tablet config*************************************/
-
-/*****************************Phone config*************************************/
-@media (max-width: 500px) {
-
-
-
-    /********* Pantalla Bienvenido *********/
-
-    .masthead {
-
-        .bienvenidoDisplay {
-            margin-top: 50%;
-        }
-
-        h3 {
-            font-size: 200%;
-        }
-
-    }
-
-    /******** Pantalla Presentacion ***********/
-    .sobreMi {
-
-        height: 100%;
-
-        .fotoPerfil {
-            border-radius: 50%;
-            width: 70%;
-            filter: drop-shadow(3px 3px 3px rgb(68, 68, 68));
-            display: block;
-            margin: auto;
-        }
-
-        h3 {
-            font-size: 120%;
-        }
-
-        p {
-            font-size: 80%;
-        }
-    }
-
-    /******** Pantalla Presentacion ***********/
-
-    /******** Pantalla Habilidades ***********/
-    .habilidades {
-
-        height: 100%;
-        text-align: center;
-
-        .caja1 {
-            padding-bottom: 5%;
-
-            h5 {
-                font-size: 90%;
-                color: rgb(61, 61, 61);
-            }
-
-            .spanHabilidades {
-                font-size: 60%;
-                color: rgb(78, 78, 78);
-            }
-
-            img {
-                width: 70px;
-                filter: drop-shadow(1px 1px 2px rgb(68, 68, 68));
-            }
-        }
-
-    }
-
-    /******** Pantalla Habilidades ***********/
-
-    /******** Pantalla Proyectos ***********/
-    .proyectos {
-
-        height: 100%;
-
-        h2 {
-            text-align: center;
-            padding: 2%;
-            font-size: 130%;
-            margin-bottom: 10%;
-        }
-
-        .caja2 {
-            width: 250px;
-            height: 320px;
-            margin: 0px auto;
-            margin-bottom: 15px;
-
-            h3 {
-                font-size: 100%;
-                padding: 5px;
-            }
-
-            img {
-                width: 100%;
-                height: 150px;
-            }
-
-            p {
-                font-size: 65%;
-            }
-
-        }
-    }
-
-    /******** Pantalla Contacto ***********/
-
-    /******** Pantalla Contacto ***********/
-
-    .contacto {
-        height: 100%;
-
-        h2 {
-            font-size: 120%;
-            padding-top: 4%;
-            margin-bottom: 10%;
-        }
-
-        h3 {
-            font-size: 100%;
-        }
-
-        .caja3 {
-
-            img {
-                width: 70px;
-                filter: drop-shadow(3px 3px 1px rgb(68, 68, 68));
-            }
-
-            p {
-                font-size: 70%;
-            }
-        }
-    }
-
-
-    footer {
-
-        padding: 15px;
-        filter: drop-shadow(3px 3px 5px rgb(68, 68, 68));
-
-        p {
-            font-size: 14px;
-            text-align: right;
-            color: rgb(223, 222, 222);
-        }
     }
 }

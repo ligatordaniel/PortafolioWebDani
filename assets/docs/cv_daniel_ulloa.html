@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Daniel Ulloa — CV</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy:    #1B3A5C;
+    --blue:    #1D6CC8;
+    --blue-lt: #EEF3FB;
+    --bg:      #F4F7FB;
+    --text:    #1A1A2E;
+    --mid:     #4A5568;
+    --line:    #D1DCE8;
+    --white:   #FFFFFF;
+  }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+    padding: 24px;
+    max-width: 840px;
+    margin: 0 auto;
+  }
+
+  .page {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(27,58,92,0.10);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--navy);
+    padding: 22px 28px 20px;
+    color: var(--white);
+    position: relative;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, transparent 55%, rgba(29,108,200,0.18) 100%);
+    pointer-events: none;
+  }
+  .header h1 {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    line-height: 1.15;
+    color: var(--white);
+  }
+  .header .role {
+    font-size: 13px;
+    color: rgba(255,255,255,0.72);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-top: 3px;
+  }
+  .header .role strong {
+    color: rgba(255,255,255,0.92);
+    font-weight: 600;
+  }
+  .contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 0;
+    margin-top: 13px;
+    padding-top: 11px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    font-size: 11px;
+    color: rgba(255,255,255,0.85);
+  }
+  .contact-bar a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .contact-bar a:hover { color: #fff; text-decoration: underline; }
+  .c-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-right: 18px;
+  }
+  .c-item svg {
+    width: 11px; height: 11px;
+    fill: rgba(255,255,255,0.55);
+    flex-shrink: 0;
+  }
+
+  /* ── BODY ── */
+  .body { padding: 20px 28px 24px; }
+
+  h2 {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--blue);
+    margin: 18px 0 9px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  h2::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+  h2:first-child { margin-top: 0; }
+
+  /* ── PERFIL ── */
+  .perfil {
+    font-size: 12px;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+  .perfil strong { color: var(--text); }
+
+  /* ── CHIPS ── */
+  .stack-group { margin-bottom: 6px; display: flex; flex-wrap: wrap; align-items: center; gap: 5px; }
+  .stack-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--navy);
+    min-width: 92px;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 3.5px; }
+  .chip {
+    background: var(--blue-lt);
+    color: var(--navy);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 1.5px 7px;
+    border-radius: 3px;
+    letter-spacing: 0.1px;
+    white-space: nowrap;
+  }
+  .chip.ai     { background: #f0eeff; color: #3d1f9e; }
+  .chip.devops { background: #e8f7f0; color: #1a5c3a; }
+  .chip.db     { background: #fff4e6; color: #7a3d00; }
+
+  /* ── JOBS ── */
+  .job {
+    padding-left: 12px;
+    border-left: 2.5px solid var(--line);
+    margin-bottom: 13px;
+    transition: border-color 0.2s;
+  }
+  .job:hover { border-left-color: var(--blue); }
+  .job-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .job-title { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.3; }
+  .job-date  { font-size: 11px; color: var(--mid); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .job-company { font-size: 11.5px; font-weight: 600; color: var(--blue); margin-top: 1px; }
+  .job-context {
+    font-size: 11px;
+    color: var(--mid);
+    font-style: italic;
+    margin: 2px 0 5px;
+    line-height: 1.45;
+  }
+  .job ul { padding-left: 13px; margin-top: 4px; }
+  .job li { margin-bottom: 3px; font-size: 12px; color: #333; line-height: 1.55; }
+  .job li strong { color: var(--text); }
+
+  /* ── PROJECTS ── */
+  .project {
+    margin-bottom: 9px;
+    padding: 9px 12px;
+    background: var(--blue-lt);
+    border-radius: 5px;
+    border-left: 3px solid var(--blue);
+  }
+  .project-name { font-size: 12.5px; font-weight: 700; color: var(--navy); }
+  .project-stack { display: flex; flex-wrap: wrap; gap: 3px; margin: 3px 0 4px; }
+  .project-desc { font-size: 12px; color: var(--mid); line-height: 1.5; }
+  .project-desc a { color: var(--blue); text-decoration: none; }
+  .project-desc a:hover { text-decoration: underline; }
+
+  /* ── TWO-COL ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; }
+
+  /* ── EDU & CERTS ── */
+  .edu-item, .cert-item { margin-bottom: 8px; }
+  .degree { font-weight: 700; font-size: 12px; }
+  .inst, .org { font-size: 11.5px; color: var(--blue); font-weight: 600; margin-top: 1px; }
+  .dates { font-size: 11px; color: var(--mid); font-variant-numeric: tabular-nums; }
+
+  @page { margin: 16mm 18mm 10mm; size: A4; }
+  @media print {
+    body { background: white; padding: 0; max-width: 100%; }
+    .page { box-shadow: none; border-radius: 0; }
+    .header { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .job:hover { border-left-color: var(--line); }
+    .job, .project, .edu-item, .cert-item { break-inside: avoid; }
+    h2 { break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Daniel Ulloa</h1>
+    <div class="role"><strong>Desarrollador Full Stack</strong> &nbsp;·&nbsp; Angular · React · JavaScript · TypeScript · Node.js · Python · Go</div>
+    <div class="contact-bar">
+      <span class="c-item">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        +56 9 7721 6059
+      </span>
+      <span class="c-item">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <a href="mailto:danielulloa256@gmail.com">danielulloa256@gmail.com</a>
+      </span>
+      <span class="c-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Santiago, Chile
+      </span>
+      <span class="c-item">
+        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        <a href="https://www.linkedin.com/in/daniel-ulloa-b23b37b5/">LinkedIn</a>
+      </span>
+      <span class="c-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+        <a href="https://github.com/ligatordaniel">GitHub</a>
+      </span>
+      <span class="c-item">
+        <svg viewBox="0 0 24 24"><path d="M16.36 14c.08-.34.14-.7.14-1.07 0-.36-.06-.7-.14-1.03l2.2-1.71c.2-.16.25-.43.13-.65l-2.08-3.6c-.12-.22-.37-.3-.59-.22l-2.6 1.05c-.54-.42-1.12-.75-1.76-.97L11.5 2.43A.49.49 0 0 0 11 2H7c-.25 0-.46.18-.49.42L6.17 5.24c-.63.22-1.21.56-1.75.97l-2.6-1.05c-.23-.09-.48 0-.59.22L.16 8.98c-.13.22-.07.49.13.65l2.2 1.71C2.45 11.67 2.39 12.02 2.39 12.38s.06.7.14 1.03l-2.2 1.71c-.2.16-.25.43-.12.65l2.07 3.6c.12.22.37.3.59.22l2.6-1.05c.54.42 1.12.75 1.76.97l.37 2.81c.04.24.25.42.49.42h4.16c.24 0 .46-.18.49-.42l.37-2.81c.63-.22 1.21-.56 1.75-.97l2.6 1.05c.22.08.47 0 .59-.22l2.08-3.6c.12-.22.07-.49-.13-.65l-2.2-1.7zM9 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
+        <a href="https://ligatordaniel.github.io/PortafolioWebDani/">Portafolio</a>
+      </span>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <h2>Perfil</h2>
+    <div class="perfil">
+      Desarrollador Full Stack con <strong>5+ años de experiencia</strong> construyendo aplicaciones web y mobile de alto tráfico para el sector financiero y telecomunicaciones en Chile. Especializado en <strong>Angular, React e Ionic</strong> en frontend, con backend en <strong>Node.js y Python</strong>. En paralelo, desarrollo proyectos propios que incluyen <strong>arquitecturas de streaming de video y audio</strong>, sitios web gestionables y pipelines de despliegue automatizados. Delivery consistente en entornos Scrum de alta exigencia. Integro herramientas de IA en el flujo de trabajo para acortar ciclos de desarrollo.
+    </div>
+
+    <h2>Stack Tecnológico</h2>
+
+    <div class="stack-group">
+      <span class="stack-label">Frontend</span>
+      <div class="chips">
+        <span class="chip">Angular</span>
+        <span class="chip">React</span>
+        <span class="chip">React Native</span>
+        <span class="chip">Ionic</span>
+        <span class="chip">TypeScript</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">HTML5</span>
+        <span class="chip">CSS3 · Sass</span>
+        <span class="chip">Jasmine</span>
+      </div>
+    </div>
+    <div class="stack-group">
+      <span class="stack-label">Backend</span>
+      <div class="chips">
+        <span class="chip">Node.js</span>
+        <span class="chip">Express</span>
+        <span class="chip">Python</span>
+        <span class="chip">FastAPI</span>
+        <span class="chip">Go</span>
+        <span class="chip">Bun · Elysia</span>
+        <span class="chip">Java · Spring Boot</span>
+      </div>
+    </div>
+    <div class="stack-group">
+      <span class="stack-label">Base de datos</span>
+      <div class="chips">
+        <span class="chip db">PostgreSQL</span>
+      </div>
+    </div>
+    <div class="stack-group">
+      <span class="stack-label">DevOps</span>
+      <div class="chips">
+        <span class="chip devops">Docker</span>
+        <span class="chip devops">Docker Compose</span>
+        <span class="chip devops">Nginx</span>
+        <span class="chip devops">GitHub Actions</span>
+        <span class="chip devops">CI/CD</span>
+        <span class="chip devops">VPS</span>
+        <span class="chip devops">Git · GitHub</span>
+      </div>
+    </div>
+    <div class="stack-group">
+      <span class="stack-label">IA</span>
+      <div class="chips">
+        <span class="chip ai">GitHub Copilot</span>
+        <span class="chip ai">Claude Code</span>
+        <span class="chip ai">OpenAI Codex</span>
+      </div>
+    </div>
+    <div class="stack-group">
+      <span class="stack-label">Idiomas</span>
+      <div class="chips">
+        <span class="chip">Español (nativo)</span>
+        <span class="chip">Inglés (intermedio)</span>
+      </div>
+    </div>
+
+    <h2>Experiencia</h2>
+
+    <div class="job">
+      <div class="job-top">
+        <span class="job-title">Desarrollador de Software Front-End</span>
+        <span class="job-date">Mar. 2022 – Actualidad &nbsp;·&nbsp; 4+ años</span>
+      </div>
+      <div class="job-company">BMSoluciones — Santiago, Chile</div>
+      <div class="job-context">App mobile-first para <strong>Tarjeta Presto LIDER</strong>, producto bancario de Banco BCI con base masiva de usuarios activos.</div>
+      <ul>
+        <li>Desarrollé y mantuve la aplicación en <strong>Ionic / Angular</strong>, cubriendo el ciclo completo desde onboarding hasta operaciones de cuenta.</li>
+        <li>Integré plataformas de pago <strong>Khipu</strong> y <strong>Servipag</strong>, y el flujo de recarga de tarjeta <strong>Bip!</strong>.</li>
+        <li>Implementé notificaciones push mediante servicios de mensajería móvil para alertas transaccionales y de marketing.</li>
+        <li>Implementé <strong>Strapi</strong> como CMS headless e incorporé nuevos flujos de contenido según los requerimientos del negocio.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <span class="job-title">Ingeniero de Desarrollo de Software</span>
+        <span class="job-date">Sept. 2020 – Mar. 2022 &nbsp;·&nbsp; 1 año 7 meses</span>
+      </div>
+      <div class="job-company">Haibu Solutions — Santiago, Chile</div>
+      <div class="job-context">Desarrollo Full Stack para VTR Telecomunicaciones y AFP Habitat.</div>
+      <ul>
+        <li>Construí módulos de atención al cliente Full Stack (<strong>Ionic / Angular + Node.js</strong>) para <strong>VTR Telecomunicaciones</strong>, operadora con presencia nacional.</li>
+        <li>Desarrollé interfaces web en <strong>Angular</strong> para <strong>AFP Habitat</strong>, una de las AFP más grandes de Chile.</li>
+        <li>Entregué app mobile interna cross-platform con <strong>React Native</strong> para <strong>FrogApp</strong>, app de gestión, monitoreo y control de servicios, desde diseño hasta producción.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <span class="job-title">Proyectos Desarrollo Independiente</span>
+        <span class="job-date">Mar. 2019 – Actualidad &nbsp;·&nbsp; 6+ años</span>
+      </div>
+      <div class="job-company">Independiente — Santiago, Chile &nbsp;·&nbsp; <a href="https://ligatordaniel.github.io/PortafolioWebDani/" style="color:var(--blue);text-decoration:none;">Ver portafolio →</a></div>
+      <ul>
+        <li>Desarrollé <strong>aplicaciones web gestionables con Ionic</strong>, arquitecturadas para funcionar como app mobile sin trabajo adicional, con deploy automatizado via <strong>GitHub Actions</strong> hacia <strong>VPS</strong> propio.</li>
+        <li>Implementé <strong>servidores de streaming de video y audio en tiempo real</strong>: configuración de servidores de medios, baja latencia y soporte de alta concurrencia de listeners y viewers.</li>
+        <li>Administré infraestructura completa en VPS: <strong>Nginx</strong> como reverse proxy, <strong>Docker</strong> para aislamiento de servicios y certificados SSL.</li>
+        <li>Ciclo completo en cada proyecto: levantamiento de requerimientos, desarrollo, despliegue y soporte.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <span class="job-title">Desarrollador & Soporte de Integración Digital</span>
+        <span class="job-date">Dic. 2017 – Feb. 2019 &nbsp;·&nbsp; 1 año 3 meses</span>
+      </div>
+      <div class="job-company">Enlace360 — Santiago, Chile</div>
+      <ul>
+        <li>Mantención e integración de soluciones digitales interactivas para pantallas táctiles y señalética corporativa usando tecnologías web (HTML, CSS, JavaScript).</li>
+        <li>Administré redes de pantallas publicitarias y canales corporativos con gestión remota de contenido.</li>
+      </ul>
+    </div>
+
+    <h2>Educación &amp; Certificaciones</h2>
+    <div class="two-col">
+      <div>
+        <div class="edu-item">
+          <div class="degree">Técnico en Electrónica Industrial</div>
+          <div class="inst">INACAP</div>
+          <div class="dates">2015 – 2017</div>
+        </div>
+        <div class="edu-item">
+          <div class="degree">Pedagogía en Inglés</div>
+          <div class="inst">Universidad Bernardo O'Higgins</div>
+          <div class="dates">2009 – 2013</div>
+        </div>
+      </div>
+      <div>
+        <div class="cert-item">
+          <div class="degree">Scrum Foundations Professional Certificate</div>
+          <div class="org">CertiProf &nbsp;·&nbsp; Jun. 2020</div>
+          <div class="dates">ID: FLCLWWTPDW-SSFDSQGG-WHKNQTBTKB</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /body -->
+</div><!-- /page -->
+</body>
+</html>
