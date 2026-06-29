@@ -3,341 +3,1742 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daniel Ulloa — Desarrollador Full Stack</title>
+  <meta name="description"
+    content="Full Stack Developer con 5+ años en Angular, React, Ionic y Node.js para proyectos FinTech y Telco en Chile. Disponible para nuevas oportunidades.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ── tokens ─────────────────────────────────────── */
+    :root {
+      --ink: #111827;
+      --ink-2: #374151;
+      --surface: #F8F7F4;
+      --card: #FFFFFF;
+      --blue: #2563EB;
+      --blue-hover: #1D4ED8;
+      --blue-bg: #EFF6FF;
+      --amber: #D97706;
+      --amber-bg: #FEF3C7;
+      --violet: #7C3AED;
+      --violet-bg: #EDE9FE;
+      --green: #059669;
+      --green-bg: #D1FAE5;
+      --muted: #6B7280;
+      --border: #E5E7EB;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/estilos.css">
-  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
-  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+    /* ── reset ───────────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  <title>Daniel Ulloa — Full Stack Developer</title>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--surface);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ── layout ──────────────────────────────────────── */
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-left: clamp(20px, 5vw, 80px);
+      padding-right: clamp(20px, 5vw, 80px);
+    }
+
+    /* ── header ──────────────────────────────────────── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(106, 107, 201, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, .07);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      height: 60px;
+    }
+
+    .header-name {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.01em;
+      flex-shrink: 0;
+    }
+
+    .header-nav {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+
+    .header-nav a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, .45);
+      letter-spacing: 0.02em;
+      transition: color .18s;
+    }
+
+    .header-nav a:hover {
+      color: #fff;
+    }
+
+    /* ── hero ────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-image: url('assets/img/wallpaper1.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: local;
+      transition: background-image .4s ease;
+    }
+
+    .hero .wrap {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding-top: clamp(56px, 9vw, 96px);
+      padding-bottom: clamp(56px, 9vw, 96px);
+    }
+
+    /* ── night mode ──────────────────────────────────── */
+    body.dark {
+      background: #0d0d0d;
+      color: #efefef;
+    }
+
+    body.dark .hero {
+      background-image: url('assets/img/wallpaperNoche.png');
+    }
+
+    body.dark .hero-name {
+      color: #fff;
+    }
+
+    body.dark .hero-title {
+      color: rgba(255, 255, 255, .85);
+    }
+
+    body.dark .hero-stack {
+      color: rgba(255, 255, 255, .55);
+    }
+
+    body.dark .btn-ghost {
+      color: #fff;
+      border-color: rgba(255, 255, 255, .8);
+    }
+
+    body.dark .btn-ghost:hover {
+      border-color: #e11d48;
+      color: #fff;
+    }
+
+    /* header y footer negros */
+    body.dark .site-header {
+      background: rgba(0, 0, 0, .97);
+      border-bottom-color: #222;
+    }
+
+    body.dark .contact-band {
+      background: #000;
+    }
+
+    body.dark .site-footer {
+      background: #000;
+      border-top-color: #1a1a1a;
+    }
+
+    /* fondo de secciones */
+    body.dark .section:not(.hero) {
+      background-color: #0d0d0d;
+    }
+
+    body.dark .hr {
+      border-top-color: #232323;
+    }
+
+    /* textos generales */
+    body.dark .section-eyebrow {
+      color: #9191e8;
+    }
+
+    body.dark .section-title {
+      color: #f0f0f0;
+    }
+
+    body.dark .about-p {
+      color: #999;
+    }
+
+    body.dark .chip {
+      background: #1c1c1c;
+      color: #9191e8;
+    }
+
+    /* stat cards */
+    body.dark .stat-card {
+      background: #181818;
+      border-color: #272727;
+    }
+
+    body.dark .stat-sub {
+      color: #666;
+    }
+
+    /* timeline */
+    body.dark .timeline::before {
+      background: #272727;
+    }
+
+    body.dark .tl-item+.tl-item {
+      border-top-color: #232323;
+    }
+
+    body.dark .tl-item::before {
+      background: #333;
+      border-color: #0d0d0d;
+    }
+
+    body.dark .tl-item.current-job {
+      border-left-color: #9191e8;
+    }
+
+    body.dark .tl-item.current-job::before {
+      background: #9191e8;
+      border-color: #0d0d0d;
+    }
+
+    body.dark .current-pill {
+      background: #1c1c1c;
+      color: #9191e8;
+    }
+
+    body.dark .tl-period {
+      color: #555;
+    }
+
+    body.dark .tl-company {
+      color: #e8e8e8;
+    }
+
+    body.dark .tl-location {
+      color: #555;
+    }
+
+    body.dark .tl-role {
+      color: #f0f0f0;
+    }
+
+    body.dark .tl-desc {
+      color: #888;
+    }
+
+    body.dark .tl-tag {
+      background: #181818;
+      color: #666;
+      border-color: #272727;
+    }
+
+    /* skills */
+    body.dark .skill-col-head {
+      border-bottom-color: #232323;
+    }
+
+    body.dark .skill-col-name {
+      color: #555;
+    }
+
+    body.dark .skill-item {
+      color: #999;
+    }
+
+    /* project cards */
+    body.dark .proj-card {
+      background: #181818;
+      border-color: #272727;
+    }
+
+    body.dark .proj-name {
+      color: #f0f0f0;
+    }
+
+    body.dark .proj-desc {
+      color: #777;
+    }
+
+    body.dark .proj-chip {
+      background: #111;
+      color: #555;
+      border-color: #272727;
+    }
+
+    /* switch en header negro */
+    body.dark .mode-switch {
+      background: rgba(255, 255, 255, .07);
+      border-color: rgba(255, 255, 255, .12);
+    }
+
+    /* ── mode switch ─────────────────────────────────── */
+    .mode-switch {
+      position: relative;
+      display: flex;
+      background: rgba(0, 0, 0, .18);
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 100px;
+      padding: 3px;
+      cursor: pointer;
+      user-select: none;
+      flex-shrink: 0;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+    }
+
+    .mode-opt {
+      position: relative;
+      z-index: 1;
+      padding: 6px 14px;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      border-radius: 100px;
+      white-space: nowrap;
+      transition: color .35s ease;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      letter-spacing: 0.02em;
+    }
+
+    /* día: slider bajo "Día" → Día oscuro, Noche blanco tenue */
+    .mode-opt-day {
+      color: #3b1f7a;
+    }
+
+    .mode-opt-night {
+      color: rgba(255, 255, 255, .6);
+    }
+
+    /* noche: slider bajo "Noche" → Noche oscuro, Día blanco tenue */
+    body.dark .mode-opt-day {
+      color: rgba(255, 255, 255, .6);
+    }
+
+    body.dark .mode-opt-night {
+      color: #3b1f7a;
+    }
+
+    .mode-slider {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      bottom: 3px;
+      border-radius: 100px;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
+      transition: transform .38s cubic-bezier(.4, 0, .2, 1), width .38s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    body.dark .mode-slider {
+      transform: translateX(var(--slider-offset, 0px));
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: center;
+    }
+
+    .available {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-bg);
+      color: var(--green);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 22px;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2.2s ease infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: .4;
+        transform: scale(.75);
+      }
+    }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 6.5vw, 5.2rem);
+      font-weight: 800;
+      line-height: 1.04;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+      margin-bottom: 14px;
+      text-shadow: 0 1px 12px rgba(255, 255, 255, .6);
+    }
+
+    .hero-title {
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      font-weight: 500;
+      color: var(--ink-2);
+      margin-bottom: 10px;
+      text-shadow: 0 1px 8px rgba(255, 255, 255, .5);
+    }
+
+    .hero-stack {
+      font-size: 0.8rem;
+      color: var(--ink-2);
+      letter-spacing: 0.02em;
+      margin-bottom: 34px;
+      text-shadow: 0 1px 6px rgba(255, 255, 255, .5);
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 0.87rem;
+      font-weight: 600;
+      padding: 13px 24px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background .18s, transform .15s;
+    }
+
+    .btn-primary:hover {
+      background: #1ebe5a;
+      transform: translateY(-1px);
+    }
+
+    .btn-primary svg {
+      flex-shrink: 0;
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 0.87rem;
+      font-weight: 600;
+      padding: 13px 24px;
+      border-radius: 8px;
+      border: 1.5px solid var(--ink);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: color .3s ease .35s, border-color .3s ease, transform .15s;
+    }
+
+    .btn-ghost::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #e11d48;
+      width: 0;
+      transition: width 1s ease;
+      z-index: 0;
+    }
+
+    .btn-ghost:hover::before {
+      width: 100%;
+    }
+
+    .btn-ghost:hover {
+      border-color: #e11d48;
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-ghost svg {
+      flex-shrink: 0;
+    }
+
+    /* stat cards */
+    .stat-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--card-accent, var(--blue));
+      border-radius: 12px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: box-shadow .2s;
+    }
+
+    .stat-card:hover {
+      box-shadow: 0 4px 20px rgba(17, 24, 39, .08);
+    }
+
+    .stat-card.c-blue {
+      --card-accent: var(--blue);
+    }
+
+    .stat-card.c-amber {
+      --card-accent: var(--amber);
+    }
+
+    .stat-card.c-violet {
+      --card-accent: var(--violet);
+    }
+
+    .stat-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .c-blue .stat-icon-wrap {
+      background: var(--blue-bg);
+    }
+
+    .c-amber .stat-icon-wrap {
+      background: var(--amber-bg);
+    }
+
+    .c-violet .stat-icon-wrap {
+      background: var(--violet-bg);
+    }
+
+    .stat-icon-wrap svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .c-blue .stat-icon-wrap svg {
+      color: var(--blue);
+    }
+
+    .c-amber .stat-icon-wrap svg {
+      color: var(--amber);
+    }
+
+    .c-violet .stat-icon-wrap svg {
+      color: var(--violet);
+    }
+
+    .stat-value {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .c-blue .stat-value {
+      color: var(--blue);
+    }
+
+    .c-amber .stat-value {
+      color: var(--amber);
+    }
+
+    .c-violet .stat-value {
+      color: var(--violet);
+    }
+
+    .stat-sub {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    /* ── section shell ───────────────────────────────── */
+    .section {
+      padding-top: clamp(52px, 8vw, 76px);
+      padding-bottom: clamp(52px, 8vw, 76px);
+    }
+
+    .section-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.55rem, 3vw, 2.1rem);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+      text-wrap: balance;
+      margin-bottom: 40px;
+      letter-spacing: -0.01em;
+    }
+
+    .hr {
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── about ───────────────────────────────────────── */
+    .about-body {
+      max-width: 680px;
+    }
+
+    .about-p {
+      font-size: 1rem;
+      color: var(--ink-2);
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      font-size: 0.76rem;
+      font-weight: 500;
+      background: var(--blue-bg);
+      color: var(--blue-hover);
+      padding: 5px 13px;
+      border-radius: 100px;
+    }
+
+    /* ── timeline ────────────────────────────────────── */
+    .timeline {
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .tl-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 32px;
+      padding: 32px 0 32px 28px;
+      position: relative;
+    }
+
+    .tl-item+.tl-item {
+      border-top: 1px solid var(--border);
+    }
+
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 36px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border);
+      border: 2px solid var(--surface);
+    }
+
+    .tl-item.current-job {
+      border-left: 2px solid var(--blue);
+      margin-left: -2px;
+      padding-left: 28px;
+    }
+
+    .tl-item.current-job::before {
+      background: var(--blue);
+      border-color: var(--surface);
+    }
+
+    .tl-period {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: .02em;
+      margin-bottom: 4px;
+    }
+
+    .tl-company {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .tl-location {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .current-pill {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: var(--blue-bg);
+      color: var(--blue);
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+
+    .tl-role {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .tl-desc {
+      font-size: 0.86rem;
+      color: var(--ink-2);
+      line-height: 1.78;
+      margin-bottom: 12px;
+    }
+
+    .tl-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tl-tag {
+      font-size: 0.68rem;
+      font-weight: 500;
+      background: var(--surface);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    /* ── skills ──────────────────────────────────────── */
+    .skills-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    .skill-col-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skill-col-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .skill-col-name {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .skill-item {
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--ink-2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-item::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--col-dot, var(--blue));
+      flex-shrink: 0;
+    }
+
+    .sc-front {
+      --col-dot: #DD0031;
+    }
+
+    .sc-back {
+      --col-dot: #68A063;
+    }
+
+    .sc-devop {
+      --col-dot: #2496ED;
+    }
+
+    .sc-ai {
+      --col-dot: var(--violet);
+    }
+
+    /* ── projects ────────────────────────────────────── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .proj-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--proj-color, var(--blue));
+      border-radius: 12px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: box-shadow .2s, transform .2s;
+      color: inherit;
+    }
+
+    .proj-card:hover {
+      box-shadow: 0 8px 32px rgba(17, 24, 39, .09);
+      transform: translateY(-2px);
+    }
+
+    .proj-card.p1 {
+      --proj-color: var(--blue);
+    }
+
+    .proj-card.p2 {
+      --proj-color: var(--amber);
+    }
+
+    .proj-card.p3 {
+      --proj-color: var(--violet);
+    }
+
+    .proj-card.p4 {
+      --proj-color: var(--green);
+    }
+
+    .proj-num {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--proj-color, var(--blue));
+      letter-spacing: .05em;
+    }
+
+    .proj-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    .proj-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.72;
+      flex: 1;
+    }
+
+    .proj-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .proj-chip {
+      font-size: 0.66rem;
+      font-weight: 600;
+      background: var(--surface);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 3px 9px;
+      border-radius: 100px;
+    }
+
+    .proj-cta {
+      font-size: 0.77rem;
+      font-weight: 600;
+      color: var(--proj-color, var(--blue));
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 4px;
+      transition: gap .15s;
+    }
+
+    .proj-card:hover .proj-cta {
+      gap: 7px;
+    }
+
+    /* ── contact dark ─────────────────────────────────── */
+    .contact-band {
+      background: #6A6BC9;
+      margin-top: clamp(52px, 8vw, 76px);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(48px, 7vw, 100px);
+      align-items: center;
+      padding-top: clamp(60px, 10vw, 96px);
+      padding-bottom: clamp(60px, 10vw, 96px);
+    }
+
+    .contact-heading {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+      text-wrap: balance;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .contact-sub {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, .5);
+      line-height: 1.75;
+      margin-bottom: 30px;
+    }
+
+    .btn-dl {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 0.87rem;
+      font-weight: 700;
+      padding: 13px 24px;
+      border-radius: 8px;
+      transition: background .18s, transform .15s;
+    }
+
+    .btn-dl:hover {
+      background: #f0f0f0;
+      transform: translateY(-1px);
+    }
+
+    .btn-dl svg {
+      flex-shrink: 0;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 15px 18px;
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 10px;
+      color: #fff;
+      transition: background .18s, border-color .18s;
+    }
+
+    .contact-link:hover {
+      background: rgba(255, 255, 255, .09);
+      border-color: rgba(255, 255, 255, .2);
+    }
+
+    .cl-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cl-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .cl-wsp {
+      background: #1a4b2e;
+    }
+
+    .cl-email {
+      background: #3b1a1a;
+    }
+
+    .cl-li {
+      background: #0f2a40;
+    }
+
+    .cl-gh {
+      background: #1a1e26;
+    }
+
+    .cl-label {
+      font-size: 0.63rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, .38);
+      margin-bottom: 2px;
+    }
+
+    .cl-value {
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    /* ── footer ──────────────────────────────────────── */
+    .site-footer {
+      background: #5758b0;
+      border-top: 1px solid rgba(255, 255, 255, .07);
+      padding: 22px clamp(20px, 5vw, 80px);
+      text-align: center;
+      font-size: 0.73rem;
+      color: rgba(255, 255, 255, .28);
+    }
+
+    .site-footer a {
+      color: rgba(255, 255, 255, .45);
+      transition: color .15s;
+    }
+
+    .site-footer a:hover {
+      color: rgba(255, 255, 255, .75);
+    }
+
+    /* ── scroll reveal ───────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-d1 {
+      transition-delay: .08s;
+    }
+
+    .reveal-d2 {
+      transition-delay: .16s;
+    }
+
+    .reveal-d3 {
+      transition-delay: .24s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      @keyframes pulse {
+
+        0%,
+        100% {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    }
+
+    /* ── responsive ──────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .stat-card {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .skills-wrap {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .header-nav {
+        display: none;
+      }
+
+      .tl-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .tl-meta {
+        display: flex;
+        gap: 14px;
+        align-items: baseline;
+        flex-wrap: wrap;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .stat-card {
+        min-width: 100%;
+      }
+
+      .skills-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── flying characters ─────────────────────────── */
+    #charLatia,
+    #charLatio {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9998;
+      display: block;
+      opacity: 0;
+    }
+
+    #charLatia {
+      width: 85px;
+      top: 55vh;
+      animation: flyUpLatia 13s 1s infinite linear;
+    }
+
+    #charLatio {
+      width: 110px;
+      top: 70vh;
+      animation: flyUpLatio 13.5s 2s infinite linear;
+    }
+
+    /* Latias: 3s vuelo + 10s pausa = 13s ciclo (keyframes comprimidos al 23%) */
+    @keyframes flyUpLatia {
+      0%    { transform: translateX(110vw) translateY(0);   opacity: 0; }
+      1.15% { opacity: 1; }
+      16.2% { opacity: 1; }
+      18.5% { transform: translateX(-160px) translateY(-90px); opacity: 0; }
+      18.6% { transform: translateX(110vw) translateY(0);   opacity: 0; }
+      100%  { transform: translateX(110vw) translateY(0);   opacity: 0; }
+    }
+
+    /* Latios: 3.5s vuelo + 10s pausa = 13.5s ciclo (keyframes comprimidos al 25.9%) */
+    @keyframes flyUpLatio {
+      0%    { transform: translateX(110vw) translateY(0);   opacity: 0; }
+      1.3%  { opacity: 1; }
+      18.2% { opacity: 1; }
+      20.7% { transform: translateX(-160px) translateY(-90px); opacity: 0; }
+      20.8% { transform: translateX(110vw) translateY(0);   opacity: 0; }
+      100%  { transform: translateX(110vw) translateY(0);   opacity: 0; }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- ── Navbar ─────────────────────────────────────────────────────────── -->
-  <nav class="navbar navbar-expand-lg sticky-top navbar-dark theme-purple" id="main-navbar">
-    <div class="custom-control custom-switch">
-      <input type="checkbox" class="custom-control-input" id="night-mode-switch">
-      <label class="custom-control-label" for="night-mode-switch" data-i18n="nightMode">ModoNoche</label>
-    </div>
+  <!-- SVG symbol defs (hidden) ──────────────────────────── -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="ico-whatsapp" viewBox="0 0 24 24">
+      <path fill="#ffffff"
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413" />
+    </symbol>
+    <symbol id="ico-linkedin" viewBox="0 0 24 24">
+      <path fill="#0077B5"
+        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </symbol>
+    <symbol id="ico-github" viewBox="0 0 24 24">
+      <path fill="#E5E7EB"
+        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+    </symbol>
+    <symbol id="ico-email" viewBox="0 0 24 24">
+      <rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="#EA4335" stroke-width="1.8" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" fill="none" stroke="#EA4335" stroke-width="1.8" />
+    </symbol>
+    <symbol id="ico-download" viewBox="0 0 24 24">
+      <path d="M12 15V3m0 12-4-4m4 4 4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"
+        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="ico-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8" />
+      <path d="M12 7v5l3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+    </symbol>
+    <symbol id="ico-bank" viewBox="0 0 24 24">
+      <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 10v11M12 10v11M16 10v11" fill="none"
+        stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+    </symbol>
+    <symbol id="ico-mobile" viewBox="0 0 24 24">
+      <rect x="5" y="2" width="14" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="1.8" />
+      <path d="M12 18h.01" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+    </symbol>
+  </svg>
 
-    <a class="navbar-brand" href="index.html"></a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav mr-auto ml-auto text-center">
-        <a class="nav-item nav-link" href="#" data-i18n="navHome">Inicio</a>
-        <a class="nav-item nav-link" href="#about" data-i18n="navAbout">Sobre mí</a>
-        <a class="nav-item nav-link" href="#experience" data-i18n="navExp">Experiencia</a>
-        <a class="nav-item nav-link" href="#skills" data-i18n="navSkills">Stack</a>
-        <a class="nav-item nav-link" href="#projects" data-i18n="navProjects">Proyectos</a>
-        <a class="nav-item nav-link active" href="#contact" data-i18n="navContact">Contacto</a>
-      </div>
-    </div>
-  </nav>
-  <!-- ── /Navbar ────────────────────────────────────────────────────────── -->
-
-
-  <!-- ── Welcome screen ────────────────────────────────────────────────── -->
-  <header class="masthead wallpaper-day" id="masthead">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-12 text-center welcome-display float-animation" id="welcome-floating">
-          <h3 id="welcome-text" class="welcome-title pixel-font" data-i18n="welcome">Bienvenido</h3>
-          <button type="button" class="btn btn-outline-success btn-sm" id="lang-btn">
-            <span data-i18n="langBtn">See me in English</span>
-          </button>
+  <!-- ── header ─────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="wrap">
+      <div class="header-inner">
+        <span class="header-name">Daniel Ulloa</span>
+        <nav aria-label="Secciones">
+          <ul class="header-nav">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#stack">Stack</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="mode-switch" id="modeSwitch" onclick="toggleDark()" role="button"
+          aria-label="Cambiar modo día/noche" tabindex="0">
+          <div class="mode-slider" id="modeSlider"></div>
+          <div class="mode-opt mode-opt-day" id="optDay">☀️ Modo Día</div>
+          <div class="mode-opt mode-opt-night" id="optNight">🌙 Modo Noche</div>
         </div>
       </div>
     </div>
-    <img id="latiaPokemon" class="latia-animation" src="assets/img/latia.png" alt="Latias Pokemon">
-    <img id="latioPokemon" class="latio-animation" src="assets/img/latio.png" alt="Latios Pokemon">
   </header>
-  <!-- ── /Welcome screen ───────────────────────────────────────────────── -->
 
+  <!-- ── hero ──────────────────────────────────────────── -->
+  <section class="section hero" id="inicio" aria-label="Presentación">
+    <div class="wrap">
+      <div class="hero-grid">
 
-  <!-- ── About ─────────────────────────────────────────────────────────── -->
-  <div class="about theme-purple animation-container" id="about">
-    <div class="row">
-      <div class="col-sm-12 col-md-12 col-lg-4">
-        <canvas class="profile-photo slide-from-left" id="profile-photo"
-          aria-label="Profile photo" width="160" height="160"></canvas>
-      </div>
-      <div class="col-sm-12 col-md-12 col-lg-8">
-        <h3 data-i18n="aboutTitle">Hola, soy Daniel</h3>
-        <p data-i18n="aboutP1">Desarrollador Full Stack con más de 5 años de experiencia construyendo aplicaciones web y mobile de alto tráfico para el sector financiero y telecomunicaciones en Chile. Especializado en Angular, React e Ionic en frontend, con backend en Node.js y Python. Integro herramientas de IA en el flujo de trabajo y construyo proyectos propios con arquitecturas de streaming y despliegue automatizado.</p>
-        <p data-i18n="aboutP2">Fanático de la tecnología, el gaming y los proyectos que combinan creatividad con ingeniería. Siempre aprendiendo.</p>
-      </div>
-    </div>
-  </div>
-  <!-- ── /About ────────────────────────────────────────────────────────── -->
-
-
-  <!-- ── Experience ────────────────────────────────────────────────────── -->
-  <div class="experience theme-white animation-container" id="experience">
-    <h2 data-i18n="expTitle">Experiencia</h2>
-    <div class="container">
-
-      <div class="exp-item">
-        <div class="exp-header">
-          <h4>BMSoluciones</h4>
-          <span class="exp-period">Mar. 2022 – Actualidad</span>
-        </div>
-        <h5 data-i18n="exp1Role">Desarrollador de Software Front-End</h5>
-        <p data-i18n="exp1Desc">App mobile-first Tarjeta Presto LIDER (Banco BCI) con Ionic / Angular. Integración de pasarelas de pago Khipu y Servipag, flujo de recarga Bip!, notificaciones push y CMS headless con Strapi.</p>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-header">
-          <h4>Haibu Solutions</h4>
-          <span class="exp-period">Sept. 2020 – Mar. 2022</span>
-        </div>
-        <h5 data-i18n="exp2Role">Ingeniero de Desarrollo de Software</h5>
-        <p data-i18n="exp2Desc">Full Stack para VTR Telecomunicaciones y AFP Habitat con Ionic/Angular + Node.js. App mobile cross-platform con React Native para FrogApp, desde diseño hasta producción.</p>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-header">
-          <h4>Enlace360</h4>
-          <span class="exp-period">Dic. 2017 – Feb. 2019</span>
-        </div>
-        <h5 data-i18n="exp3Role">Desarrollador &amp; Soporte de Integración Digital</h5>
-        <p data-i18n="exp3Desc">Soluciones digitales interactivas para pantallas táctiles y señalética corporativa. Gestión remota de redes de pantallas publicitarias y canales corporativos.</p>
-      </div>
-
-    </div>
-  </div>
-  <!-- ── /Experience ───────────────────────────────────────────────────── -->
-
-
-  <!-- ── Skills ────────────────────────────────────────────────────────── -->
-  <div class="skills" id="skills">
-    <h2 data-i18n="skillsTitle">Stack Tecnológico</h2>
-    <div class="container">
-      <div class="row skills-grid">
-
-        <div class="col-12 col-md-6 col-lg-3 skill-group">
-          <h5 data-i18n="skillCatFront">Frontend</h5>
-          <div class="skill-badges">
-            <span class="skill-badge">Angular</span>
-            <span class="skill-badge">React</span>
-            <span class="skill-badge">React Native</span>
-            <span class="skill-badge">Ionic</span>
-            <span class="skill-badge">TypeScript</span>
-            <span class="skill-badge">JavaScript</span>
-            <span class="skill-badge">HTML5 / CSS3</span>
-            <span class="skill-badge">Sass</span>
+        <div>
+          <div class="available">
+            <div class="pulse"></div>
+            Disponible para nuevas oportunidades
+          </div>
+          <h1 class="hero-name">Daniel<br>Ulloa</h1>
+          <p class="hero-title">Desarrollador Full Stack</p>
+          <p class="hero-stack">Angular · React · Ionic · Node.js · Python · TypeScript</p>
+          <div class="hero-ctas">
+            <a href="https://wa.me/56977216059" target="_blank" rel="noopener" class="btn-primary">
+              <svg width="18" height="18">
+                <use href="#ico-whatsapp" />
+              </svg>
+              Escribir por WhatsApp
+            </a>
+            <a href="assets/docs/cv_daniel_ulloa.pdf" download class="btn-ghost">
+              <svg width="17" height="17">
+                <use href="#ico-download" />
+              </svg>
+              <span>Descargar CV</span>
+            </a>
           </div>
         </div>
 
-        <div class="col-12 col-md-6 col-lg-3 skill-group">
-          <h5 data-i18n="skillCatBack">Backend</h5>
-          <div class="skill-badges">
-            <span class="skill-badge">Node.js</span>
-            <span class="skill-badge">Express</span>
-            <span class="skill-badge">Python</span>
-            <span class="skill-badge">FastAPI</span>
-            <span class="skill-badge">Go</span>
-            <span class="skill-badge">Bun / Elysia</span>
-            <span class="skill-badge">Java / Spring Boot</span>
-            <span class="skill-badge">PostgreSQL</span>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3 skill-group">
-          <h5 data-i18n="skillCatDevops">DevOps / Infra</h5>
-          <div class="skill-badges">
-            <span class="skill-badge">Docker</span>
-            <span class="skill-badge">Docker Compose</span>
-            <span class="skill-badge">Nginx</span>
-            <span class="skill-badge">GitHub Actions</span>
-            <span class="skill-badge">VPS</span>
-            <span class="skill-badge">Git / GitHub</span>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3 skill-group">
-          <h5 data-i18n="skillCatAi">IA &amp; Tools</h5>
-          <div class="skill-badges">
-            <span class="skill-badge">GitHub Copilot</span>
-            <span class="skill-badge">Claude Code</span>
-            <span class="skill-badge">OpenAI Codex</span>
-            <span class="skill-badge">Scrum</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-  <!-- ── /Skills ───────────────────────────────────────────────────────── -->
-
-
-  <!-- ── Projects ──────────────────────────────────────────────────────── -->
-  <div class="projects animation-container theme-white" id="projects">
-    <h2 data-i18n="projectsTitle">Proyectos</h2>
-    <div class="container">
-      <div class="row">
-
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="project-card">
-            <div class="card-header theme-purple" id="project-card-1">
-              <h3 data-i18n="proj1Title">Galeria IOS</h3>
-              <a href="https://ligatordaniel.github.io/Galeria-IOS-chile/" target="_blank">
-                <img src="assets/img/thumbnailios2.png" class="card-thumbnail" alt="proyecto"></a>
+        <div class="stat-cards">
+          <div class="stat-card c-blue reveal">
+            <div class="stat-icon-wrap">
+              <svg>
+                <use href="#ico-clock" />
+              </svg>
             </div>
-            <div class="p-2">
-              <p data-i18n="proj1Desc">Web responsive que utilizando la temática de Mac. Las imágenes de la galeria se mueven y siguen el cursor del mouse</p>
+            <div>
+              <div class="stat-value">5+ años</div>
+              <div class="stat-sub">de experiencia profesional</div>
             </div>
           </div>
-        </div>
-
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="project-card">
-            <div class="card-header theme-purple" id="project-card-2">
-              <h3 data-i18n="proj2Title">Reloj JS</h3>
-              <a href="https://ligatordaniel.github.io/RelojJS/" target="_blank">
-                <img src="assets/img/thumbnailreloj.png" class="card-thumbnail" alt="proyecto"></a>
+          <div class="stat-card c-amber reveal reveal-d1">
+            <div class="stat-icon-wrap">
+              <svg>
+                <use href="#ico-bank" />
+              </svg>
             </div>
-            <div class="p-2">
-              <p data-i18n="proj2Desc">Reloj construido con JavaScript hecho para funcionar extrayendo la hora de tu dispositivo. Siempre carga una imagen aleatoria como fondo</p>
+            <div>
+              <div class="stat-value">FinTech</div>
+              <div class="stat-sub">Banco BCI · AFP Habitat · VTR</div>
             </div>
           </div>
-        </div>
-
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="project-card">
-            <div class="card-header theme-purple" id="project-card-3">
-              <h3 data-i18n="proj3Title">Pokédex</h3>
-              <a href="https://ligatordaniel.github.io/Pokedex/" target="_blank">
-                <img src="assets/img/thumbnailpokedex.png" class="card-thumbnail" alt="proyecto"></a>
+          <div class="stat-card c-violet reveal reveal-d2">
+            <div class="stat-icon-wrap">
+              <svg>
+                <use href="#ico-mobile" />
+              </svg>
             </div>
-            <div class="p-2">
-              <p data-i18n="proj3Desc">Creada con PokéAPI, una herramienta educativa vinculada a una extensa base de datos en la que puedes traer información de un pokemon con su nombre ó numero id</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="row">
-
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="project-card">
-            <div class="card-header theme-purple" id="project-card-4">
-              <h3 data-i18n="proj4Title">USD a CLP Calendario</h3>
-              <a href="https://dolarvuecalendario.firebaseapp.com/" target="_blank">
-                <img src="assets/img/thumbnailCalendarioDolar.png" class="card-thumbnail" alt="proyecto"></a>
-            </div>
-            <div class="p-2">
-              <p data-i18n="proj4Desc">Realizada con Vue y Vuetify. Consulta una API publica, extrayendo el precio del dólar convertido a pesos chilenos en cualquier fecha</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="project-card">
-            <div class="card-header theme-purple" id="project-card-5">
-              <h3 data-i18n="proj5Title">MyTrello</h3>
-              <a href="https://basedatos-735c2.firebaseapp.com/" target="_blank">
-                <img src="assets/img/thumbnailmytrello.png" class="card-thumbnail" alt="proyecto"></a>
-            </div>
-            <div class="p-2">
-              <p data-i18n="proj5Desc">Inspirada en Trello, sirve para crear y editar notas que puedes almacenar en una base de datos en tiempo real. Creada con Angular y Firebase</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-12 col-md-4 col-lg-4">
-          <div class="project-card">
-            <div class="card-header theme-purple" id="project-card-6">
-              <h3 data-i18n="proj6Title">Dungun PWA</h3>
-              <a href="https://dungunapp.web.app/" target="_blank">
-                <img src="assets/img/thumbnailDungun.png" class="card-thumbnail" alt="proyecto"></a>
-            </div>
-            <div class="p-2">
-              <p data-i18n="proj6Desc">Realizada con el stack MEAN, la aplicación busca por medio de código una sala de streaming con un traductor asignado. Para una demostración usar código 'demostracion'</p>
+            <div>
+              <div class="stat-value">Mobile-first</div>
+              <div class="stat-sub">Ionic · React Native · PWA</div>
             </div>
           </div>
         </div>
 
       </div>
     </div>
-  </div>
-  <!-- ── /Projects ─────────────────────────────────────────────────────── -->
+  </section>
 
+  <hr class="hr" style="max-width:1100px; margin:0 auto;">
 
-  <!-- ── Contact ───────────────────────────────────────────────────────── -->
-  <div class="contact theme-white" id="contact">
-    <h2 data-i18n="contactTitle">Contacto</h2>
-    <h3 class="blink-animation pixel-font">I'm available and ready to work together!</h3>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <div class="contact-item">
-            <img src="assets/img/logoGmail.png" alt="Email">
-            <p>Danielulloa256@gmail.com</p>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <div class="contact-item">
-            <img src="assets/img/whatsapp2.png" alt="WhatsApp">
-            <p>+569 77 21 6059</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <div class="contact-item">
-            <a href="https://www.linkedin.com/in/daniel-ulloa-b23b37b5/" target="_blank">
-              <img src="assets/img/linkedinLogo.png" alt="LinkedIn"></a>
-            <p data-i18n="contactLinkedin">Linkedin Perfil</p>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <div class="contact-item">
-            <a href="assets/docs/cv_daniel_ulloa.pdf" download>
-              <img id="cv-download" src="assets/img/download.png" alt="Download CV"></a>
-            <p><span data-i18n="contactCv">Descargar Curriculum</span></p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="contact-item">
-            <a href="https://github.com/ligatordaniel" target="_blank">
-              <img src="assets/img/logoGit.png" alt="GitHub"></a>
-            <p data-i18n="contactGithub">Github Perfil</p>
-          </div>
+  <!-- ── about ─────────────────────────────────────────── -->
+  <section class="section" id="sobre-mi">
+    <div class="wrap">
+      <div class="about-body reveal">
+        <div class="section-eyebrow">Sobre mí</div>
+        <h2 class="section-title">Full Stack especializado<br>en mobile y banca digital</h2>
+        <p class="about-p">Llevo más de cinco años construyendo aplicaciones web y mobile de alto tráfico para el sector
+          financiero y de telecomunicaciones en Chile. Mi trabajo en BMSoluciones incluye la app Tarjeta Presto LIDER de
+          Banco BCI — un producto masivo con usuarios activos a escala nacional. En Haibu Solutions desarrollé módulos
+          críticos para VTR Telecomunicaciones y AFP Habitat.</p>
+        <p class="about-p">Me desenvuelvo en todo el ciclo: desde el diseño de arquitectura hasta el despliegue en
+          producción. Administro mi propia infraestructura con Docker, Nginx y CI/CD automatizado. Me integro rápido a
+          equipos Scrum y entrego con autonomía.</p>
+        <div class="chips">
+          <span class="chip">Scrum certificado (SFPC)</span>
+          <span class="chip">Inglés intermedio</span>
+          <span class="chip">Santiago, Chile</span>
+          <span class="chip">Disponible de inmediato</span>
+          <span class="chip">Híbrido o remoto</span>
         </div>
       </div>
     </div>
+  </section>
+
+  <hr class="hr" style="max-width:1100px; margin:0 auto;">
+
+  <!-- ── experience ─────────────────────────────────────── -->
+  <section class="section" id="experiencia">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="section-eyebrow">Trayectoria</div>
+        <h2 class="section-title">Experiencia profesional</h2>
+      </div>
+      <div class="timeline">
+
+        <div class="tl-item current-job reveal">
+          <div class="tl-meta">
+            <div class="tl-period">Mar. 2022 — Hoy</div>
+            <div class="tl-company">BMSoluciones</div>
+            <div class="tl-location">Santiago, Chile</div>
+            <span class="current-pill">Actual</span>
+          </div>
+          <div class="tl-content">
+            <div class="tl-role">Desarrollador de Software Front-End</div>
+            <p class="tl-desc">Desarrollo y mantenimiento de la app mobile-first <strong>Tarjeta Presto LIDER</strong>,
+              producto bancario de Banco BCI con base masiva de usuarios. Integré las pasarelas de pago Khipu y
+              Servipag, el flujo de recarga de tarjeta Bip! y notificaciones push. Implementé Strapi como CMS headless
+              para gestión de contenido.</p>
+            <div class="tl-tags">
+              <span class="tl-tag">Ionic</span><span class="tl-tag">Angular</span><span class="tl-tag">TypeScript</span>
+              <span class="tl-tag">Strapi</span><span class="tl-tag">Push Notifications</span><span class="tl-tag">Banco
+                BCI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-meta">
+            <div class="tl-period">Sep. 2020 — Mar. 2022</div>
+            <div class="tl-company">Haibu Solutions</div>
+            <div class="tl-location">Santiago, Chile</div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-role">Ingeniero de Desarrollo de Software</div>
+            <p class="tl-desc">Full Stack para <strong>VTR Telecomunicaciones</strong> y <strong>AFP Habitat</strong>
+              con Ionic/Angular y Node.js. Entregué además la app mobile interna <strong>FrogApp</strong> con React
+              Native, desde diseño hasta producción.</p>
+            <div class="tl-tags">
+              <span class="tl-tag">Angular</span><span class="tl-tag">Ionic</span><span class="tl-tag">Node.js</span>
+              <span class="tl-tag">React Native</span><span class="tl-tag">VTR</span><span class="tl-tag">AFP
+                Habitat</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-meta">
+            <div class="tl-period">Mar. 2019 — Hoy</div>
+            <div class="tl-company">Independiente</div>
+            <div class="tl-location">Santiago, Chile</div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-role">Desarrollador Independiente</div>
+            <p class="tl-desc">Apps web con Ionic, servidores de streaming de video y audio en tiempo real,
+              infraestructura VPS con Nginx y Docker, pipelines CI/CD con GitHub Actions. Ciclo completo de cada
+              proyecto.</p>
+            <div class="tl-tags">
+              <span class="tl-tag">Docker</span><span class="tl-tag">Nginx</span>
+              <span class="tl-tag">GitHub Actions</span><span class="tl-tag">VPS</span><span
+                class="tl-tag">Streaming</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-meta">
+            <div class="tl-period">Dic. 2017 — Feb. 2019</div>
+            <div class="tl-company">Enlace360</div>
+            <div class="tl-location">Santiago, Chile</div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-role">Desarrollador &amp; Soporte de Integración Digital</div>
+            <p class="tl-desc">Soluciones digitales para pantallas táctiles y señalética corporativa. Gestión remota de
+              redes de pantallas publicitarias y canales corporativos.</p>
+            <div class="tl-tags">
+              <span class="tl-tag">JavaScript</span><span class="tl-tag">HTML/CSS</span><span class="tl-tag">Señalética
+                digital</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="hr" style="max-width:1100px; margin:0 auto;">
+
+  <!-- ── skills ─────────────────────────────────────────── -->
+  <section class="section" id="stack">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="section-eyebrow">Tecnologías</div>
+        <h2 class="section-title">Stack tecnológico</h2>
+      </div>
+      <div class="skills-wrap reveal">
+
+        <div class="skill-col sc-front">
+          <div class="skill-col-head">
+            <div class="skill-col-dot" style="background:#DD0031"></div>
+            <div class="skill-col-name">Frontend</div>
+          </div>
+          <div class="skill-list">
+            <span class="skill-item">Angular</span><span class="skill-item">React</span>
+            <span class="skill-item">React Native</span><span class="skill-item">Ionic</span>
+            <span class="skill-item">TypeScript</span><span class="skill-item">JavaScript</span>
+            <span class="skill-item">HTML5 / CSS3</span><span class="skill-item">Sass</span>
+          </div>
+        </div>
+
+        <div class="skill-col sc-back">
+          <div class="skill-col-head">
+            <div class="skill-col-dot" style="background:#68A063"></div>
+            <div class="skill-col-name">Backend</div>
+          </div>
+          <div class="skill-list">
+            <span class="skill-item">Node.js</span><span class="skill-item">Express</span>
+            <span class="skill-item">Python</span><span class="skill-item">FastAPI</span>
+            <span class="skill-item">Go</span><span class="skill-item">Bun / Elysia</span>
+            <span class="skill-item">Java / Spring Boot</span><span class="skill-item">PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="skill-col sc-devop">
+          <div class="skill-col-head">
+            <div class="skill-col-dot" style="background:#2496ED"></div>
+            <div class="skill-col-name">DevOps / Infra</div>
+          </div>
+          <div class="skill-list">
+            <span class="skill-item">Docker</span><span class="skill-item">Docker Compose</span>
+            <span class="skill-item">Nginx</span><span class="skill-item">GitHub Actions</span>
+            <span class="skill-item">VPS</span><span class="skill-item">Git / GitHub</span>
+          </div>
+        </div>
+
+        <div class="skill-col sc-ai">
+          <div class="skill-col-head">
+            <div class="skill-col-dot" style="background:#7C3AED"></div>
+            <div class="skill-col-name">IA &amp; Método</div>
+          </div>
+          <div class="skill-list">
+            <span class="skill-item">GitHub Copilot</span><span class="skill-item">Claude Code</span>
+            <span class="skill-item">OpenAI Codex</span><span class="skill-item">Scrum (SFPC)</span>
+            <span class="skill-item">Inglés intermedio</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="hr" style="max-width:1100px; margin:0 auto;">
+
+  <!-- ── projects ───────────────────────────────────────── -->
+  <section class="section" id="proyectos">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="section-eyebrow">Trabajo propio</div>
+        <h2 class="section-title">Proyectos personales</h2>
+      </div>
+      <div class="projects-grid">
+
+        <a href="https://ligatordaniel.github.io/Pokedex/" target="_blank" rel="noopener"
+          class="proj-card p1 reveal">
+          <div class="proj-num">01 — En producción</div>
+          <div class="proj-name">Pokédex</div>
+          <p class="proj-desc">Pokédex interactiva conectada a la PokéAPI. Busca cualquier Pokémon por nombre o número
+            de ID y obtén sus estadísticas, tipos, habilidades y sprite oficial.</p>
+          <div class="proj-chips">
+            <span class="proj-chip">JavaScript</span><span class="proj-chip">PokéAPI</span>
+            <span class="proj-chip">HTML5</span><span class="proj-chip">CSS3</span>
+          </div>
+          <div class="proj-cta">Ver proyecto →</div>
+        </a>
+
+        <div class="proj-card p2 reveal reveal-d1">
+          <div class="proj-num">02 — Proyecto personal</div>
+          <div class="proj-name">Google Drive Clone</div>
+          <p class="proj-desc">Clon funcional de Google Drive con subida, descarga y organización de archivos en
+            carpetas, autenticación de usuarios y almacenamiento en la nube. Interfaz fiel al diseño original.</p>
+          <div class="proj-chips">
+            <span class="proj-chip">React</span><span class="proj-chip">Node.js</span>
+            <span class="proj-chip">PostgreSQL</span><span class="proj-chip">Docker</span>
+            <span class="proj-chip">AWS S3</span>
+          </div>
+          <div class="proj-cta" style="color:var(--muted); cursor:default;">GitHub próximamente</div>
+        </div>
+
+        <div class="proj-card p3 reveal reveal-d2">
+          <div class="proj-num">03 — Proyecto personal</div>
+          <div class="proj-name">YouTube to Media Converter</div>
+          <p class="proj-desc">Herramienta web para convertir videos de YouTube a MP3 o MP4. Procesamiento en backend,
+            descarga directa al navegador, interfaz limpia y sin publicidad.</p>
+          <div class="proj-chips">
+            <span class="proj-chip">Python</span><span class="proj-chip">FastAPI</span>
+            <span class="proj-chip">yt-dlp</span><span class="proj-chip">React</span>
+            <span class="proj-chip">Docker</span>
+          </div>
+          <div class="proj-cta" style="color:var(--muted); cursor:default;">GitHub próximamente</div>
+        </div>
+
+        <a href="https://dungunapp.web.app/" target="_blank" rel="noopener" class="proj-card p4 reveal reveal-d3">
+          <div class="proj-num">04 — En producción</div>
+          <div class="proj-name">Dungun — Servidor de streaming</div>
+          <p class="proj-desc">Plataforma de streaming de audio en tiempo real con salas privadas y traductor asignado
+            por código. Arquitectura MEAN, WebSockets, soporte de alta concurrencia. Demo: <em>demostracion</em>.</p>
+          <div class="proj-chips">
+            <span class="proj-chip">MongoDB</span><span class="proj-chip">Express</span>
+            <span class="proj-chip">Angular</span><span class="proj-chip">Node.js</span>
+            <span class="proj-chip">WebSockets</span><span class="proj-chip">PWA</span>
+          </div>
+          <div class="proj-cta">Ver proyecto →</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── contact ────────────────────────────────────────── -->
+  <div class="contact-band" id="contacto">
+    <div class="wrap">
+      <div class="contact-inner">
+
+        <div class="reveal">
+          <h2 class="contact-heading">¿Buscas un desarrollador Full Stack?</h2>
+          <p class="contact-sub">Disponible para posiciones full-time, part-time o proyectos freelance. Respondo rápido
+            por WhatsApp.</p>
+          <a href="assets/docs/cv_daniel_ulloa.pdf" download class="btn-dl">
+            <svg width="17" height="17">
+              <use href="#ico-download" />
+            </svg>
+            Descargar CV completo
+          </a>
+        </div>
+
+        <div class="contact-links reveal reveal-d1">
+          <a href="https://wa.me/56977216059" target="_blank" rel="noopener" class="contact-link">
+            <div class="cl-icon cl-wsp">
+              <svg width="20" height="20">
+                <use href="#ico-whatsapp" />
+              </svg>
+            </div>
+            <div>
+              <div class="cl-label">WhatsApp</div>
+              <div class="cl-value">+56 9 7721 6059</div>
+            </div>
+          </a>
+          <a href="mailto:danielulloa256@gmail.com" class="contact-link">
+            <div class="cl-icon cl-email">
+              <svg width="20" height="20">
+                <use href="#ico-email" />
+              </svg>
+            </div>
+            <div>
+              <div class="cl-label">Email</div>
+              <div class="cl-value">danielulloa256@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/daniel-ulloa-b23b37b5/" target="_blank" rel="noopener"
+            class="contact-link">
+            <div class="cl-icon cl-li">
+              <svg width="20" height="20">
+                <use href="#ico-linkedin" />
+              </svg>
+            </div>
+            <div>
+              <div class="cl-label">LinkedIn</div>
+              <div class="cl-value">/in/daniel-ulloa-b23b37b5</div>
+            </div>
+          </a>
+          <a href="https://github.com/ligatordaniel" target="_blank" rel="noopener" class="contact-link">
+            <div class="cl-icon cl-gh">
+              <svg width="20" height="20">
+                <use href="#ico-github" />
+              </svg>
+            </div>
+            <div>
+              <div class="cl-label">GitHub</div>
+              <div class="cl-value">ligatordaniel</div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
   </div>
-  <!-- ── /Contact ──────────────────────────────────────────────────────── -->
 
-
-  <!-- ── Footer ────────────────────────────────────────────────────────── -->
-  <footer class="theme-purple" id="main-footer">
-    <p class="pixel-font">Made by @DanielUlloa<br>Optimized for Chrome</p>
+  <footer class="site-footer">
+    Daniel Ulloa · Santiago, Chile · 2025 ·
+    <a href="index.html">Ver portfolio completo</a>
   </footer>
-  <!-- ── /Footer ───────────────────────────────────────────────────────── -->
+
+  <script>
+    const io = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }),
+      { threshold: 0.07 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    function updateSlider(dark) {
+      const slider = document.getElementById('modeSlider');
+      const optDay = document.getElementById('optDay');
+      const optNight = document.getElementById('optNight');
+      const sw = document.getElementById('modeSwitch');
+      if (dark) {
+        sw.style.setProperty('--slider-offset', optDay.offsetWidth + 'px');
+        slider.style.width = optNight.offsetWidth + 'px';
+      } else {
+        sw.style.setProperty('--slider-offset', '0px');
+        slider.style.width = optDay.offsetWidth + 'px';
+      }
+    }
+
+    function toggleDark() {
+      const dark = document.body.classList.toggle('dark');
+      updateSlider(dark);
+    }
+
+    window.addEventListener('load', () => updateSlider(false));
+    window.addEventListener('resize', () => updateSlider(document.body.classList.contains('dark')));
 
 
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <script src="assets/js/nocturno.js" type="text/javascript"></script>
-  <script src="assets/js/animacionesScroll.js" type="text/javascript"></script>
-  <script src="assets/js/idioma.js" type="text/javascript"></script>
-  <script src="assets/js/sprite.js" type="text/javascript"></script>
+
+  </script>
+
+  <img id="charLatia" src="assets/img/latias.png" alt="">
+  <img id="charLatio" src="assets/img/latios.png" alt="">
 
 </body>
 
