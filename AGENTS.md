@@ -1,1 +1,4 @@
-See [CLAUDE.md](CLAUDE.md) for commands and architecture.
+# AGENTS.md
+
+See [CLAUDE.md](CLAUDE.md) for the repository commands, architecture, and
+editing notes.
