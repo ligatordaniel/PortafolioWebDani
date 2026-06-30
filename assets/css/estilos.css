@@ -221,8 +221,24 @@ body.dark .tl-item::before {
   border-color: #0d0d0d;
 }
 
+body.dark .tl-item:hover {
+  border-left-color: #9191e8;
+}
+
+body.dark .tl-item:hover::before {
+  background: #9191e8;
+}
+
 body.dark .tl-item.current-job {
   border-left-color: #9191e8;
+}
+
+body.dark .timeline:has(.tl-item:hover) .tl-item.current-job:not(:hover) {
+  border-left-color: transparent;
+}
+
+body.dark .timeline:has(.tl-item:hover) .tl-item.current-job:not(:hover)::before {
+  background: #333;
 }
 
 body.dark .tl-item.current-job::before {
@@ -618,6 +634,7 @@ body.dark .mode-slider {
 .section {
   padding-top: clamp(52px, 8vw, 76px);
   padding-bottom: clamp(52px, 8vw, 76px);
+  scroll-margin-top: 60px;
 }
 
 .section-eyebrow {
@@ -693,6 +710,9 @@ body.dark .mode-slider {
   gap: 32px;
   padding: 32px 0 32px 28px;
   position: relative;
+  border-left: 2px solid transparent;
+  margin-left: -2px;
+  transition: border-left-color .25s ease;
 }
 
 .tl-item+.tl-item {
@@ -709,12 +729,27 @@ body.dark .mode-slider {
   border-radius: 50%;
   background: var(--border);
   border: 2px solid var(--surface);
+  transition: background-color .25s ease;
+}
+
+.tl-item:hover {
+  border-left-color: var(--blue);
+}
+
+.tl-item:hover::before {
+  background: var(--blue);
 }
 
 .tl-item.current-job {
-  border-left: 2px solid var(--blue);
-  margin-left: -2px;
-  padding-left: 28px;
+  border-left-color: var(--blue);
+}
+
+.timeline:has(.tl-item:hover) .tl-item.current-job:not(:hover) {
+  border-left-color: transparent;
+}
+
+.timeline:has(.tl-item:hover) .tl-item.current-job:not(:hover)::before {
+  background: var(--border);
 }
 
 .tl-item.current-job::before {

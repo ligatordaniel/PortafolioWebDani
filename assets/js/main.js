@@ -197,6 +197,28 @@ document.addEventListener('keydown', e => {
   if (num) num.textContent = display;
 })();
 
+/* ── smooth scroll ─────────────────────────────────── */
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const id = link.getAttribute('href');
+    if (id.length < 2) return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    const startY = window.pageYOffset;
+    const targetY = target.getBoundingClientRect().top + startY - parseFloat(getComputedStyle(target).scrollMarginTop || 0);
+    const duration = 1100;
+    const startTime = performance.now();
+    function step(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3.5);
+      window.scrollTo(0, startY + (targetY - startY) * eased);
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+});
+
 /* ── init ──────────────────────────────────────────── */
 window.addEventListener('load', () => {
   updateSlider(false);
