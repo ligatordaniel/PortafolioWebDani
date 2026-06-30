@@ -1205,6 +1205,178 @@
       }
     }
 
+    /* ── lang switch ─────────────────────────────────── */
+    .header-controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .lang-switch {
+      position: relative;
+      display: flex;
+      background: rgba(0, 0, 0, .18);
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 100px;
+      padding: 3px;
+      cursor: pointer;
+      user-select: none;
+      flex-shrink: 0;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+    }
+
+    .lang-opt {
+      position: relative;
+      z-index: 1;
+      padding: 6px 14px;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      border-radius: 100px;
+      white-space: nowrap;
+      transition: color .35s ease;
+      letter-spacing: 0.04em;
+    }
+
+    .lang-opt-es { color: #3b1f7a; }
+    .lang-opt-en { color: rgba(255, 255, 255, .6); }
+    body.lang-en .lang-opt-es { color: rgba(255, 255, 255, .6); }
+    body.lang-en .lang-opt-en { color: #3b1f7a; }
+
+    .lang-slider {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      bottom: 3px;
+      border-radius: 100px;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
+      transition: transform .38s cubic-bezier(.4, 0, .2, 1), width .38s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    body.lang-en .lang-slider {
+      transform: translateX(var(--lang-slider-offset, 0px));
+    }
+
+    body.dark .lang-switch {
+      background: rgba(255, 255, 255, .07);
+      border-color: rgba(255, 255, 255, .12);
+    }
+
+    /* ── cv modal ─────────────────────────────────────── */
+    .cv-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .55);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .22s;
+      padding: 20px;
+    }
+
+    .cv-modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .cv-modal {
+      position: relative;
+      background: #fff;
+      border-radius: 18px;
+      padding: 36px 32px 32px;
+      max-width: 400px;
+      width: 100%;
+      transform: translateY(14px) scale(.97);
+      transition: transform .22s cubic-bezier(.4, 0, .2, 1);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .22);
+    }
+
+    .cv-modal-overlay.open .cv-modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .cv-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1;
+      padding: 4px 7px;
+      border-radius: 6px;
+      transition: color .15s, background .15s;
+    }
+
+    .cv-modal-close:hover {
+      color: var(--ink);
+      background: var(--border);
+    }
+
+    .cv-modal-title {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .cv-modal-sub {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+
+    .cv-modal-btns {
+      display: flex;
+      gap: 10px;
+    }
+
+    .cv-btn-lang {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      padding: 18px 12px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      cursor: pointer;
+      font-family: var(--sans);
+      text-decoration: none;
+      color: var(--ink);
+      transition: border-color .15s, background .15s, transform .12s;
+    }
+
+    .cv-btn-lang:hover {
+      border-color: var(--blue);
+      background: var(--blue-bg);
+      transform: translateY(-2px);
+    }
+
+    .cv-flag { font-size: 2rem; line-height: 1; }
+    .cv-lang-name { font-size: 0.84rem; font-weight: 700; }
+    .cv-lang-sub { font-size: 0.69rem; color: var(--muted); }
+
+    body.dark .cv-modal { background: #1e1e1e; }
+    body.dark .cv-modal-title { color: #f0f0f0; }
+    body.dark .cv-modal-sub { color: #777; }
+    body.dark .cv-modal-close { color: #666; }
+    body.dark .cv-modal-close:hover { color: #ccc; background: #2a2a2a; }
+    body.dark .cv-btn-lang { background: #252525; border-color: #333; color: #e0e0e0; }
+    body.dark .cv-btn-lang:hover { border-color: #9191e8; background: #1e1e30; }
+    body.dark .cv-lang-sub { color: #555; }
+
+    .btn-dl { border: none; cursor: pointer; }
+
     /* ── flying characters ─────────────────────────── */
     #charLatia,
     #charLatio {
@@ -1294,19 +1466,27 @@
         <span class="header-name">Daniel Ulloa</span>
         <nav aria-label="Secciones">
           <ul class="header-nav">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#inicio" data-i18n="nav-home">Inicio</a></li>
+            <li><a href="#sobre-mi" data-i18n="nav-about">Sobre mí</a></li>
+            <li><a href="#experiencia" data-i18n="nav-exp">Experiencia</a></li>
             <li><a href="#stack">Stack</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#proyectos" data-i18n="nav-projects">Proyectos</a></li>
+            <li><a href="#contacto" data-i18n="nav-contact">Contacto</a></li>
           </ul>
         </nav>
-        <div class="mode-switch" id="modeSwitch" onclick="toggleDark()" role="button"
-          aria-label="Cambiar modo día/noche" tabindex="0">
-          <div class="mode-slider" id="modeSlider"></div>
-          <div class="mode-opt mode-opt-day" id="optDay">☀️ Modo Día</div>
-          <div class="mode-opt mode-opt-night" id="optNight">🌙 Modo Noche</div>
+        <div class="header-controls">
+          <div class="lang-switch" id="langSwitch" onclick="toggleLang()" role="button"
+            aria-label="Switch language / Cambiar idioma" tabindex="0">
+            <div class="lang-slider" id="langSlider"></div>
+            <div class="lang-opt lang-opt-es" id="optEs">ES</div>
+            <div class="lang-opt lang-opt-en" id="optEn">EN</div>
+          </div>
+          <div class="mode-switch" id="modeSwitch" onclick="toggleDark()" role="button"
+            aria-label="Cambiar modo día/noche" tabindex="0">
+            <div class="mode-slider" id="modeSlider"></div>
+            <div class="mode-opt mode-opt-day" id="optDay" data-i18n="mode-day">☀️ Día</div>
+            <div class="mode-opt mode-opt-night" id="optNight" data-i18n="mode-night">🌙 Noche</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1320,24 +1500,24 @@
         <div>
           <div class="available">
             <div class="pulse"></div>
-            Disponible para nuevas oportunidades
+            <span data-i18n="hero-available">Disponible para nuevas oportunidades</span>
           </div>
           <h1 class="hero-name">Daniel<br>Ulloa</h1>
-          <p class="hero-title">Desarrollador Full Stack</p>
+          <p class="hero-title" data-i18n="hero-title">Desarrollador Full Stack</p>
           <p class="hero-stack">Angular · React · Ionic · Node.js · Python · TypeScript</p>
           <div class="hero-ctas">
             <a href="https://wa.me/56977216059" target="_blank" rel="noopener" class="btn-primary">
               <svg width="18" height="18">
                 <use href="#ico-whatsapp" />
               </svg>
-              Escribir por WhatsApp
+              <span data-i18n="btn-whatsapp">Escribir por WhatsApp</span>
             </a>
-            <a href="assets/docs/cv_daniel_ulloa.pdf" download class="btn-ghost">
+            <button type="button" onclick="openCVModal()" class="btn-ghost">
               <svg width="17" height="17">
                 <use href="#ico-download" />
               </svg>
-              <span>Descargar CV</span>
-            </a>
+              <span data-i18n="btn-cv">Descargar CV</span>
+            </button>
           </div>
         </div>
 
@@ -1349,8 +1529,8 @@
               </svg>
             </div>
             <div>
-              <div class="stat-value">5+ años</div>
-              <div class="stat-sub">de experiencia profesional</div>
+              <div class="stat-value" data-i18n="stat-years-val">5+ años</div>
+              <div class="stat-sub" data-i18n="stat-years-sub">de experiencia profesional</div>
             </div>
           </div>
           <div class="stat-card c-amber reveal reveal-d1">
@@ -1387,21 +1567,21 @@
   <section class="section" id="sobre-mi">
     <div class="wrap">
       <div class="about-body reveal">
-        <div class="section-eyebrow">Sobre mí</div>
-        <h2 class="section-title">Full Stack especializado<br>en mobile y banca digital</h2>
-        <p class="about-p">Llevo más de cinco años construyendo aplicaciones web y mobile de alto tráfico para el sector
+        <div class="section-eyebrow" data-i18n="about-eyebrow">Sobre mí</div>
+        <h2 class="section-title" data-i18n="about-title">Full Stack especializado<br>en mobile y banca digital</h2>
+        <p class="about-p" data-i18n="about-p1">Llevo más de cinco años construyendo aplicaciones web y mobile de alto tráfico para el sector
           financiero y de telecomunicaciones en Chile. Mi trabajo en BMSoluciones incluye la app Tarjeta Presto LIDER de
           Banco BCI — un producto masivo con usuarios activos a escala nacional. En Haibu Solutions desarrollé módulos
           críticos para VTR Telecomunicaciones y AFP Habitat.</p>
-        <p class="about-p">Me desenvuelvo en todo el ciclo: desde el diseño de arquitectura hasta el despliegue en
+        <p class="about-p" data-i18n="about-p2">Me desenvuelvo en todo el ciclo: desde el diseño de arquitectura hasta el despliegue en
           producción. Administro mi propia infraestructura con Docker, Nginx y CI/CD automatizado. Me integro rápido a
           equipos Scrum y entrego con autonomía.</p>
         <div class="chips">
-          <span class="chip">Scrum certificado (SFPC)</span>
-          <span class="chip">Inglés intermedio</span>
+          <span class="chip" data-i18n="chip-scrum">Scrum certificado (SFPC)</span>
+          <span class="chip" data-i18n="chip-english">Inglés intermedio</span>
           <span class="chip">Santiago, Chile</span>
-          <span class="chip">Disponible de inmediato</span>
-          <span class="chip">Híbrido o remoto</span>
+          <span class="chip" data-i18n="chip-available">Disponible de inmediato</span>
+          <span class="chip" data-i18n="chip-hybrid">Híbrido o remoto</span>
         </div>
       </div>
     </div>
@@ -1413,21 +1593,21 @@
   <section class="section" id="experiencia">
     <div class="wrap">
       <div class="reveal">
-        <div class="section-eyebrow">Trayectoria</div>
-        <h2 class="section-title">Experiencia profesional</h2>
+        <div class="section-eyebrow" data-i18n="exp-eyebrow">Trayectoria</div>
+        <h2 class="section-title" data-i18n="exp-title">Experiencia profesional</h2>
       </div>
       <div class="timeline">
 
         <div class="tl-item current-job reveal">
           <div class="tl-meta">
-            <div class="tl-period">Mar. 2022 — Hoy</div>
+            <div class="tl-period" data-i18n="tl-period-bm">Mar. 2022 — Hoy</div>
             <div class="tl-company">BMSoluciones</div>
             <div class="tl-location">Santiago, Chile</div>
-            <span class="current-pill">Actual</span>
+            <span class="current-pill" data-i18n="current-pill">Actual</span>
           </div>
           <div class="tl-content">
-            <div class="tl-role">Desarrollador de Software Front-End</div>
-            <p class="tl-desc">Desarrollo y mantenimiento de la app mobile-first <strong>Tarjeta Presto LIDER</strong>,
+            <div class="tl-role" data-i18n="exp-bm-role">Desarrollador de Software Front-End</div>
+            <p class="tl-desc" data-i18n="exp-bm-desc">Desarrollo y mantenimiento de la app mobile-first <strong>Tarjeta Presto LIDER</strong>,
               producto bancario de Banco BCI con base masiva de usuarios. Integré las pasarelas de pago Khipu y
               Servipag, el flujo de recarga de tarjeta Bip! y notificaciones push. Implementé Strapi como CMS headless
               para gestión de contenido.</p>
@@ -1446,8 +1626,8 @@
             <div class="tl-location">Santiago, Chile</div>
           </div>
           <div class="tl-content">
-            <div class="tl-role">Ingeniero de Desarrollo de Software</div>
-            <p class="tl-desc">Full Stack para <strong>VTR Telecomunicaciones</strong> y <strong>AFP Habitat</strong>
+            <div class="tl-role" data-i18n="exp-haibu-role">Ingeniero de Desarrollo de Software</div>
+            <p class="tl-desc" data-i18n="exp-haibu-desc">Full Stack para <strong>VTR Telecomunicaciones</strong> y <strong>AFP Habitat</strong>
               con Ionic/Angular y Node.js. Entregué además la app mobile interna <strong>FrogApp</strong> con React
               Native, desde diseño hasta producción.</p>
             <div class="tl-tags">
@@ -1460,13 +1640,13 @@
 
         <div class="tl-item reveal">
           <div class="tl-meta">
-            <div class="tl-period">Mar. 2019 — Hoy</div>
-            <div class="tl-company">Independiente</div>
+            <div class="tl-period" data-i18n="tl-period-ind">Mar. 2019 — Hoy</div>
+            <div class="tl-company" data-i18n="tl-company-ind">Independiente</div>
             <div class="tl-location">Santiago, Chile</div>
           </div>
           <div class="tl-content">
-            <div class="tl-role">Desarrollador Independiente</div>
-            <p class="tl-desc">Apps web con Ionic, servidores de streaming de video y audio en tiempo real,
+            <div class="tl-role" data-i18n="exp-ind-role">Desarrollador Independiente</div>
+            <p class="tl-desc" data-i18n="exp-ind-desc">Apps web con Ionic, servidores de streaming de video y audio en tiempo real,
               infraestructura VPS con Nginx y Docker, pipelines CI/CD con GitHub Actions. Ciclo completo de cada
               proyecto.</p>
             <div class="tl-tags">
@@ -1479,13 +1659,13 @@
 
         <div class="tl-item reveal">
           <div class="tl-meta">
-            <div class="tl-period">Dic. 2017 — Feb. 2019</div>
+            <div class="tl-period" data-i18n="tl-period-enlace">Dic. 2017 — Feb. 2019</div>
             <div class="tl-company">Enlace360</div>
             <div class="tl-location">Santiago, Chile</div>
           </div>
           <div class="tl-content">
-            <div class="tl-role">Desarrollador &amp; Soporte de Integración Digital</div>
-            <p class="tl-desc">Soluciones digitales para pantallas táctiles y señalética corporativa. Gestión remota de
+            <div class="tl-role" data-i18n="exp-enlace-role">Desarrollador &amp; Soporte de Integración Digital</div>
+            <p class="tl-desc" data-i18n="exp-enlace-desc">Soluciones digitales para pantallas táctiles y señalética corporativa. Gestión remota de
               redes de pantallas publicitarias y canales corporativos.</p>
             <div class="tl-tags">
               <span class="tl-tag">JavaScript</span><span class="tl-tag">HTML/CSS</span><span class="tl-tag">Señalética
@@ -1504,8 +1684,8 @@
   <section class="section" id="stack">
     <div class="wrap">
       <div class="reveal">
-        <div class="section-eyebrow">Tecnologías</div>
-        <h2 class="section-title">Stack tecnológico</h2>
+        <div class="section-eyebrow" data-i18n="skills-eyebrow">Tecnologías</div>
+        <h2 class="section-title" data-i18n="skills-title">Stack tecnológico</h2>
       </div>
       <div class="skills-wrap reveal">
 
@@ -1550,7 +1730,7 @@
         <div class="skill-col sc-ai">
           <div class="skill-col-head">
             <div class="skill-col-dot" style="background:#7C3AED"></div>
-            <div class="skill-col-name">IA &amp; Método</div>
+            <div class="skill-col-name" data-i18n="skill-ai">IA &amp; Método</div>
           </div>
           <div class="skill-list">
             <span class="skill-item">GitHub Copilot</span><span class="skill-item">Claude Code</span>
@@ -1569,61 +1749,61 @@
   <section class="section" id="proyectos">
     <div class="wrap">
       <div class="reveal">
-        <div class="section-eyebrow">Trabajo propio</div>
-        <h2 class="section-title">Proyectos personales</h2>
+        <div class="section-eyebrow" data-i18n="proj-eyebrow">Trabajo propio</div>
+        <h2 class="section-title" data-i18n="proj-title">Proyectos personales</h2>
       </div>
       <div class="projects-grid">
 
         <a href="https://ligatordaniel.github.io/Pokedex/" target="_blank" rel="noopener"
           class="proj-card p1 reveal">
-          <div class="proj-num">01 — En producción</div>
+          <div class="proj-num" data-i18n="proj1-num">01 — En producción</div>
           <div class="proj-name">Pokédex</div>
-          <p class="proj-desc">Pokédex interactiva conectada a la PokéAPI. Busca cualquier Pokémon por nombre o número
+          <p class="proj-desc" data-i18n="proj1-desc">Pokédex interactiva conectada a la PokéAPI. Busca cualquier Pokémon por nombre o número
             de ID y obtén sus estadísticas, tipos, habilidades y sprite oficial.</p>
           <div class="proj-chips">
             <span class="proj-chip">JavaScript</span><span class="proj-chip">PokéAPI</span>
             <span class="proj-chip">HTML5</span><span class="proj-chip">CSS3</span>
           </div>
-          <div class="proj-cta">Ver proyecto →</div>
+          <div class="proj-cta" data-i18n="proj-cta-link">Ver proyecto →</div>
         </a>
 
         <div class="proj-card p2 reveal reveal-d1">
-          <div class="proj-num">02 — Proyecto personal</div>
+          <div class="proj-num" data-i18n="proj2-num">02 — Proyecto personal</div>
           <div class="proj-name">Google Drive Clone</div>
-          <p class="proj-desc">Clon funcional de Google Drive con subida, descarga y organización de archivos en
+          <p class="proj-desc" data-i18n="proj2-desc">Clon funcional de Google Drive con subida, descarga y organización de archivos en
             carpetas, autenticación de usuarios y almacenamiento en la nube. Interfaz fiel al diseño original.</p>
           <div class="proj-chips">
             <span class="proj-chip">React</span><span class="proj-chip">Node.js</span>
             <span class="proj-chip">PostgreSQL</span><span class="proj-chip">Docker</span>
             <span class="proj-chip">AWS S3</span>
           </div>
-          <div class="proj-cta" style="color:var(--muted); cursor:default;">GitHub próximamente</div>
+          <div class="proj-cta" style="color:var(--muted); cursor:default;" data-i18n="proj-cta-soon">GitHub próximamente</div>
         </div>
 
         <div class="proj-card p3 reveal reveal-d2">
-          <div class="proj-num">03 — Proyecto personal</div>
+          <div class="proj-num" data-i18n="proj3-num">03 — Proyecto personal</div>
           <div class="proj-name">YouTube to Media Converter</div>
-          <p class="proj-desc">Herramienta web para convertir videos de YouTube a MP3 o MP4. Procesamiento en backend,
+          <p class="proj-desc" data-i18n="proj3-desc">Herramienta web para convertir videos de YouTube a MP3 o MP4. Procesamiento en backend,
             descarga directa al navegador, interfaz limpia y sin publicidad.</p>
           <div class="proj-chips">
             <span class="proj-chip">Python</span><span class="proj-chip">FastAPI</span>
             <span class="proj-chip">yt-dlp</span><span class="proj-chip">React</span>
             <span class="proj-chip">Docker</span>
           </div>
-          <div class="proj-cta" style="color:var(--muted); cursor:default;">GitHub próximamente</div>
+          <div class="proj-cta" style="color:var(--muted); cursor:default;" data-i18n="proj-cta-soon">GitHub próximamente</div>
         </div>
 
         <a href="https://dungunapp.web.app/" target="_blank" rel="noopener" class="proj-card p4 reveal reveal-d3">
-          <div class="proj-num">04 — En producción</div>
-          <div class="proj-name">Dungun — Servidor de streaming</div>
-          <p class="proj-desc">Plataforma de streaming de audio en tiempo real con salas privadas y traductor asignado
+          <div class="proj-num" data-i18n="proj4-num">04 — En producción</div>
+          <div class="proj-name" data-i18n="proj4-name">Dungun — Servidor de streaming</div>
+          <p class="proj-desc" data-i18n="proj4-desc">Plataforma de streaming de audio en tiempo real con salas privadas y traductor asignado
             por código. Arquitectura MEAN, WebSockets, soporte de alta concurrencia. Demo: <em>demostracion</em>.</p>
           <div class="proj-chips">
             <span class="proj-chip">MongoDB</span><span class="proj-chip">Express</span>
             <span class="proj-chip">Angular</span><span class="proj-chip">Node.js</span>
             <span class="proj-chip">WebSockets</span><span class="proj-chip">PWA</span>
           </div>
-          <div class="proj-cta">Ver proyecto →</div>
+          <div class="proj-cta" data-i18n="proj-cta-link">Ver proyecto →</div>
         </a>
 
       </div>
@@ -1636,15 +1816,15 @@
       <div class="contact-inner">
 
         <div class="reveal">
-          <h2 class="contact-heading">¿Buscas un desarrollador Full Stack?</h2>
-          <p class="contact-sub">Disponible para posiciones full-time, part-time o proyectos freelance. Respondo rápido
+          <h2 class="contact-heading" data-i18n="contact-heading">¿Buscas un desarrollador Full Stack?</h2>
+          <p class="contact-sub" data-i18n="contact-sub">Disponible para posiciones full-time, part-time o proyectos freelance. Respondo rápido
             por WhatsApp.</p>
-          <a href="assets/docs/cv_daniel_ulloa.pdf" download class="btn-dl">
+          <button type="button" onclick="openCVModal()" class="btn-dl">
             <svg width="17" height="17">
               <use href="#ico-download" />
             </svg>
-            Descargar CV completo
-          </a>
+            <span data-i18n="btn-dl">Descargar CV completo</span>
+          </button>
         </div>
 
         <div class="contact-links reveal reveal-d1">
@@ -1704,6 +1884,27 @@
     <a href="index.html">Ver portfolio completo</a>
   </footer>
 
+  <!-- ── CV language modal ─────────────────────────────── -->
+  <div class="cv-modal-overlay" id="cvModalOverlay" onclick="closeCVModal(event)">
+    <div class="cv-modal">
+      <button class="cv-modal-close" onclick="closeCVModal()" aria-label="Cerrar">✕</button>
+      <div class="cv-modal-title" data-i18n="cv-modal-title">Descargar CV</div>
+      <div class="cv-modal-sub" data-i18n="cv-modal-sub">Elige el idioma de tu preferencia</div>
+      <div class="cv-modal-btns">
+        <button type="button" class="cv-btn-lang" onclick="downloadCV('es')">
+          <span class="cv-flag">🇨🇱</span>
+          <span class="cv-lang-name">Español</span>
+          <span class="cv-lang-sub">Spanish version</span>
+        </button>
+        <button type="button" class="cv-btn-lang" onclick="downloadCV('en')">
+          <span class="cv-flag">🇺🇸</span>
+          <span class="cv-lang-name">English</span>
+          <span class="cv-lang-sub">English version</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script>
     const io = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }),
@@ -1711,9 +1912,10 @@
     );
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+    /* ── day/night ─────────────────────────────────────── */
     function updateSlider(dark) {
       const slider = document.getElementById('modeSlider');
-      const optDay = document.getElementById('optDay');
+      const optDay  = document.getElementById('optDay');
       const optNight = document.getElementById('optNight');
       const sw = document.getElementById('modeSwitch');
       if (dark) {
@@ -1724,17 +1926,176 @@
         slider.style.width = optDay.offsetWidth + 'px';
       }
     }
-
     function toggleDark() {
       const dark = document.body.classList.toggle('dark');
       updateSlider(dark);
     }
 
-    window.addEventListener('load', () => updateSlider(false));
-    window.addEventListener('resize', () => updateSlider(document.body.classList.contains('dark')));
+    /* ── language ──────────────────────────────────────── */
+    const T = {
+      es: {
+        'nav-home': 'Inicio', 'nav-about': 'Sobre mí', 'nav-exp': 'Experiencia',
+        'nav-projects': 'Proyectos', 'nav-contact': 'Contacto',
+        'mode-day': '☀️ Día', 'mode-night': '🌙 Noche',
+        'hero-available': 'Disponible para nuevas oportunidades',
+        'hero-title': 'Desarrollador Full Stack',
+        'btn-whatsapp': 'Escribir por WhatsApp', 'btn-cv': 'Descargar CV',
+        'stat-years-val': '5+ años', 'stat-years-sub': 'de experiencia profesional',
+        'about-eyebrow': 'Sobre mí',
+        'about-title': 'Full Stack especializado<br>en mobile y banca digital',
+        'about-p1': 'Llevo más de cinco años construyendo aplicaciones web y mobile de alto tráfico para el sector financiero y de telecomunicaciones en Chile. Mi trabajo en BMSoluciones incluye la app Tarjeta Presto LIDER de Banco BCI — un producto masivo con usuarios activos a escala nacional. En Haibu Solutions desarrollé módulos críticos para VTR Telecomunicaciones y AFP Habitat.',
+        'about-p2': 'Me desenvuelvo en todo el ciclo: desde el diseño de arquitectura hasta el despliegue en producción. Administro mi propia infraestructura con Docker, Nginx y CI/CD automatizado. Me integro rápido a equipos Scrum y entrego con autonomía.',
+        'chip-scrum': 'Scrum certificado (SFPC)', 'chip-english': 'Inglés intermedio',
+        'chip-available': 'Disponible de inmediato', 'chip-hybrid': 'Híbrido o remoto',
+        'exp-eyebrow': 'Trayectoria', 'exp-title': 'Experiencia profesional',
+        'current-pill': 'Actual',
+        'tl-period-bm': 'Mar. 2022 — Hoy', 'tl-period-ind': 'Mar. 2019 — Hoy',
+        'tl-period-enlace': 'Dic. 2017 — Feb. 2019',
+        'tl-company-ind': 'Independiente',
+        'exp-bm-role': 'Desarrollador de Software Front-End',
+        'exp-bm-desc': 'Desarrollo y mantenimiento de la app mobile-first <strong>Tarjeta Presto LIDER</strong>, producto bancario de Banco BCI con base masiva de usuarios. Integré las pasarelas de pago Khipu y Servipag, el flujo de recarga de tarjeta Bip! y notificaciones push. Implementé Strapi como CMS headless para gestión de contenido.',
+        'exp-haibu-role': 'Ingeniero de Desarrollo de Software',
+        'exp-haibu-desc': 'Full Stack para <strong>VTR Telecomunicaciones</strong> y <strong>AFP Habitat</strong> con Ionic/Angular y Node.js. Entregué además la app mobile interna <strong>FrogApp</strong> con React Native, desde diseño hasta producción.',
+        'exp-ind-role': 'Desarrollador Independiente',
+        'exp-ind-desc': 'Apps web con Ionic, servidores de streaming de video y audio en tiempo real, infraestructura VPS con Nginx y Docker, pipelines CI/CD con GitHub Actions. Ciclo completo de cada proyecto.',
+        'exp-enlace-role': 'Desarrollador &amp; Soporte de Integración Digital',
+        'exp-enlace-desc': 'Soluciones digitales para pantallas táctiles y señalética corporativa. Gestión remota de redes de pantallas publicitarias y canales corporativos.',
+        'skills-eyebrow': 'Tecnologías', 'skills-title': 'Stack tecnológico',
+        'skill-ai': 'IA &amp; Método',
+        'proj-eyebrow': 'Trabajo propio', 'proj-title': 'Proyectos personales',
+        'proj1-num': '01 — En producción', 'proj2-num': '02 — Proyecto personal',
+        'proj3-num': '03 — Proyecto personal', 'proj4-num': '04 — En producción',
+        'proj1-desc': 'Pokédex interactiva conectada a la PokéAPI. Busca cualquier Pokémon por nombre o número de ID y obtén sus estadísticas, tipos, habilidades y sprite oficial.',
+        'proj2-desc': 'Clon funcional de Google Drive con subida, descarga y organización de archivos en carpetas, autenticación de usuarios y almacenamiento en la nube. Interfaz fiel al diseño original.',
+        'proj3-desc': 'Herramienta web para convertir videos de YouTube a MP3 o MP4. Procesamiento en backend, descarga directa al navegador, interfaz limpia y sin publicidad.',
+        'proj4-name': 'Dungun — Servidor de streaming',
+        'proj4-desc': 'Plataforma de streaming de audio en tiempo real con salas privadas y traductor asignado por código. Arquitectura MEAN, WebSockets, soporte de alta concurrencia. Demo: <em>demostracion</em>.',
+        'proj-cta-link': 'Ver proyecto →', 'proj-cta-soon': 'GitHub próximamente',
+        'contact-heading': '¿Buscas un desarrollador Full Stack?',
+        'contact-sub': 'Disponible para posiciones full-time, part-time o proyectos freelance. Respondo rápido por WhatsApp.',
+        'btn-dl': 'Descargar CV completo',
+        'cv-modal-title': 'Descargar CV', 'cv-modal-sub': 'Elige el idioma de tu preferencia',
+      },
+      en: {
+        'nav-home': 'Home', 'nav-about': 'About me', 'nav-exp': 'Experience',
+        'nav-projects': 'Projects', 'nav-contact': 'Contact',
+        'mode-day': '☀️ Day', 'mode-night': '🌙 Night',
+        'hero-available': 'Available for new opportunities',
+        'hero-title': 'Full Stack Developer',
+        'btn-whatsapp': 'Message on WhatsApp', 'btn-cv': 'Download Resume',
+        'stat-years-val': '5+ years', 'stat-years-sub': 'of professional experience',
+        'about-eyebrow': 'About me',
+        'about-title': 'Full Stack specialist<br>in mobile and digital banking',
+        'about-p1': "I've spent over five years building high-traffic web and mobile applications for the financial and telecommunications sector in Chile. My work at BMSoluciones includes the Tarjeta Presto LIDER app for Banco BCI — a large-scale product with an active user base nationwide. At Haibu Solutions I developed critical modules for VTR Telecomunicaciones and AFP Habitat.",
+        'about-p2': "I handle the full cycle: from architecture design to production deployment. I manage my own infrastructure with Docker, Nginx and automated CI/CD. I integrate quickly into Scrum teams and deliver autonomously.",
+        'chip-scrum': 'Scrum certified (SFPC)', 'chip-english': 'Intermediate English',
+        'chip-available': 'Immediately available', 'chip-hybrid': 'Hybrid or remote',
+        'exp-eyebrow': 'Career', 'exp-title': 'Professional experience',
+        'current-pill': 'Current',
+        'tl-period-bm': 'Mar. 2022 — Present', 'tl-period-ind': 'Mar. 2019 — Present',
+        'tl-period-enlace': 'Dec. 2017 — Feb. 2019',
+        'tl-company-ind': 'Independent',
+        'exp-bm-role': 'Front-End Software Developer',
+        'exp-bm-desc': 'Development and maintenance of the mobile-first <strong>Tarjeta Presto LIDER</strong> app, a banking product from Banco BCI with a massive user base. I integrated Khipu and Servipag payment gateways, the Bip! card top-up flow and push notifications. Implemented Strapi as a headless CMS for content management.',
+        'exp-haibu-role': 'Software Development Engineer',
+        'exp-haibu-desc': 'Full Stack for <strong>VTR Telecomunicaciones</strong> and <strong>AFP Habitat</strong> with Ionic/Angular and Node.js. Also delivered the internal mobile app <strong>FrogApp</strong> with React Native, from design to production.',
+        'exp-ind-role': 'Independent Developer',
+        'exp-ind-desc': 'Web apps with Ionic, real-time video and audio streaming servers, VPS infrastructure with Nginx and Docker, CI/CD pipelines with GitHub Actions. Full cycle for every project.',
+        'exp-enlace-role': 'Developer &amp; Digital Integration Support',
+        'exp-enlace-desc': 'Digital solutions for touch screens and corporate signage. Remote management of advertising display networks and corporate channels.',
+        'skills-eyebrow': 'Technologies', 'skills-title': 'Tech stack',
+        'skill-ai': 'AI &amp; Methods',
+        'proj-eyebrow': 'Personal work', 'proj-title': 'Personal projects',
+        'proj1-num': '01 — In production', 'proj2-num': '02 — Personal project',
+        'proj3-num': '03 — Personal project', 'proj4-num': '04 — In production',
+        'proj1-desc': 'Interactive Pokédex connected to the PokéAPI. Search any Pokémon by name or ID number and get its stats, types, abilities and official sprite.',
+        'proj2-desc': 'Functional Google Drive clone with file upload, download and folder organization, user authentication and cloud storage. Interface faithful to the original design.',
+        'proj3-desc': 'Web tool to convert YouTube videos to MP3 or MP4. Backend processing, direct browser download, clean ad-free interface.',
+        'proj4-name': 'Dungun — Streaming server',
+        'proj4-desc': 'Real-time audio streaming platform with private rooms and code-assigned translator. MEAN architecture, WebSockets, high-concurrency support. Demo: <em>demostracion</em>.',
+        'proj-cta-link': 'View project →', 'proj-cta-soon': 'GitHub coming soon',
+        'contact-heading': 'Looking for a Full Stack developer?',
+        'contact-sub': 'Available for full-time, part-time or freelance projects. Quick reply on WhatsApp.',
+        'btn-dl': 'Download full Resume',
+        'cv-modal-title': 'Download Resume', 'cv-modal-sub': 'Choose your preferred language',
+      }
+    };
 
+    let currentLang = 'es';
 
+    function applyLang(lang) {
+      const t = T[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+      document.documentElement.lang = lang;
+      document.title = lang === 'en'
+        ? 'Daniel Ulloa — Full Stack Developer'
+        : 'Daniel Ulloa — Desarrollador Full Stack';
+      requestAnimationFrame(() => {
+        updateSlider(document.body.classList.contains('dark'));
+        updateLangSlider(lang === 'en');
+      });
+    }
 
+    function updateLangSlider(en) {
+      const slider = document.getElementById('langSlider');
+      const optEs = document.getElementById('optEs');
+      const optEn = document.getElementById('optEn');
+      const sw = document.getElementById('langSwitch');
+      if (en) {
+        sw.style.setProperty('--lang-slider-offset', optEs.offsetWidth + 'px');
+        slider.style.width = optEn.offsetWidth + 'px';
+      } else {
+        sw.style.setProperty('--lang-slider-offset', '0px');
+        slider.style.width = optEs.offsetWidth + 'px';
+      }
+    }
+
+    function toggleLang() {
+      currentLang = currentLang === 'es' ? 'en' : 'es';
+      document.body.classList.toggle('lang-en', currentLang === 'en');
+      applyLang(currentLang);
+    }
+
+    /* ── cv modal ──────────────────────────────────────── */
+    function openCVModal() {
+      document.getElementById('cvModalOverlay').classList.add('open');
+    }
+    function closeCVModal(e) {
+      if (!e || e.target === document.getElementById('cvModalOverlay')) {
+        document.getElementById('cvModalOverlay').classList.remove('open');
+      }
+    }
+    function downloadCV(lang) {
+      const files = {
+        es: { url: 'assets/docs/cv_daniel_ulloa.pdf',    name: 'CV_Daniel_Ulloa_ES.pdf' },
+        en: { url: 'assets/docs/cv_daniel_ulloa_en.pdf', name: 'CV_Daniel_Ulloa_EN.pdf' }
+      };
+      const { url, name } = files[lang];
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = name;
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      document.getElementById('cvModalOverlay').classList.remove('open');
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') document.getElementById('cvModalOverlay').classList.remove('open');
+    });
+
+    /* ── init ──────────────────────────────────────────── */
+    window.addEventListener('load', () => {
+      updateSlider(false);
+      updateLangSlider(false);
+    });
+    window.addEventListener('resize', () => {
+      updateSlider(document.body.classList.contains('dark'));
+      updateLangSlider(currentLang === 'en');
+    });
   </script>
 
   <img id="charLatia" src="assets/img/latias.png" alt="">
