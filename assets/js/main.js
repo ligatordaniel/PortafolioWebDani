@@ -179,6 +179,19 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') document.getElementById('cvModalOverlay').classList.remove('open');
 });
 
+/* ── whatsapp ──────────────────────────────────────── */
+(function () {
+  const p = ['569', '772', '160', '59'];
+  const n = p.join('');
+  const url = 'https://wa' + '.me/' + n;
+  const display = '+56 9 7721 6059';
+  document.querySelectorAll('#wa-hero, #wa-contact').forEach(el => {
+    el.href = url;
+  });
+  const num = document.getElementById('wa-number');
+  if (num) num.textContent = display;
+})();
+
 /* ── init ──────────────────────────────────────────── */
 window.addEventListener('load', () => {
   updateSlider(false);
