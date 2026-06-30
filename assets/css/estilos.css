@@ -993,12 +993,33 @@ body.dark .mode-slider {
   font-weight: 700;
   padding: 13px 24px;
   border-radius: 8px;
-  transition: background .18s, transform .15s;
+  position: relative;
+  overflow: hidden;
+  transition: color .3s ease .35s, transform .15s;
+}
+
+.btn-dl::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #e11d48;
+  width: 0;
+  transition: width 1s ease;
+  z-index: 0;
+}
+
+.btn-dl:hover::before {
+  width: 100%;
 }
 
 .btn-dl:hover {
-  background: #f0f0f0;
+  color: #fff;
   transform: translateY(-1px);
+}
+
+.btn-dl > * {
+  position: relative;
+  z-index: 1;
 }
 
 .btn-dl svg {
@@ -1727,4 +1748,22 @@ body.dark .cv-lang-sub { color: #555; }
   .hero-name {
     font-size: 2.45rem;
   }
+}
+
+/* ── lang transition overlay ───────────────────────── */
+.lang-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background: var(--surface, #F8F7F4);
+  opacity: 0;
+  transition: opacity .18s ease;
+}
+body.dark .lang-flash {
+  background: #0d0d0d;
+}
+.lang-flash.show {
+  opacity: .65;
+}
 }

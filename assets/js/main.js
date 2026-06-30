@@ -58,13 +58,13 @@ const T = {
     'proj1-num': '01 — En producción', 'proj2-num': '02 — Proyecto personal',
     'proj3-num': '03 — Proyecto personal', 'proj4-num': '04 — En producción',
     'proj1-desc': 'Pokédex interactiva conectada a la PokéAPI. Busca cualquier Pokémon por nombre o número de ID y obtén sus estadísticas, tipos, habilidades y sprite oficial.',
-    'proj2-desc': 'Clon funcional de Google Drive con subida, descarga y organización de archivos en carpetas, autenticación de usuarios y almacenamiento en la nube. Interfaz fiel al diseño original.',
-    'proj3-desc': 'Herramienta web para convertir videos de YouTube a MP3 o MP4. Procesamiento en backend, descarga directa al navegador, interfaz limpia y sin publicidad.',
+    'proj2-desc': 'Clon funcional de Google Drive con subida y descarga de archivos hasta 15 GB, organización en carpetas, autenticación de usuarios y almacenamiento en volumen Docker local. Interfaz fiel al diseño original.',
+    'proj3-desc': 'Herramienta web para convertir videos de YouTube a MP3 o MP4. Backend en Spring Boot con cola Kafka para procesar conversiones de forma asíncrona, yt-dlp y ffmpeg en el worker.',
     'proj4-name': 'Dungun — Servidor de streaming',
-    'proj4-desc': 'Plataforma de streaming de audio en tiempo real con salas privadas y traductor asignado por código. Arquitectura MEAN, WebSockets, soporte de alta concurrencia. Demo: <em>demostracion</em>.',
+    'proj4-desc': 'Plataforma de streaming de audio en tiempo real con salas privadas y traductor asignado por código. Demo: <em>demostracion</em>.',
     'proj-cta-link': 'Ver proyecto →', 'proj-cta-soon': 'GitHub próximamente',
     'contact-heading': '¿Buscas un desarrollador Full Stack?',
-    'contact-sub': 'Disponible para posiciones full-time, part-time o proyectos freelance. Respondo rápido por WhatsApp.',
+    'contact-sub': 'Si buscas un desarrollador con experiencia y compromiso, hablemos.',
     'btn-dl': 'Descargar CV completo',
     'cv-modal-title': 'Descargar CV', 'cv-modal-sub': 'Elige el idioma de tu preferencia',
   },
@@ -101,13 +101,13 @@ const T = {
     'proj1-num': '01 — In production', 'proj2-num': '02 — Personal project',
     'proj3-num': '03 — Personal project', 'proj4-num': '04 — In production',
     'proj1-desc': 'Interactive Pokédex connected to the PokéAPI. Search any Pokémon by name or ID number and get its stats, types, abilities and official sprite.',
-    'proj2-desc': 'Functional Google Drive clone with file upload, download and folder organization, user authentication and cloud storage. Interface faithful to the original design.',
-    'proj3-desc': 'Web tool to convert YouTube videos to MP3 or MP4. Backend processing, direct browser download, clean ad-free interface.',
+    'proj2-desc': 'Functional Google Drive clone with file upload and download up to 15 GB, folder organization, user authentication and local Docker volume storage. Interface faithful to the original design.',
+    'proj3-desc': 'Web tool to convert YouTube videos to MP3 or MP4. Spring Boot backend with a Kafka queue for async conversion processing, yt-dlp and ffmpeg on the worker.',
     'proj4-name': 'Dungun — Streaming server',
-    'proj4-desc': 'Real-time audio streaming platform with private rooms and code-assigned translator. MEAN architecture, WebSockets, high-concurrency support. Demo: <em>demostracion</em>.',
+    'proj4-desc': 'Real-time audio streaming platform with private rooms and code-assigned translator. Demo: <em>demostracion</em>.',
     'proj-cta-link': 'View project →', 'proj-cta-soon': 'GitHub coming soon',
     'contact-heading': 'Looking for a Full Stack developer?',
-    'contact-sub': 'Available for full-time, part-time or freelance projects. Quick reply on WhatsApp.',
+    'contact-sub': 'If you\'re looking for a committed developer with real-world experience, I\'m your person. Let\'s talk.',
     'btn-dl': 'Download full Resume',
     'cv-modal-title': 'Download Resume', 'cv-modal-sub': 'Choose your preferred language',
   }
@@ -146,9 +146,14 @@ function updateLangSlider(en) {
 }
 
 function toggleLang() {
-  currentLang = currentLang === 'es' ? 'en' : 'es';
-  document.body.classList.toggle('lang-en', currentLang === 'en');
-  applyLang(currentLang);
+  const flash = document.getElementById('langFlash');
+  flash.classList.add('show');
+  setTimeout(() => {
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    document.body.classList.toggle('lang-en', currentLang === 'en');
+    applyLang(currentLang);
+    flash.classList.remove('show');
+  }, 180);
 }
 
 /* ── cv modal ──────────────────────────────────────── */

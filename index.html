@@ -364,12 +364,11 @@
         <div class="proj-card p2 reveal reveal-d1">
           <div class="proj-num" data-i18n="proj2-num">02 — Proyecto personal</div>
           <div class="proj-name">Google Drive Clone</div>
-          <p class="proj-desc" data-i18n="proj2-desc">Clon funcional de Google Drive con subida, descarga y organización de archivos en
-            carpetas, autenticación de usuarios y almacenamiento en la nube. Interfaz fiel al diseño original.</p>
+          <p class="proj-desc" data-i18n="proj2-desc">Clon funcional de Google Drive con subida y descarga de archivos hasta 15 GB, organización en carpetas, autenticación de usuarios y almacenamiento en volumen Docker local. Interfaz fiel al diseño original.</p>
           <div class="proj-chips">
-            <span class="proj-chip">React</span><span class="proj-chip">Node.js</span>
+            <span class="proj-chip">React</span><span class="proj-chip">Bun</span>
+            <span class="proj-chip">Elysia</span><span class="proj-chip">TypeScript</span>
             <span class="proj-chip">PostgreSQL</span><span class="proj-chip">Docker</span>
-            <span class="proj-chip">AWS S3</span>
           </div>
           <div class="proj-cta" style="color:var(--muted); cursor:default;" data-i18n="proj-cta-soon">GitHub próximamente</div>
         </div>
@@ -377,12 +376,11 @@
         <div class="proj-card p3 reveal reveal-d2">
           <div class="proj-num" data-i18n="proj3-num">03 — Proyecto personal</div>
           <div class="proj-name">YouTube to Media Converter</div>
-          <p class="proj-desc" data-i18n="proj3-desc">Herramienta web para convertir videos de YouTube a MP3 o MP4. Procesamiento en backend,
-            descarga directa al navegador, interfaz limpia y sin publicidad.</p>
+          <p class="proj-desc" data-i18n="proj3-desc">Herramienta web para convertir videos de YouTube a MP3 o MP4. Backend en Spring Boot con cola Kafka para procesar conversiones de forma asíncrona, yt-dlp y ffmpeg en el worker.</p>
           <div class="proj-chips">
-            <span class="proj-chip">Python</span><span class="proj-chip">FastAPI</span>
-            <span class="proj-chip">yt-dlp</span><span class="proj-chip">React</span>
-            <span class="proj-chip">Docker</span>
+            <span class="proj-chip">Spring Boot</span><span class="proj-chip">Java</span>
+            <span class="proj-chip">Kafka</span><span class="proj-chip">yt-dlp</span>
+            <span class="proj-chip">React</span><span class="proj-chip">Docker</span>
           </div>
           <div class="proj-cta" style="color:var(--muted); cursor:default;" data-i18n="proj-cta-soon">GitHub próximamente</div>
         </div>
@@ -390,12 +388,9 @@
         <a href="https://dungunapp.web.app/" target="_blank" rel="noopener" class="proj-card p4 reveal reveal-d3">
           <div class="proj-num" data-i18n="proj4-num">04 — En producción</div>
           <div class="proj-name" data-i18n="proj4-name">Dungun — Servidor de streaming</div>
-          <p class="proj-desc" data-i18n="proj4-desc">Plataforma de streaming de audio en tiempo real con salas privadas y traductor asignado
-            por código. Arquitectura MEAN, WebSockets, soporte de alta concurrencia. Demo: <em>demostracion</em>.</p>
+          <p class="proj-desc" data-i18n="proj4-desc">Plataforma de streaming de audio en tiempo real con salas privadas y traductor asignado por código. Demo: <em>demostracion</em>.</p>
           <div class="proj-chips">
-            <span class="proj-chip">MongoDB</span><span class="proj-chip">Express</span>
-            <span class="proj-chip">Angular</span><span class="proj-chip">Node.js</span>
-            <span class="proj-chip">WebSockets</span><span class="proj-chip">PWA</span>
+            <span class="proj-chip">Angular</span><span class="proj-chip">Ionic</span><span class="proj-chip">Streaming</span><span class="proj-chip">PWA</span>
           </div>
           <div class="proj-cta" data-i18n="proj-cta-link">Ver proyecto →</div>
         </a>
@@ -411,8 +406,7 @@
 
         <div class="reveal">
           <h2 class="contact-heading" data-i18n="contact-heading">¿Buscas un desarrollador Full Stack?</h2>
-          <p class="contact-sub" data-i18n="contact-sub">Disponible para posiciones full-time, part-time o proyectos freelance. Respondo rápido
-            por WhatsApp.</p>
+          <p class="contact-sub" data-i18n="contact-sub">Si buscas un desarrollador con experiencia y compromiso, hablemos.</p>
           <button type="button" onclick="openCVModal()" class="btn-dl">
             <svg width="17" height="17">
               <use href="#ico-download" />
@@ -503,6 +497,7 @@
 
   <img id="charLatia" src="assets/img/latias.png" alt="">
   <img id="charLatio" src="assets/img/latios.png" alt="">
+  <div class="lang-flash" id="langFlash"></div>
 
 </body>
 
