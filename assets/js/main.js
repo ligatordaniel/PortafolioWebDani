@@ -197,6 +197,12 @@ document.addEventListener('keydown', e => {
   if (num) num.textContent = display;
 })();
 
+/* ── footer year ────────────────────────────────────── */
+(() => {
+  const year = document.getElementById('footerYear');
+  if (year) year.textContent = new Date().getFullYear();
+})();
+
 /* ── smooth scroll ─────────────────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
