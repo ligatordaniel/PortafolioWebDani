@@ -828,12 +828,30 @@ body.dark .mode-slider {
 }
 
 .skill-col-head {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 14px;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--border);
+}
+
+.skill-col-head::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 1px;
+  background: var(--col-dot, var(--blue));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.skill-col:hover .skill-col-head::after {
+  transform: scaleX(1);
 }
 
 .skill-col-dot {
