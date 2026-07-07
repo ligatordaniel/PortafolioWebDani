@@ -100,12 +100,12 @@
           <p class="hero-title" data-i18n="hero-title">Desarrollador Full Stack</p>
           <p class="hero-stack">Angular · React · Ionic · Node.js · Python · TypeScript</p>
           <div class="hero-ctas">
-            <a id="wa-hero" href="#" target="_blank" rel="noopener" class="btn-primary">
+            <button type="button" id="wa-hero" class="btn-primary" onclick="openWaModal()">
               <svg width="18" height="18">
                 <use href="#ico-whatsapp" />
               </svg>
               <span data-i18n="btn-whatsapp">Escribir por WhatsApp</span>
-            </a>
+            </button>
             <button type="button" onclick="openCVModal()" class="btn-ghost">
               <svg width="17" height="17">
                 <use href="#ico-download" />
@@ -348,8 +348,7 @@
       </div>
       <div class="projects-grid">
 
-        <a href="https://ligatordaniel.github.io/Pokedex/" target="_blank" rel="noopener"
-          class="proj-card p1 reveal">
+        <div class="proj-card p1 reveal">
           <div class="proj-num" data-i18n="proj1-num">01 — En producción</div>
           <div class="proj-name">Pokédex</div>
           <p class="proj-desc" data-i18n="proj1-desc">Pokédex interactiva conectada a la PokéAPI. Busca cualquier Pokémon por nombre o número
@@ -358,10 +357,14 @@
             <span class="proj-chip">JavaScript</span><span class="proj-chip">PokéAPI</span>
             <span class="proj-chip">HTML5</span><span class="proj-chip">CSS3</span>
           </div>
-          <div class="proj-cta" data-i18n="proj-cta-link">Ver proyecto →</div>
-        </a>
+          <div class="proj-links">
+            <a href="https://ligatordaniel.github.io/Pokedex/" target="_blank" rel="noopener" class="proj-cta" data-i18n="proj-cta-link">Ver proyecto →</a>
+            <a href="https://github.com/ligatordaniel/Pokedex" target="_blank" rel="noopener" class="proj-cta" data-i18n="proj-cta-repo">Ver repo en GitHub →</a>
+          </div>
+        </div>
 
-        <div class="proj-card p2 reveal reveal-d1">
+        <a href="https://github.com/ligatordaniel/kafra-elysia" target="_blank" rel="noopener"
+          class="proj-card p2 reveal reveal-d1">
           <div class="proj-num" data-i18n="proj2-num">02 — Proyecto personal</div>
           <div class="proj-name">Google Drive Clone</div>
           <p class="proj-desc" data-i18n="proj2-desc">Clon funcional de Google Drive con subida y descarga de archivos hasta 15 GB, organización en carpetas, autenticación de usuarios y almacenamiento en volumen Docker local. Interfaz fiel al diseño original.</p>
@@ -370,29 +373,83 @@
             <span class="proj-chip">Elysia</span><span class="proj-chip">TypeScript</span>
             <span class="proj-chip">PostgreSQL</span><span class="proj-chip">Docker</span>
           </div>
-          <div class="proj-cta" style="color:var(--muted); cursor:default;" data-i18n="proj-cta-soon">GitHub próximamente</div>
-        </div>
+          <div class="proj-cta" data-i18n="proj-cta-repo">Ver repo en GitHub →</div>
+        </a>
 
-        <div class="proj-card p3 reveal reveal-d2">
+        <a href="https://github.com/ligatordaniel/ocarina-fastapi" target="_blank" rel="noopener"
+          class="proj-card p3 reveal reveal-d2">
           <div class="proj-num" data-i18n="proj3-num">03 — Proyecto personal</div>
-          <div class="proj-name">YouTube to Media Converter</div>
+          <div class="proj-name">Ocarina — YouTube to Media Converter</div>
           <p class="proj-desc" data-i18n="proj3-desc">Herramienta web para convertir videos de YouTube a MP3 o MP4. Backend en Spring Boot con cola Kafka para procesar conversiones de forma asíncrona, yt-dlp y ffmpeg en el worker.</p>
           <div class="proj-chips">
             <span class="proj-chip">Spring Boot</span><span class="proj-chip">Java</span>
-            <span class="proj-chip">Kafka</span><span class="proj-chip">yt-dlp</span>
+            <span class="proj-chip">yt-dlp</span><span class="proj-chip">ffmpeg</span>
             <span class="proj-chip">React</span><span class="proj-chip">Docker</span>
           </div>
-          <div class="proj-cta" style="color:var(--muted); cursor:default;" data-i18n="proj-cta-soon">GitHub próximamente</div>
-        </div>
+          <div class="proj-cta" data-i18n="proj-cta-repo">Ver repo en GitHub →</div>
+        </a>
 
-        <a href="https://dungunapp.web.app/" target="_blank" rel="noopener" class="proj-card p4 reveal reveal-d3">
+        <div class="proj-card p4 reveal reveal-d3">
           <div class="proj-num" data-i18n="proj4-num">04 — En producción</div>
           <div class="proj-name" data-i18n="proj4-name">Dungun — Servidor de streaming</div>
           <p class="proj-desc" data-i18n="proj4-desc">Plataforma de streaming de audio en tiempo real con salas privadas y traductor asignado por código. Demo: <em>demostracion</em>.</p>
           <div class="proj-chips">
             <span class="proj-chip">Angular</span><span class="proj-chip">Ionic</span><span class="proj-chip">Streaming</span><span class="proj-chip">PWA</span>
           </div>
-          <div class="proj-cta" data-i18n="proj-cta-link">Ver proyecto →</div>
+          <div class="proj-links">
+            <a href="https://dungunapp.web.app/" target="_blank" rel="noopener" class="proj-cta" data-i18n="proj-cta-link">Ver proyecto →</a>
+            <a href="https://github.com/ligatordaniel/dungunapp" target="_blank" rel="noopener" class="proj-cta" data-i18n="proj-cta-repo">Ver repo en GitHub →</a>
+          </div>
+        </div>
+
+        <a href="https://github.com/ligatordaniel/bee-go" target="_blank" rel="noopener"
+          class="proj-card p5 reveal reveal-d4">
+          <div class="proj-num" data-i18n="proj5-num">05 — Proyecto personal</div>
+          <div class="proj-name">Bee — Career Tracker</div>
+          <p class="proj-desc" data-i18n="proj5-desc">Asistente personal inteligente para la gestión integral de búsqueda laboral. Centraliza postulaciones, da seguimiento a procesos de selección y organiza contactos reclutadores desde un panel privado. Backend en Go con despliegue containerizado y runtime de alta concurrencia.</p>
+          <div class="proj-chips">
+            <span class="proj-chip">Go</span><span class="proj-chip">Docker</span><span class="proj-chip">SQLite</span>
+          </div>
+          <div class="proj-cta" data-i18n="proj-cta-repo">Ver repo en GitHub →</div>
+        </a>
+
+        <a href="https://github.com/ligatordaniel/jarvis-react" target="_blank" rel="noopener"
+          class="proj-card p6 reveal reveal-d5">
+          <div class="proj-num" data-i18n="proj6-num">06 — Proyecto personal</div>
+          <div class="proj-name">Jarvis — Frontend React</div>
+          <p class="proj-desc" data-i18n="proj6-desc">Frontend React que centraliza múltiples backends en una sola interfaz. Conexión a Ocarina (descarga de YouTube vía FastAPI), Kafra (gestor de archivos) y autenticación unificada con Shaula.</p>
+          <div class="proj-chips">
+            <span class="proj-chip">React</span><span class="proj-chip">Vite</span>
+            <span class="proj-chip">TypeScript</span><span class="proj-chip">Nginx</span>
+            <span class="proj-chip">Docker</span>
+          </div>
+          <div class="proj-cta" data-i18n="proj-cta-repo">Ver repo en GitHub →</div>
+        </a>
+
+        <a href="https://github.com/ligatordaniel/shaula-sprintboot" target="_blank" rel="noopener"
+          class="proj-card p7 reveal reveal-d6">
+          <div class="proj-num" data-i18n="proj7-num">07 — Proyecto personal</div>
+          <div class="proj-name">Shaula — Auth Gateway</div>
+          <p class="proj-desc" data-i18n="proj7-desc">Gateway de autenticación y proxy interno para la suite Jarvis. Valida sesiones con login/logout seguro y enruta tráfico hacia Kafra y Ocarina sin exponer servicios internos.</p>
+          <div class="proj-chips">
+            <span class="proj-chip">FastAPI</span><span class="proj-chip">Python</span>
+            <span class="proj-chip">yt-dlp</span><span class="proj-chip">ffmpeg</span>
+            <span class="proj-chip">Docker</span>
+          </div>
+          <div class="proj-cta" data-i18n="proj-cta-repo">Ver repo en GitHub →</div>
+        </a>
+
+        <a href="https://github.com/ligatordaniel/streamhub-elysia" target="_blank" rel="noopener"
+          class="proj-card p8 reveal reveal-d7">
+          <div class="proj-num" data-i18n="proj8-num">08 — Proyecto personal</div>
+          <div class="proj-name">StreamHub — Streaming Multi-Tenant</div>
+          <p class="proj-desc" data-i18n="proj8-desc">Plataforma de streaming de audio y video con arquitectura multi-tenant por empresa. Backend Bun + Elysia, frontend React + Tailwind, streaming RTMP con MediaMTX y Nginx. Super admin gestiona compañías, usuarios y streamings.</p>
+          <div class="proj-chips">
+            <span class="proj-chip">Bun</span><span class="proj-chip">Elysia</span>
+            <span class="proj-chip">React</span><span class="proj-chip">Tailwind</span>
+            <span class="proj-chip">MediaMTX</span><span class="proj-chip">SQLite</span>
+          </div>
+          <div class="proj-cta" data-i18n="proj-cta-repo">Ver repo en GitHub →</div>
         </a>
 
       </div>
@@ -416,7 +473,7 @@
         </div>
 
         <div class="contact-links reveal reveal-d1">
-          <a id="wa-contact" href="#" target="_blank" rel="noopener" class="contact-link">
+          <button type="button" id="wa-contact" class="contact-link contact-link-btn" onclick="openWaModal()">
             <div class="cl-icon cl-wsp">
               <svg width="20" height="20">
                 <use href="#ico-whatsapp" />
@@ -426,8 +483,8 @@
               <div class="cl-label">WhatsApp</div>
               <div id="wa-number" class="cl-value"></div>
             </div>
-          </a>
-          <a href="mailto:danielulloa256@gmail.com" class="contact-link">
+          </button>
+          <button type="button" id="email-contact" class="contact-link contact-link-btn" onclick="openEmailModal()" aria-label="Contactar por correo">
             <div class="cl-icon cl-email">
               <svg width="20" height="20">
                 <use href="#ico-email" />
@@ -435,9 +492,9 @@
             </div>
             <div>
               <div class="cl-label">Email</div>
-              <div class="cl-value">danielulloa256@gmail.com</div>
+              <div id="email-value" class="cl-value"></div>
             </div>
-          </a>
+          </button>
           <a href="https://www.linkedin.com/in/daniel-ulloa-b23b37b5/" target="_blank" rel="noopener"
             class="contact-link">
             <div class="cl-icon cl-li">
@@ -488,6 +545,48 @@
           <span class="cv-flag">🇺🇸</span>
           <span class="cv-lang-name">English</span>
           <span class="cv-lang-sub">English version</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WhatsApp modal ─────────────────────────────────── -->
+  <div class="cv-modal-overlay" id="waModalOverlay" onclick="closeWaModal(event)">
+    <div class="cv-modal">
+      <button class="cv-modal-close" onclick="closeWaModal()" aria-label="Cerrar">✕</button>
+      <div class="cv-modal-title" data-i18n="wa-modal-title">Escribir por WhatsApp</div>
+      <div class="cv-modal-sub" data-i18n="wa-modal-sub">Elige cómo prefieres contactarme</div>
+      <div class="cv-modal-btns">
+        <button type="button" id="waBtnCopy" class="cv-btn-lang" onclick="waAction('copy')">
+          <span class="cv-flag">📋</span>
+          <span class="cv-lang-name" data-i18n="wa-modal-copy">Copiar número</span>
+          <span class="cv-lang-sub" id="waCopySub"></span>
+        </button>
+        <button type="button" class="cv-btn-lang" onclick="waAction('open')">
+          <span class="cv-flag">💬</span>
+          <span class="cv-lang-name" data-i18n="wa-modal-open">Abrir conversación</span>
+          <span class="cv-lang-sub" data-i18n="wa-modal-open-sub">Con un mensaje listo</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Email modal ────────────────────────────────────── -->
+  <div class="cv-modal-overlay" id="emailModalOverlay" onclick="closeEmailModal(event)">
+    <div class="cv-modal">
+      <button class="cv-modal-close" onclick="closeEmailModal()" aria-label="Cerrar">✕</button>
+      <div class="cv-modal-title" data-i18n="email-modal-title">Escribir un correo</div>
+      <div class="cv-modal-sub" data-i18n="email-modal-sub">Elige cómo prefieres contactarme</div>
+      <div class="cv-modal-btns">
+        <button type="button" id="emailBtnCopy" class="cv-btn-lang" onclick="emailAction('copy')">
+          <span class="cv-flag">📋</span>
+          <span class="cv-lang-name" data-i18n="email-modal-copy">Copiar correo</span>
+          <span class="cv-lang-sub" id="emailCopySub"></span>
+        </button>
+        <button type="button" class="cv-btn-lang" onclick="emailAction('open')">
+          <span class="cv-flag">✉️</span>
+          <span class="cv-lang-name" data-i18n="email-modal-open">Abrir correo</span>
+          <span class="cv-lang-sub" data-i18n="email-modal-open-sub">Con asunto y mensaje listos</span>
         </button>
       </div>
     </div>

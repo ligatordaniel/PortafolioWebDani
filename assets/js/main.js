@@ -59,14 +59,31 @@ const T = {
     'proj3-num': '03 — Proyecto personal', 'proj4-num': '04 — En producción',
     'proj1-desc': 'Pokédex interactiva conectada a la PokéAPI. Busca cualquier Pokémon por nombre o número de ID y obtén sus estadísticas, tipos, habilidades y sprite oficial.',
     'proj2-desc': 'Clon funcional de Google Drive con subida y descarga de archivos hasta 15 GB, organización en carpetas, autenticación de usuarios y almacenamiento en volumen Docker local. Interfaz fiel al diseño original.',
-    'proj3-desc': 'Herramienta web para convertir videos de YouTube a MP3 o MP4. Backend en Spring Boot con cola Kafka para procesar conversiones de forma asíncrona, yt-dlp y ffmpeg en el worker.',
+    'proj3-desc': 'Herramienta web para convertir videos de YouTube a MP3 o MP4. Backend en Python FastAPI con cola de procesamiento asíncrono, yt-dlp y ffmpeg en el worker.',
     'proj4-name': 'Dungun — Servidor de streaming',
     'proj4-desc': 'Plataforma de streaming de audio en tiempo real con salas privadas y traductor asignado por código. Demo: <em>demostracion</em>.',
-    'proj-cta-link': 'Ver proyecto →', 'proj-cta-soon': 'GitHub próximamente',
+    'proj5-num': '05 — Proyecto personal', 'proj6-num': '06 — Proyecto personal',
+    'proj7-num': '07 — Proyecto personal',
+    'proj5-desc': 'Asistente personal inteligente para la gestión integral de búsqueda laboral. Centraliza postulaciones, da seguimiento a procesos de selección y organiza contactos reclutadores desde un panel privado. Backend en Go con despliegue containerizado y runtime de alta concurrencia.',
+    'proj6-desc': 'Frontend React que centraliza múltiples backends en una sola interfaz. Conexión a Ocarina (descarga de YouTube vía FastAPI), Kafra (gestor de archivos) y autenticación unificada con Shaula.',
+    'proj7-desc': 'Gateway de autenticación y proxy interno para la suite Jarvis. Valida sesiones con login/logout seguro y enruta tráfico hacia Kafra y Ocarina (Python) sin exponer servicios internos.',
+    'proj8-num': '08 — Proyecto personal',
+    'proj8-desc': 'Plataforma de streaming de audio y video con arquitectura multi-tenant por empresa. Backend Bun + Elysia, frontend React + Tailwind, streaming RTMP con MediaMTX y Nginx. Super admin gestiona compañías, usuarios y streamings.',
+    'proj-cta-link': 'Ver proyecto →', 'proj-cta-repo': 'Ver repo en GitHub →', 'proj-cta-soon': 'GitHub próximamente',
     'contact-heading': '¿Buscas un desarrollador Full Stack?',
     'contact-sub': 'Si buscas un desarrollador con experiencia y compromiso, hablemos.',
     'btn-dl': 'Descargar CV completo',
     'cv-modal-title': 'Descargar CV', 'cv-modal-sub': 'Elige el idioma de tu preferencia',
+    'wa-modal-title': 'Escribir por WhatsApp', 'wa-modal-sub': 'Elige cómo prefieres contactarme',
+    'wa-modal-copy': 'Copiar número', 'wa-modal-open': 'Abrir conversación',
+    'wa-modal-open-sub': 'Con un mensaje listo',
+    'wa-message': '¡Hola Daniel! Vi tu portafolio y me gustaría conversar sobre una oportunidad.',
+    'email-modal-title': 'Escribir un correo', 'email-modal-sub': 'Elige cómo prefieres contactarme',
+    'email-modal-copy': 'Copiar correo', 'email-modal-open': 'Abrir correo',
+    'email-modal-open-sub': 'Con asunto y mensaje listos',
+    'email-subject': 'Contacto desde tu portafolio',
+    'email-body': 'Hola Daniel, vi tu portafolio y me gustaría conversar sobre una oportunidad.',
+    'modal-copied': '¡Copiado!',
   },
   en: {
     'nav-home': 'Home', 'nav-about': 'About me', 'nav-exp': 'Experience',
@@ -102,14 +119,31 @@ const T = {
     'proj3-num': '03 — Personal project', 'proj4-num': '04 — In production',
     'proj1-desc': 'Interactive Pokédex connected to the PokéAPI. Search any Pokémon by name or ID number and get its stats, types, abilities and official sprite.',
     'proj2-desc': 'Functional Google Drive clone with file upload and download up to 15 GB, folder organization, user authentication and local Docker volume storage. Interface faithful to the original design.',
-    'proj3-desc': 'Web tool to convert YouTube videos to MP3 or MP4. Spring Boot backend with a Kafka queue for async conversion processing, yt-dlp and ffmpeg on the worker.',
+    'proj3-desc': 'Web tool to convert YouTube videos to MP3 or MP4. Python FastAPI backend with an async processing queue, yt-dlp and ffmpeg on the worker.',
     'proj4-name': 'Dungun — Streaming server',
     'proj4-desc': 'Real-time audio streaming platform with private rooms and code-assigned translator. Demo: <em>demostracion</em>.',
-    'proj-cta-link': 'View project →', 'proj-cta-soon': 'GitHub coming soon',
+    'proj5-num': '05 — Personal project', 'proj6-num': '06 — Personal project',
+    'proj7-num': '07 — Personal project',
+    'proj5-desc': 'Intelligent personal assistant for comprehensive job search management. Centralizes applications, tracks selection pipelines and organizes recruiter contacts from a private dashboard. Go backend with containerized deployment and high-concurrency runtime.',
+    'proj6-desc': 'React frontend that centralizes multiple backends in a single interface. Connects to Ocarina (YouTube download via FastAPI), Kafra (file manager) and unified authentication with Shaula.',
+    'proj7-desc': 'Authentication gateway and internal proxy for the Jarvis suite. Validates sessions with secure login/logout and routes traffic to Kafra and Ocarina (Python) without exposing internal services.',
+    'proj8-num': '08 — Personal project',
+    'proj8-desc': 'Audio and video streaming platform with multi-tenant architecture per company. Bun + Elysia backend, React + Tailwind frontend, RTMP streaming with MediaMTX and Nginx. Super admin manages companies, users and streamings.',
+    'proj-cta-link': 'View project →', 'proj-cta-repo': 'View repo on GitHub →', 'proj-cta-soon': 'GitHub coming soon',
     'contact-heading': 'Looking for a Full Stack developer?',
     'contact-sub': 'If you\'re looking for a committed developer with real-world experience, I\'m your person. Let\'s talk.',
     'btn-dl': 'Download full Resume',
     'cv-modal-title': 'Download Resume', 'cv-modal-sub': 'Choose your preferred language',
+    'wa-modal-title': 'Message on WhatsApp', 'wa-modal-sub': "Choose how you'd like to reach me",
+    'wa-modal-copy': 'Copy number', 'wa-modal-open': 'Open chat',
+    'wa-modal-open-sub': 'With a message ready',
+    'wa-message': 'Hi Daniel! I saw your portfolio and would like to talk about an opportunity.',
+    'email-modal-title': 'Send an email', 'email-modal-sub': "Choose how you'd like to reach me",
+    'email-modal-copy': 'Copy email', 'email-modal-open': 'Open email',
+    'email-modal-open-sub': 'With subject and message ready',
+    'email-subject': 'Contact from your portfolio',
+    'email-body': 'Hi Daniel, I saw your portfolio and would like to talk about an opportunity.',
+    'modal-copied': 'Copied!',
   }
 };
 
@@ -181,21 +215,102 @@ function downloadCV(lang) {
   document.getElementById('cvModalOverlay').classList.remove('open');
 }
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') document.getElementById('cvModalOverlay').classList.remove('open');
+  if (e.key !== 'Escape') return;
+  ['cvModalOverlay', 'waModalOverlay', 'emailModalOverlay'].forEach(id => {
+    document.getElementById(id).classList.remove('open');
+  });
 });
 
+/* ── copy-to-clipboard helper with feedback ──────────── */
+async function copyWithFeedback(text, btn) {
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch {
+    const helper = document.createElement('textarea');
+    helper.value = text;
+    helper.style.position = 'fixed';
+    helper.style.opacity = '0';
+    document.body.appendChild(helper);
+    helper.select();
+    document.execCommand('copy');
+    document.body.removeChild(helper);
+  }
+
+  const nameEl = btn.querySelector('.cv-lang-name');
+  const flagEl = btn.querySelector('.cv-flag');
+  const defaultName = nameEl.textContent;
+  const defaultFlag = flagEl.textContent;
+
+  clearTimeout(btn._resetTimer);
+  btn.classList.add('is-copied');
+  nameEl.textContent = T[currentLang]['modal-copied'];
+  flagEl.textContent = '✅';
+
+  btn._resetTimer = setTimeout(() => {
+    btn.classList.remove('is-copied');
+    nameEl.textContent = defaultName;
+    flagEl.textContent = defaultFlag;
+  }, 1600);
+}
+
 /* ── whatsapp ──────────────────────────────────────── */
+const waNumber = ['569', '772', '160', '59'].join('');
+const waUrl = 'https://wa' + '.me/' + waNumber;
+const waDisplay = '+56 9 7721 6059';
+
 (function () {
-  const p = ['569', '772', '160', '59'];
-  const n = p.join('');
-  const url = 'https://wa' + '.me/' + n;
-  const display = '+56 9 7721 6059';
-  document.querySelectorAll('#wa-hero, #wa-contact').forEach(el => {
-    el.href = url;
-  });
   const num = document.getElementById('wa-number');
-  if (num) num.textContent = display;
+  if (num) num.textContent = waDisplay;
+  const sub = document.getElementById('waCopySub');
+  if (sub) sub.textContent = waDisplay;
 })();
+
+function openWaModal() {
+  document.getElementById('waModalOverlay').classList.add('open');
+}
+function closeWaModal(e) {
+  if (!e || e.target === document.getElementById('waModalOverlay')) {
+    document.getElementById('waModalOverlay').classList.remove('open');
+  }
+}
+function waAction(type) {
+  if (type === 'copy') {
+    copyWithFeedback(waDisplay, document.getElementById('waBtnCopy'));
+    return;
+  }
+  const text = encodeURIComponent(T[currentLang]['wa-message']);
+  window.open(waUrl + '?text=' + text, '_blank', 'noopener');
+  closeWaModal();
+}
+
+/* ── email ─────────────────────────────────────────── */
+const emailAddress = ['daniel', 'ulloa', '256'].join('') + '@' + ['gmail', 'com'].join('.');
+
+(function () {
+  const value = document.getElementById('email-value');
+  if (value) value.textContent = emailAddress;
+  const sub = document.getElementById('emailCopySub');
+  if (sub) sub.textContent = emailAddress;
+})();
+
+function openEmailModal() {
+  document.getElementById('emailModalOverlay').classList.add('open');
+}
+function closeEmailModal(e) {
+  if (!e || e.target === document.getElementById('emailModalOverlay')) {
+    document.getElementById('emailModalOverlay').classList.remove('open');
+  }
+}
+function emailAction(type) {
+  if (type === 'copy') {
+    copyWithFeedback(emailAddress, document.getElementById('emailBtnCopy'));
+    return;
+  }
+  const subject = encodeURIComponent(T[currentLang]['email-subject']);
+  const body = encodeURIComponent(T[currentLang]['email-body']);
+  window.location.href = 'mailto:' + emailAddress + '?subject=' + subject + '&body=' + body;
+  closeEmailModal();
+}
 
 /* ── footer year ────────────────────────────────────── */
 (() => {
