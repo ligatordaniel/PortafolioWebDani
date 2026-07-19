@@ -28,7 +28,7 @@ Full Stack Developer con 5+ años en el sector financiero y de telecomunicacione
 
 
 
-🚀 En paralelo, llevo 6+ años de proyectos independientes: plataformas de streaming de audio y video en tiempo real con alta concurrencia, infraestructura VPS completa (Nginx, Docker, SSL) y pipelines CI/CD con GitHub Actions.
+🚀 En paralelo, llevo 7+ años desarrollando proyectos independientes: plataformas de streaming de audio y video en tiempo real, servicios modulares, infraestructura VPS (Nginx, Docker, SSL) y pipelines CI/CD con GitHub Actions.
 
 
 

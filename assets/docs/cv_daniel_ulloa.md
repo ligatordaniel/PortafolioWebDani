@@ -8,7 +8,7 @@
 
 ## PERFIL PROFESIONAL
 
-Desarrollador Full Stack con **5+ años de experiencia** construyendo aplicaciones web y mobile de alto tráfico para el sector financiero y telecomunicaciones en Chile. Especializado en **Angular, React e Ionic** en frontend, con backend en **Node.js y Python**. En paralelo, desarrollo proyectos propios que incluyen **arquitecturas de streaming de video y audio**, sitios web gestionables y pipelines de despliegue automatizados. Delivery consistente en entornos Scrum de alta exigencia. Integro herramientas de IA en el flujo de trabajo para acortar ciclos de desarrollo.
+Desarrollador Full Stack con **5+ años de experiencia profesional** construyendo aplicaciones web y móviles para los sectores financiero y de telecomunicaciones en Chile. Especializado en **Angular, React e Ionic** en frontend, con experiencia backend en **Node.js y Python**. En proyectos propios diseño **arquitecturas de streaming de video y audio**, servicios modulares y pipelines de despliegue automatizados. Trabajo con autonomía en equipos Scrum e integro herramientas de IA para acortar ciclos de desarrollo.
 
 ---
 
@@ -28,7 +28,7 @@ Desarrollador Full Stack con **5+ años de experiencia** construyendo aplicacion
 ### Desarrollador de Software Front-End
 **BMSoluciones** — Santiago, Chile | Mar. 2022 – Actualidad *(4+ años)*
 
-App mobile-first para **Tarjeta Presto LIDER**, producto bancario de Banco BCI con base masiva de usuarios activos.
+Aplicación mobile-first para **Tarjeta Presto LIDER**, producto bancario de Banco BCI con usuarios activos a escala nacional.
 
 - Desarrollé y mantuve la aplicación en **Ionic / Angular**, cubriendo el ciclo completo desde onboarding hasta operaciones de cuenta.
 - Integré plataformas de pago **Khipu** y **Servipag**, y el flujo de recarga de tarjeta **Bip!**.
@@ -48,14 +48,14 @@ Desarrollo Full Stack para VTR Telecomunicaciones y AFP Habitat.
 
 ---
 
-### Proyectos Desarrollo Independiente
-**Independiente** — Santiago, Chile | Mar. 2019 – Actualidad *(6+ años)*  
+### Proyectos de Desarrollo Independiente
+**Independiente** — Santiago, Chile | Mar. 2019 – Actualidad *(7+ años)*<br>
 [ligatordaniel.github.io/PortafolioWebDani](https://ligatordaniel.github.io/PortafolioWebDani/)
 
-- Desarrollé **aplicaciones web gestionables con Ionic**, arquitecturadas para funcionar como app mobile sin trabajo adicional, con deploy automatizado via **GitHub Actions** hacia **VPS** propio.
-- Implementé **servidores de streaming de video y audio en tiempo real**: configuración de servidores de medios, baja latencia y soporte de alta concurrencia de listeners y viewers.
-- Administré infraestructura completa en VPS: **Nginx** como reverse proxy, **Docker** para aislamiento de servicios y certificados SSL.
-- Ciclo completo en cada proyecto: levantamiento de requerimientos, desarrollo, despliegue y soporte.
+- Diseñé **StreamHub**, plataforma multi-tenant de streaming de audio y video con **Bun, Elysia, React, MediaMTX y Nginx**.
+- Construí la suite **Jarvis**, integrando un frontend React con **Kafra** (Bun/Elysia/PostgreSQL), **Ocarina** (FastAPI/Kafka) y **Shaula** (Java/Spring Boot).
+- Desarrollé **Dungun**, aplicación Ionic/Angular para streaming de audio en tiempo real con salas privadas.
+- Administré infraestructura en VPS con **Nginx, Docker, certificados SSL y despliegues automatizados mediante GitHub Actions**.
 
 ---
 

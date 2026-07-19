@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1200, initial-scale=1">
+  <title>Daniel Ulloa — Open Graph card</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 1200px; height: 630px; margin: 0; overflow: hidden; }
+    body {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 54px;
+      padding: 78px 92px;
+      color: #111827;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #69d8f4 url('../img/wallpaper1.png') center / cover no-repeat;
+    }
+    body::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(255,255,255,.2), transparent 60%);
+      pointer-events: none;
+    }
+    .identity, .proof { position: relative; z-index: 1; }
+    .available {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      color: #047857;
+      background: #d1fae5;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .available::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: #059669; }
+    h1 {
+      margin: 0 0 12px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 78px;
+      line-height: .98;
+      letter-spacing: -.04em;
+    }
+    .role { margin: 0 0 12px; font-size: 28px; font-weight: 600; }
+    .stack { margin: 0; font-size: 17px; color: #374151; }
+    .proof { display: grid; gap: 14px; }
+    .card {
+      padding: 18px 22px;
+      border: 1px solid rgba(17,24,39,.1);
+      border-left: 5px solid #2563eb;
+      border-radius: 14px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 10px 30px rgba(27,58,92,.08);
+    }
+    .card:nth-child(2) { border-left-color: #d97706; }
+    .card:nth-child(3) { border-left-color: #7c3aed; }
+    .value { font-family: Georgia, 'Times New Roman', serif; font-size: 28px; font-weight: 700; color: #2563eb; }
+    .card:nth-child(2) .value { color: #d97706; }
+    .card:nth-child(3) .value { color: #7c3aed; }
+    .label { margin-top: 3px; font-size: 14px; color: #4b5563; }
+    .url {
+      position: absolute;
+      z-index: 1;
+      left: 92px;
+      bottom: 42px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #3730a3;
+    }
+  </style>
+</head>
+<body>
+  <div class="identity">
+    <div class="available">Disponible para oportunidades</div>
+    <h1>Daniel<br>Ulloa</h1>
+    <p class="role">Desarrollador Full Stack</p>
+    <p class="stack">Angular · Ionic · React · Node.js · Python · TypeScript</p>
+  </div>
+  <div class="proof">
+    <div class="card">
+      <div class="value">5+ años</div>
+      <div class="label">de experiencia profesional</div>
+    </div>
+    <div class="card">
+      <div class="value">FinTech &amp; Telco</div>
+      <div class="label">Banco BCI · AFP Habitat · VTR</div>
+    </div>
+    <div class="card">
+      <div class="value">Full Stack &amp; Infra</div>
+      <div class="label">Productos móviles · APIs · Streaming · CI/CD</div>
+    </div>
+  </div>
+  <div class="url">ligatordaniel.github.io/PortafolioWebDani</div>
+</body>
+</html>

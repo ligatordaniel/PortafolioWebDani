@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /PortafolioWebDani/
+
+Sitemap: https://ligatordaniel.github.io/PortafolioWebDani/sitemap.xml

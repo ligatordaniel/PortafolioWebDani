@@ -8,7 +8,7 @@
 
 ## PROFESSIONAL PROFILE
 
-Full Stack Developer with **5+ years of experience** building high-traffic web and mobile applications for the financial and telecommunications sector in Chile. Specialized in **Angular, React and Ionic** on the frontend, with backend in **Node.js and Python**. I also develop personal projects including **real-time video and audio streaming architectures**, manageable websites, and automated deployment pipelines. Consistent delivery in high-demand Scrum environments. I integrate AI tools into my workflow to shorten development cycles.
+Full Stack Developer with **5+ years of professional experience** building web and mobile applications for the financial and telecommunications sectors in Chile. Specialized in **Angular, React and Ionic** on the frontend, with backend experience in **Node.js and Python**. In personal projects I design **video and audio streaming architectures**, modular services and automated deployment pipelines. I work autonomously in Scrum teams and integrate AI tools to shorten development cycles.
 
 ---
 
@@ -28,7 +28,7 @@ Full Stack Developer with **5+ years of experience** building high-traffic web a
 ### Front-End Software Developer
 **BMSoluciones** — Santiago, Chile | Mar. 2022 – Present *(4+ years)*
 
-Mobile-first app for **Tarjeta Presto LIDER**, a banking product from Banco BCI with a massive active user base.
+Mobile-first application for **Tarjeta Presto LIDER**, a banking product from Banco BCI with active users nationwide.
 
 - Developed and maintained the application in **Ionic / Angular**, covering the full cycle from onboarding to account operations.
 - Integrated payment platforms **Khipu** and **Servipag**, and the **Bip!** card top-up flow.
@@ -49,13 +49,13 @@ Full Stack development for VTR Telecomunicaciones and AFP Habitat.
 ---
 
 ### Independent Development Projects
-**Freelance** — Santiago, Chile | Mar. 2019 – Present *(6+ years)*  
+**Freelance** — Santiago, Chile | Mar. 2019 – Present *(7+ years)*<br>
 [ligatordaniel.github.io/PortafolioWebDani](https://ligatordaniel.github.io/PortafolioWebDani/)
 
-- Built **manageable web apps with Ionic**, architected to work as mobile apps without additional effort, with automated deployment via **GitHub Actions** to a self-managed **VPS**.
-- Implemented **real-time video and audio streaming servers**: media server configuration, low latency, and high-concurrency support for listeners and viewers.
-- Managed full VPS infrastructure: **Nginx** as reverse proxy, **Docker** for service isolation, and SSL certificates.
-- Full cycle on every project: requirements gathering, development, deployment and support.
+- Designed **StreamHub**, a multi-tenant audio and video streaming platform built with **Bun, Elysia, React, MediaMTX and Nginx**.
+- Built the **Jarvis** suite, integrating a React frontend with **Kafra** (Bun/Elysia/PostgreSQL), **Ocarina** (FastAPI/Kafka) and **Shaula** (Java/Spring Boot).
+- Developed **Dungun**, an Ionic/Angular application for real-time audio streaming with private rooms.
+- Managed VPS infrastructure with **Nginx, Docker, SSL certificates and automated deployments through GitHub Actions**.
 
 ---
 

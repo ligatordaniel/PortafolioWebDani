@@ -17,15 +17,21 @@ function updateSlider(dark) {
     sw.style.setProperty('--slider-offset', '0px');
     slider.style.width = optDay.offsetWidth + 'px';
   }
+  sw.setAttribute('aria-pressed', String(dark));
+  sw.setAttribute('aria-label', currentLang === 'en'
+    ? (dark ? 'Enable day mode' : 'Enable night mode')
+    : (dark ? 'Activar modo día' : 'Activar modo noche'));
 }
 function toggleDark() {
   const dark = document.body.classList.toggle('dark');
   updateSlider(dark);
+  try { localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light'); } catch (_) { /* optional */ }
 }
 
 /* ── language ──────────────────────────────────────── */
 const T = {
   es: {
+    'skip-content': 'Saltar al contenido principal',
     'nav-home': 'Inicio', 'nav-about': 'Sobre mí', 'nav-exp': 'Experiencia',
     'nav-projects': 'Proyectos', 'nav-contact': 'Contacto',
     'mode-day': '☀️ Día', 'mode-night': '🌙 Noche',
@@ -34,14 +40,14 @@ const T = {
     'btn-whatsapp': 'Escribir por WhatsApp', 'btn-cv': 'Descargar CV',
     'stat-years-val': '5+ años', 'stat-years-sub': 'de experiencia profesional',
     'about-eyebrow': 'Sobre mí',
-    'about-title': 'Full Stack especializado<br>en mobile y banca digital',
-    'about-p1': 'Llevo más de cinco años construyendo aplicaciones web y mobile de alto tráfico para el sector financiero y de telecomunicaciones en Chile. Mi trabajo en BMSoluciones incluye la app Tarjeta Presto LIDER de Banco BCI — un producto masivo con usuarios activos a escala nacional. En Haibu Solutions desarrollé módulos críticos para VTR Telecomunicaciones y AFP Habitat.',
+    'about-title': 'Full Stack especializado<br>en aplicaciones móviles y banca digital',
+    'about-p1': 'Llevo más de cinco años construyendo aplicaciones web y móviles para los sectores financiero y de telecomunicaciones en Chile. Mi trabajo en BMSoluciones incluye la app Tarjeta Presto LIDER de Banco BCI, un producto con usuarios activos a escala nacional. En Haibu Solutions desarrollé módulos para VTR Telecomunicaciones y AFP Habitat.',
     'about-p2': 'Me desenvuelvo en todo el ciclo: desde el diseño de arquitectura hasta el despliegue en producción. Administro mi propia infraestructura con Docker, Nginx y CI/CD automatizado. Me integro rápido a equipos Scrum y entrego con autonomía.',
     'chip-scrum': 'Scrum certificado (SFPC)', 'chip-english': 'Inglés intermedio',
-    'chip-available': 'Disponible de inmediato', 'chip-hybrid': 'Híbrido o remoto',
+    'chip-available': 'Abierto a nuevas oportunidades', 'chip-hybrid': 'Híbrido o remoto',
     'exp-eyebrow': 'Trayectoria', 'exp-title': 'Experiencia profesional',
     'current-pill': 'Actual',
-    'tl-period-bm': 'Mar. 2022 — Hoy', 'tl-period-ind': 'Mar. 2019 — Hoy',
+    'tl-period-bm': 'Mar. 2022 — Hoy', 'tl-period-ind': 'Mar. 2019 — Hoy · 7+ años',
     'tl-period-enlace': 'Dic. 2017 — Feb. 2019',
     'tl-company-ind': 'Independiente',
     'exp-bm-role': 'Desarrollador de Software Front-End',
@@ -53,21 +59,21 @@ const T = {
     'exp-enlace-role': 'Desarrollador &amp; Soporte de Integración Digital',
     'exp-enlace-desc': 'Soluciones digitales para pantallas táctiles y señalética corporativa. Gestión remota de redes de pantallas publicitarias y canales corporativos.',
     'skills-eyebrow': 'Tecnologías', 'skills-title': 'Stack tecnológico',
-    'skill-ai': 'IA &amp; Método',
+    'skill-ai': 'IA &amp; Método', 'skill-english': 'Inglés intermedio',
     'proj-eyebrow': 'Trabajo propio', 'proj-title': 'Proyectos personales',
-    'proj1-num': '01 — En producción', 'proj2-num': '02 — Proyecto personal',
-    'proj3-num': '03 — Proyecto personal', 'proj4-num': '04 — En producción',
+    'proj1-num': 'Proyecto personal', 'proj2-num': 'Proyecto destacado',
+    'proj3-num': 'Suite personal', 'proj4-num': 'En producción',
     'proj1-desc': 'Pokédex interactiva conectada a la PokéAPI. Busca cualquier Pokémon por nombre o número de ID y obtén sus estadísticas, tipos, habilidades y sprite oficial.',
-    'proj2-desc': 'Clon funcional de Google Drive con subida y descarga de archivos hasta 15 GB, organización en carpetas, autenticación de usuarios y almacenamiento en volumen Docker local. Interfaz fiel al diseño original.',
-    'proj3-desc': 'Herramienta web para convertir videos de YouTube a MP3 o MP4. Backend en Python FastAPI con cola de procesamiento asíncrono, yt-dlp y ffmpeg en el worker.',
+    'proj2-desc': 'Gestor privado de archivos con subida y descarga de hasta 15 GB, organización en carpetas, autenticación y almacenamiento persistente. Backend Bun + Elysia, frontend React y PostgreSQL.',
+    'proj3-desc': 'Backend en Python y FastAPI para procesar contenido propio o autorizado en MP3 o MP4. Usa Kafka para la cola asíncrona, yt-dlp y ffmpeg en el worker.',
     'proj4-name': 'Dungun — Servidor de streaming',
     'proj4-desc': 'Plataforma de streaming de audio en tiempo real con salas privadas y traductor asignado por código. Demo: <em>demostracion</em>.',
-    'proj5-num': '05 — Proyecto personal', 'proj6-num': '06 — Proyecto personal',
-    'proj7-num': '07 — Proyecto personal',
-    'proj5-desc': 'Asistente personal inteligente para la gestión integral de búsqueda laboral. Centraliza postulaciones, da seguimiento a procesos de selección y organiza contactos reclutadores desde un panel privado. Backend en Go con despliegue containerizado y runtime de alta concurrencia.',
+    'proj5-num': 'Proyecto personal', 'proj6-num': 'Suite personal',
+    'proj7-num': 'Suite personal',
+    'proj5-desc': 'API REST en Go para centralizar postulaciones laborales. Lee registros JSON, permite listar y consultar ofertas por identificador y se despliega en un contenedor Docker.',
     'proj6-desc': 'Frontend React que centraliza múltiples backends en una sola interfaz. Conexión a Ocarina (descarga de YouTube vía FastAPI), Kafra (gestor de archivos) y autenticación unificada con Shaula.',
     'proj7-desc': 'Gateway de autenticación y proxy interno para la suite Jarvis. Valida sesiones con login/logout seguro y enruta tráfico hacia Kafra y Ocarina (Python) sin exponer servicios internos.',
-    'proj8-num': '08 — Proyecto personal',
+    'proj8-num': 'Proyecto destacado',
     'proj8-desc': 'Plataforma de streaming de audio y video con arquitectura multi-tenant por empresa. Backend Bun + Elysia, frontend React + Tailwind, streaming RTMP con MediaMTX y Nginx. Super admin gestiona compañías, usuarios y streamings.',
     'proj-cta-link': 'Ver proyecto →', 'proj-cta-repo': 'Ver repo en GitHub →', 'proj-cta-soon': 'GitHub próximamente',
     'contact-heading': '¿Buscas un desarrollador Full Stack?',
@@ -84,8 +90,11 @@ const T = {
     'email-subject': 'Contacto desde tu portafolio',
     'email-body': 'Hola Daniel, vi tu portafolio y me gustaría conversar sobre una oportunidad.',
     'modal-copied': '¡Copiado!',
+    'footer-machine': 'CV en formato legible por máquinas',
+    'footer-ai': 'Resumen para sistemas de IA',
   },
   en: {
+    'skip-content': 'Skip to main content',
     'nav-home': 'Home', 'nav-about': 'About me', 'nav-exp': 'Experience',
     'nav-projects': 'Projects', 'nav-contact': 'Contact',
     'mode-day': '☀️ Day', 'mode-night': '🌙 Night',
@@ -94,14 +103,14 @@ const T = {
     'btn-whatsapp': 'Message on WhatsApp', 'btn-cv': 'Download Resume',
     'stat-years-val': '5+ years', 'stat-years-sub': 'of professional experience',
     'about-eyebrow': 'About me',
-    'about-title': 'Full Stack specialist<br>in mobile and digital banking',
-    'about-p1': "I've spent over five years building high-traffic web and mobile applications for the financial and telecommunications sector in Chile. My work at BMSoluciones includes the Tarjeta Presto LIDER app for Banco BCI — a large-scale product with an active user base nationwide. At Haibu Solutions I developed critical modules for VTR Telecomunicaciones and AFP Habitat.",
+    'about-title': 'Full Stack specialist<br>in mobile applications and digital banking',
+    'about-p1': "I've spent over five years building web and mobile applications for the financial and telecommunications sectors in Chile. My work at BMSoluciones includes the Tarjeta Presto LIDER app for Banco BCI, a product with active users nationwide. At Haibu Solutions I developed modules for VTR Telecomunicaciones and AFP Habitat.",
     'about-p2': "I handle the full cycle: from architecture design to production deployment. I manage my own infrastructure with Docker, Nginx and automated CI/CD. I integrate quickly into Scrum teams and deliver autonomously.",
     'chip-scrum': 'Scrum certified (SFPC)', 'chip-english': 'Intermediate English',
-    'chip-available': 'Immediately available', 'chip-hybrid': 'Hybrid or remote',
+    'chip-available': 'Open to new opportunities', 'chip-hybrid': 'Hybrid or remote',
     'exp-eyebrow': 'Career', 'exp-title': 'Professional experience',
     'current-pill': 'Current',
-    'tl-period-bm': 'Mar. 2022 — Present', 'tl-period-ind': 'Mar. 2019 — Present',
+    'tl-period-bm': 'Mar. 2022 — Present', 'tl-period-ind': 'Mar. 2019 — Present · 7+ years',
     'tl-period-enlace': 'Dec. 2017 — Feb. 2019',
     'tl-company-ind': 'Independent',
     'exp-bm-role': 'Front-End Software Developer',
@@ -113,21 +122,21 @@ const T = {
     'exp-enlace-role': 'Developer &amp; Digital Integration Support',
     'exp-enlace-desc': 'Digital solutions for touch screens and corporate signage. Remote management of advertising display networks and corporate channels.',
     'skills-eyebrow': 'Technologies', 'skills-title': 'Tech stack',
-    'skill-ai': 'AI &amp; Methods',
+    'skill-ai': 'AI &amp; Methods', 'skill-english': 'Intermediate English',
     'proj-eyebrow': 'Personal work', 'proj-title': 'Personal projects',
-    'proj1-num': '01 — In production', 'proj2-num': '02 — Personal project',
-    'proj3-num': '03 — Personal project', 'proj4-num': '04 — In production',
+    'proj1-num': 'Personal project', 'proj2-num': 'Featured project',
+    'proj3-num': 'Personal suite', 'proj4-num': 'In production',
     'proj1-desc': 'Interactive Pokédex connected to the PokéAPI. Search any Pokémon by name or ID number and get its stats, types, abilities and official sprite.',
-    'proj2-desc': 'Functional Google Drive clone with file upload and download up to 15 GB, folder organization, user authentication and local Docker volume storage. Interface faithful to the original design.',
-    'proj3-desc': 'Web tool to convert YouTube videos to MP3 or MP4. Python FastAPI backend with an async processing queue, yt-dlp and ffmpeg on the worker.',
+    'proj2-desc': 'Private file manager with uploads and downloads up to 15 GB, folder organization, authentication and persistent storage. Bun + Elysia backend, React frontend and PostgreSQL.',
+    'proj3-desc': 'Python and FastAPI backend for processing owned or authorized content as MP3 or MP4. It uses Kafka for the asynchronous queue, with yt-dlp and ffmpeg in the worker.',
     'proj4-name': 'Dungun — Streaming server',
     'proj4-desc': 'Real-time audio streaming platform with private rooms and code-assigned translator. Demo: <em>demostracion</em>.',
-    'proj5-num': '05 — Personal project', 'proj6-num': '06 — Personal project',
-    'proj7-num': '07 — Personal project',
-    'proj5-desc': 'Intelligent personal assistant for comprehensive job search management. Centralizes applications, tracks selection pipelines and organizes recruiter contacts from a private dashboard. Go backend with containerized deployment and high-concurrency runtime.',
+    'proj5-num': 'Personal project', 'proj6-num': 'Personal suite',
+    'proj7-num': 'Personal suite',
+    'proj5-desc': 'REST API in Go for centralizing job applications. It reads JSON records, lists applications, retrieves details by identifier and runs in a Docker container.',
     'proj6-desc': 'React frontend that centralizes multiple backends in a single interface. Connects to Ocarina (YouTube download via FastAPI), Kafra (file manager) and unified authentication with Shaula.',
     'proj7-desc': 'Authentication gateway and internal proxy for the Jarvis suite. Validates sessions with secure login/logout and routes traffic to Kafra and Ocarina (Python) without exposing internal services.',
-    'proj8-num': '08 — Personal project',
+    'proj8-num': 'Featured project',
     'proj8-desc': 'Audio and video streaming platform with multi-tenant architecture per company. Bun + Elysia backend, React + Tailwind frontend, RTMP streaming with MediaMTX and Nginx. Super admin manages companies, users and streamings.',
     'proj-cta-link': 'View project →', 'proj-cta-repo': 'View repo on GitHub →', 'proj-cta-soon': 'GitHub coming soon',
     'contact-heading': 'Looking for a Full Stack developer?',
@@ -144,10 +153,12 @@ const T = {
     'email-subject': 'Contact from your portfolio',
     'email-body': 'Hi Daniel, I saw your portfolio and would like to talk about an opportunity.',
     'modal-copied': 'Copied!',
+    'footer-machine': 'Machine-readable resume',
+    'footer-ai': 'AI-readable profile summary',
   }
 };
 
-let currentLang = 'es';
+let currentLang = document.documentElement.lang === 'en' ? 'en' : 'es';
 
 function applyLang(lang) {
   const t = T[lang];
@@ -183,26 +194,47 @@ function toggleLang() {
   const flash = document.getElementById('langFlash');
   flash.classList.add('show');
   setTimeout(() => {
-    currentLang = currentLang === 'es' ? 'en' : 'es';
-    document.body.classList.toggle('lang-en', currentLang === 'en');
-    applyLang(currentLang);
-    flash.classList.remove('show');
+    window.location.href = document.documentElement.dataset.langSwitchUrl || (currentLang === 'es' ? 'en/' : '../');
   }, 180);
 }
 
 /* ── cv modal ──────────────────────────────────────── */
+let lastFocusedElement = null;
+
+function openModal(id) {
+  const overlay = document.getElementById(id);
+  if (!overlay) return;
+  lastFocusedElement = document.activeElement;
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+  const firstControl = overlay.querySelector('button, a[href]');
+  if (firstControl) requestAnimationFrame(() => firstControl.focus());
+}
+
+function closeModal(id) {
+  const overlay = document.getElementById(id);
+  if (!overlay) return;
+  overlay.classList.remove('open');
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+  if (lastFocusedElement && document.contains(lastFocusedElement)) lastFocusedElement.focus();
+  lastFocusedElement = null;
+}
+
 function openCVModal() {
-  document.getElementById('cvModalOverlay').classList.add('open');
+  openModal('cvModalOverlay');
 }
 function closeCVModal(e) {
   if (!e || e.target === document.getElementById('cvModalOverlay')) {
-    document.getElementById('cvModalOverlay').classList.remove('open');
+    closeModal('cvModalOverlay');
   }
 }
 function downloadCV(lang) {
+  const prefix = document.documentElement.dataset.assetsPrefix || '';
   const files = {
-    es: { url: 'assets/docs/cv_daniel_ulloa.pdf',    name: 'CV_Daniel_Ulloa_ES.pdf' },
-    en: { url: 'assets/docs/cv_daniel_ulloa_en.pdf', name: 'CV_Daniel_Ulloa_EN.pdf' }
+    es: { url: prefix + 'assets/docs/cv_daniel_ulloa.pdf',    name: 'CV_Daniel_Ulloa_ES.pdf' },
+    en: { url: prefix + 'assets/docs/cv_daniel_ulloa_en.pdf', name: 'CV_Daniel_Ulloa_EN.pdf' }
   };
   const { url, name } = files[lang];
   const link = document.createElement('a');
@@ -212,13 +244,27 @@ function downloadCV(lang) {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
-  document.getElementById('cvModalOverlay').classList.remove('open');
+  closeModal('cvModalOverlay');
 }
 document.addEventListener('keydown', e => {
-  if (e.key !== 'Escape') return;
-  ['cvModalOverlay', 'waModalOverlay', 'emailModalOverlay'].forEach(id => {
-    document.getElementById(id).classList.remove('open');
-  });
+  const openOverlay = document.querySelector('.cv-modal-overlay.open');
+  if (!openOverlay) return;
+  if (e.key === 'Escape') {
+    closeModal(openOverlay.id);
+    return;
+  }
+  if (e.key !== 'Tab') return;
+  const controls = [...openOverlay.querySelectorAll('button:not([disabled]), a[href]')];
+  if (!controls.length) return;
+  const first = controls[0];
+  const last = controls[controls.length - 1];
+  if (e.shiftKey && document.activeElement === first) {
+    e.preventDefault();
+    last.focus();
+  } else if (!e.shiftKey && document.activeElement === last) {
+    e.preventDefault();
+    first.focus();
+  }
 });
 
 /* ── copy-to-clipboard helper with feedback ──────────── */
@@ -266,11 +312,11 @@ const waDisplay = '+56 9 7721 6059';
 })();
 
 function openWaModal() {
-  document.getElementById('waModalOverlay').classList.add('open');
+  openModal('waModalOverlay');
 }
 function closeWaModal(e) {
   if (!e || e.target === document.getElementById('waModalOverlay')) {
-    document.getElementById('waModalOverlay').classList.remove('open');
+    closeModal('waModalOverlay');
   }
 }
 function waAction(type) {
@@ -294,11 +340,11 @@ const emailAddress = ['daniel', 'ulloa', '256'].join('') + '@' + ['gmail', 'com'
 })();
 
 function openEmailModal() {
-  document.getElementById('emailModalOverlay').classList.add('open');
+  openModal('emailModalOverlay');
 }
 function closeEmailModal(e) {
   if (!e || e.target === document.getElementById('emailModalOverlay')) {
-    document.getElementById('emailModalOverlay').classList.remove('open');
+    closeModal('emailModalOverlay');
   }
 }
 function emailAction(type) {
@@ -326,6 +372,10 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     const target = document.querySelector(id);
     if (!target) return;
     e.preventDefault();
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      target.scrollIntoView();
+      return;
+    }
     const startY = window.pageYOffset;
     const targetY = target.getBoundingClientRect().top + startY - parseFloat(getComputedStyle(target).scrollMarginTop || 0);
     const duration = 1100;
@@ -342,8 +392,14 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 /* ── init ──────────────────────────────────────────── */
 window.addEventListener('load', () => {
-  updateSlider(false);
-  updateLangSlider(false);
+  let dark = false;
+  try { dark = localStorage.getItem('portfolio-theme') === 'dark'; } catch (_) { /* optional */ }
+  document.body.classList.toggle('dark', dark);
+  document.body.classList.toggle('lang-en', currentLang === 'en');
+  const langSwitch = document.getElementById('langSwitch');
+  langSwitch.setAttribute('aria-label', currentLang === 'en' ? 'Ver versión en español' : 'View English version');
+  updateSlider(dark);
+  updateLangSlider(currentLang === 'en');
 });
 window.addEventListener('resize', () => {
   updateSlider(document.body.classList.contains('dark'));
