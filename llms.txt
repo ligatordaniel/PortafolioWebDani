@@ -2,9 +2,9 @@
 
 > Professional portfolio and digital resume of Daniel Ulloa, a Full Stack Developer based in Santiago, Chile, with experience in digital banking, telecommunications, mobile-first applications, infrastructure and real-time streaming.
 
-Daniel works primarily with Angular, Ionic, React, React Native, TypeScript and Node.js. His personal projects also provide public evidence of work with Python and FastAPI, Go, Java and Spring Boot, Bun and Elysia, PostgreSQL, Docker, Nginx, CI/CD and audio/video streaming infrastructure.
+Daniel works primarily with Angular, Ionic, React, React Native, RxJS, TypeScript and Node.js. His experience also includes Express, NestJS, Python and FastAPI, Go, Java and Spring Boot, Bun and Elysia; PostgreSQL, SQLite, MySQL and MongoDB; and Docker, Nginx, Cloudflare, Kubernetes, CI/CD and audio/video streaming infrastructure.
 
-Current professional role: Front-End Software Developer at BMSoluciones since March 2022, working on the Tarjeta Presto LIDER product for Banco BCI. Previous professional experience includes Haibu Solutions, with work for VTR Telecomunicaciones and AFP Habitat, and Enlace360. Independent software projects date from March 2019.
+Current professional role: Front-End Software Development Specialist at BMSoluciones since March 2022, working on the Tarjeta Presto LIDER product for Banco BCI. Previous professional experience includes Haibu Solutions, with work for VTR Telecomunicaciones and AFP Habitat, and Enlace360. Independent software projects date from March 2019.
 
 Languages: Spanish (native) and English (intermediate).
 
@@ -22,12 +22,13 @@ Languages: Spanish (native) and English (intermediate).
 
 ## Selected projects
 
-- [StreamHub](https://github.com/ligatordaniel/streamhub-elysia): Multi-tenant audio/video streaming platform; Bun, Elysia, React, Tailwind, SQLite, MediaMTX and Nginx.
+- [StreamHub](https://github.com/ligatordaniel/streamhub-elysia): Multi-tenant audio/video streaming platform for online radio stations and TV channels; Bun, Elysia, React, Tailwind, SQLite, MediaMTX and Nginx.
+- [API-Scriptdog](https://api-scriptdog-1.cl/api_panel/): Multi-tenant news and management platform for online radio stations and channels, with an administrative dashboard per organization; Bun/Elysia, Ionic/Angular, TypeScript, RxJS and PostgreSQL.
 - [Kafra](https://github.com/ligatordaniel/kafra-elysia): Private file manager; Bun, Elysia, React, TypeScript, PostgreSQL and Docker.
 - [Jarvis](https://github.com/ligatordaniel/jarvis-react): React frontend integrating Kafra, Ocarina and Shaula.
 - [Ocarina](https://github.com/ligatordaniel/ocarina-fastapi): FastAPI media-processing backend with Kafka, yt-dlp, ffmpeg and Docker. Intended for owned or authorized content.
 - [Shaula](https://github.com/ligatordaniel/shaula-sprintboot): Java 21 and Spring Boot authentication gateway and private-service proxy.
-- [Dungun](https://github.com/ligatordaniel/dungunapp): Ionic/Angular real-time audio streaming application.
+- [Dungun](https://github.com/ligatordaniel/dungunapp): Ionic application using TypeScript and RxJS for real-time translations through audio streaming with private rooms.
 - [Bee](https://github.com/ligatordaniel/bee-go): Go REST API for listing and retrieving job application records.
 
 ## Contact

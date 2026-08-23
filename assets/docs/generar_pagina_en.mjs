@@ -37,8 +37,8 @@ output = output
   .replace('<title>Daniel Ulloa — Desarrollador Full Stack</title>',
     '<title>Daniel Ulloa — Full Stack Developer</title>')
   .replace(
-    'content="Full Stack Developer con 5+ años en Angular, React, Ionic y Node.js para proyectos FinTech y Telco en Chile. Disponible para nuevas oportunidades."',
-    'content="Full Stack Developer with 5+ years of experience in Angular, React, Ionic and Node.js across FinTech and telecommunications projects in Chile. Open to new opportunities."'
+    'content="Full Stack Developer con 8+ años en Angular, React, Ionic y Node.js para proyectos FinTech y Telco en Chile. Disponible para nuevas oportunidades."',
+    'content="Full Stack Developer with 8+ years of experience in Angular, React, Ionic and Node.js across FinTech and telecommunications projects in Chile. Open to new opportunities."'
   )
   .replace('rel="canonical" href="https://ligatordaniel.github.io/PortafolioWebDani/"',
     'rel="canonical" href="https://ligatordaniel.github.io/PortafolioWebDani/en/"')
@@ -102,11 +102,12 @@ output = output.replace(
       item === 'Streaming de audio y video' ? 'Audio and video streaming' : item
     );
     const descriptions = {
-      StreamHub: 'Multi-tenant audio and video streaming platform built with Bun, Elysia, React, MediaMTX and Nginx.',
+      StreamHub: 'Multi-tenant audio and video streaming platform for online radio stations and TV channels, built with Bun, Elysia, React, MediaMTX and Nginx.',
       Kafra: 'Private file manager built with Bun, Elysia, React, PostgreSQL and Docker.',
       Ocarina: 'FastAPI backend for asynchronous media processing with Kafka, yt-dlp and ffmpeg.',
       Shaula: 'Authentication gateway and internal proxy built with Java and Spring Boot.',
-      Bee: 'Go API for centralizing and retrieving job applications.'
+      Bee: 'Go API for centralizing and retrieving job applications.',
+      'API-Scriptdog': 'Multi-tenant news and management platform for online radio stations and channels, with an administrative dashboard per organization. Bun/Elysia backend, Ionic/Angular frontend using TypeScript and RxJS, and PostgreSQL.'
     };
     data.hasPart.forEach(project => { project.description = descriptions[project.name]; });
     return `<script type="application/ld+json">\n${JSON.stringify(data, null, 2)}\n  </script>`;

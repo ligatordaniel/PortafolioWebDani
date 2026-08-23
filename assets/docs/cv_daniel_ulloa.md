@@ -8,24 +8,24 @@
 
 ## PERFIL PROFESIONAL
 
-Desarrollador Full Stack con **5+ años de experiencia profesional** construyendo aplicaciones web y móviles para los sectores financiero y de telecomunicaciones en Chile. Especializado en **Angular, React e Ionic** en frontend, con experiencia backend en **Node.js y Python**. En proyectos propios diseño **arquitecturas de streaming de video y audio**, servicios modulares y pipelines de despliegue automatizados. Trabajo con autonomía en equipos Scrum e integro herramientas de IA para acortar ciclos de desarrollo.
+Desarrollador Full Stack con **8+ años de experiencia profesional** construyendo aplicaciones web y móviles para los sectores financiero y de telecomunicaciones en Chile. Especializado en **Angular, React e Ionic** en frontend, con experiencia backend en **Node.js y Python**. En proyectos propios diseño **arquitecturas de streaming de video y audio**, servicios modulares y pipelines de despliegue automatizados. Trabajo con autonomía en equipos Scrum e integro herramientas de IA para acortar ciclos de desarrollo.
 
 ---
 
 ## STACK TECNOLÓGICO
 
-**Frontend:** Angular · React · React Native · Ionic · TypeScript · JavaScript · HTML5 · CSS3 · Sass · Jasmine  
-**Backend:** Node.js · Express · Python · FastAPI · Go · Bun · Elysia · Java · Spring Boot  
-**Base de datos:** PostgreSQL  
-**DevOps:** Docker · Docker Compose · Nginx · GitHub Actions · VPS · Git · GitHub  
-**IA & Productividad:** GitHub Copilot · Claude Code · OpenAI Codex  
+**Frontend:** Angular · React · React Native · Ionic · RxJS · TypeScript · JavaScript · HTML5 · CSS3 · Sass · Jasmine  
+**Backend:** Node.js · Express · NestJS · Python · FastAPI · Go · Bun · Elysia · Java · Spring Boot  
+**Base de datos:** PostgreSQL · SQLite · MySQL · MongoDB  
+**DevOps:** Docker · Docker Compose · Nginx · GitHub Actions · VPS · Cloudflare · Kubernetes · Git · GitHub  
+**IA & Productividad:** GitHub Copilot · Claude Code · OpenAI Codex · OpenCode  
 **Idiomas:** Español (nativo) · Inglés (intermedio)
 
 ---
 
 ## EXPERIENCIA LABORAL
 
-### Desarrollador de Software Front-End
+### Desarrollador de Software especialista Front-End
 **BMSoluciones** — Santiago, Chile | Mar. 2022 – Actualidad *(4+ años)*
 
 Aplicación mobile-first para **Tarjeta Presto LIDER**, producto bancario de Banco BCI con usuarios activos a escala nacional.
@@ -52,10 +52,10 @@ Desarrollo Full Stack para VTR Telecomunicaciones y AFP Habitat.
 **Independiente** — Santiago, Chile | Mar. 2019 – Actualidad *(7+ años)*<br>
 [ligatordaniel.github.io/PortafolioWebDani](https://ligatordaniel.github.io/PortafolioWebDani/)
 
-- Diseñé **StreamHub**, plataforma multi-tenant de streaming de audio y video con **Bun, Elysia, React, MediaMTX y Nginx**.
-- Construí la suite **Jarvis**, integrando un frontend React con **Kafra** (Bun/Elysia/PostgreSQL), **Ocarina** (FastAPI/Kafka) y **Shaula** (Java/Spring Boot).
-- Desarrollé **Dungun**, aplicación Ionic/Angular para streaming de audio en tiempo real con salas privadas.
-- Administré infraestructura en VPS con **Nginx, Docker, certificados SSL y despliegues automatizados mediante GitHub Actions**.
+- Desarrollé **StreamHub**, plataforma multi-tenant de streaming de audio y video para radios y canales de TV online, con **Bun, Elysia, React, MediaMTX y Nginx**.
+- Desarrollé **API-Scriptdog**, plataforma multi-tenant de noticias y gestión para radios y canales online, con panel administrativo por organización. Backend en **Bun/Elysia**, frontend **Ionic/Angular** con **TypeScript y RxJS**, y **PostgreSQL**.
+- Desarrollé **Dungun**, aplicación Ionic con **TypeScript y RxJS** para traducciones en tiempo real mediante streaming de audio con salas privadas.
+- Implementé desde cero la administración y el despliegue de infraestructura en VPS con **Nginx, Docker, certificados SSL y despliegues automatizados mediante GitHub Actions**.
 
 ---
 

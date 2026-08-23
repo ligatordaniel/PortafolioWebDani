@@ -8,24 +8,24 @@
 
 ## PROFESSIONAL PROFILE
 
-Full Stack Developer with **5+ years of professional experience** building web and mobile applications for the financial and telecommunications sectors in Chile. Specialized in **Angular, React and Ionic** on the frontend, with backend experience in **Node.js and Python**. In personal projects I design **video and audio streaming architectures**, modular services and automated deployment pipelines. I work autonomously in Scrum teams and integrate AI tools to shorten development cycles.
+Full Stack Developer with **8+ years of professional experience** building web and mobile applications for the financial and telecommunications sectors in Chile. Specialized in **Angular, React and Ionic** on the frontend, with backend experience in **Node.js and Python**. In personal projects I design **video and audio streaming architectures**, modular services and automated deployment pipelines. I work autonomously in Scrum teams and integrate AI tools to shorten development cycles.
 
 ---
 
 ## TECH STACK
 
-**Frontend:** Angular · React · React Native · Ionic · TypeScript · JavaScript · HTML5 · CSS3 · Sass · Jasmine  
-**Backend:** Node.js · Express · Python · FastAPI · Go · Bun · Elysia · Java · Spring Boot  
-**Database:** PostgreSQL  
-**DevOps:** Docker · Docker Compose · Nginx · GitHub Actions · VPS · Git · GitHub  
-**AI & Productivity:** GitHub Copilot · Claude Code · OpenAI Codex  
+**Frontend:** Angular · React · React Native · Ionic · RxJS · TypeScript · JavaScript · HTML5 · CSS3 · Sass · Jasmine  
+**Backend:** Node.js · Express · NestJS · Python · FastAPI · Go · Bun · Elysia · Java · Spring Boot  
+**Database:** PostgreSQL · SQLite · MySQL · MongoDB  
+**DevOps:** Docker · Docker Compose · Nginx · GitHub Actions · VPS · Cloudflare · Kubernetes · Git · GitHub  
+**AI & Productivity:** GitHub Copilot · Claude Code · OpenAI Codex · OpenCode  
 **Languages:** Spanish (native) · English (intermediate)
 
 ---
 
 ## WORK EXPERIENCE
 
-### Front-End Software Developer
+### Front-End Software Development Specialist
 **BMSoluciones** — Santiago, Chile | Mar. 2022 – Present *(4+ years)*
 
 Mobile-first application for **Tarjeta Presto LIDER**, a banking product from Banco BCI with active users nationwide.
@@ -52,10 +52,10 @@ Full Stack development for VTR Telecomunicaciones and AFP Habitat.
 **Freelance** — Santiago, Chile | Mar. 2019 – Present *(7+ years)*<br>
 [ligatordaniel.github.io/PortafolioWebDani](https://ligatordaniel.github.io/PortafolioWebDani/)
 
-- Designed **StreamHub**, a multi-tenant audio and video streaming platform built with **Bun, Elysia, React, MediaMTX and Nginx**.
-- Built the **Jarvis** suite, integrating a React frontend with **Kafra** (Bun/Elysia/PostgreSQL), **Ocarina** (FastAPI/Kafka) and **Shaula** (Java/Spring Boot).
-- Developed **Dungun**, an Ionic/Angular application for real-time audio streaming with private rooms.
-- Managed VPS infrastructure with **Nginx, Docker, SSL certificates and automated deployments through GitHub Actions**.
+- Developed **StreamHub**, a multi-tenant audio and video streaming platform for online radio stations and TV channels, built with **Bun, Elysia, React, MediaMTX and Nginx**.
+- Developed **API-Scriptdog**, a multi-tenant news and management platform for online radio stations and channels, with an administrative dashboard per organization. Built with a **Bun/Elysia** backend, **Ionic/Angular** frontend using **TypeScript and RxJS**, and **PostgreSQL**.
+- Developed **Dungun**, an Ionic application using **TypeScript and RxJS** for real-time translations through audio streaming with private rooms.
+- Implemented from scratch the administration and deployment of VPS infrastructure with **Nginx, Docker, SSL certificates and automated deployments through GitHub Actions**.
 
 ---
 
