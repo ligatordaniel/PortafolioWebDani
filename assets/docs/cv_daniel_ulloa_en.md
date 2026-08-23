@@ -1,5 +1,5 @@
 # DANIEL ULLOA
-**Full Stack Developer | Angular · React · JavaScript · TypeScript · Node.js · Python · Go**
+**Senior Full Stack Developer | AI Integration | Angular · React · JavaScript · TypeScript · Node.js · Python · Go**
 
 +56 9 7721 6059 · danielulloa256@gmail.com · Santiago, Chile  
 [LinkedIn](https://www.linkedin.com/in/daniel-ulloa-b23b37b5/) · [GitHub](https://github.com/ligatordaniel) · [Portfolio](https://ligatordaniel.github.io/PortafolioWebDani/)

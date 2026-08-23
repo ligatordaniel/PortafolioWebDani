@@ -36,7 +36,7 @@ const T = {
     'nav-projects': 'Proyectos', 'nav-contact': 'Contacto',
     'mode-day': '☀️ Día', 'mode-night': '🌙 Noche',
     'hero-available': 'Disponible para nuevas oportunidades',
-    'hero-title': 'Desarrollador Full Stack',
+    'hero-title': 'Desarrollador Full Stack Senior | Integración de IA',
     'btn-whatsapp': 'Escribir por WhatsApp', 'btn-cv': 'Descargar CV',
     'stat-years-val': '8+ años', 'stat-years-sub': 'de experiencia profesional',
     'about-eyebrow': 'Sobre mí',
@@ -92,7 +92,7 @@ const T = {
     'email-subject': 'Contacto desde tu portafolio',
     'email-body': 'Hola Daniel, vi tu portafolio y me gustaría conversar sobre una oportunidad.',
     'modal-copied': '¡Copiado!',
-    'footer-machine': 'CV en formato legible por máquinas',
+    'footer-machine': 'CV compatible con ATS',
     'footer-ai': 'Resumen para sistemas de IA',
   },
   en: {
@@ -101,7 +101,7 @@ const T = {
     'nav-projects': 'Projects', 'nav-contact': 'Contact',
     'mode-day': '☀️ Day', 'mode-night': '🌙 Night',
     'hero-available': 'Available for new opportunities',
-    'hero-title': 'Full Stack Developer',
+    'hero-title': 'Senior Full Stack Developer | AI Integration',
     'btn-whatsapp': 'Message on WhatsApp', 'btn-cv': 'Download Resume',
     'stat-years-val': '8+ years', 'stat-years-sub': 'of professional experience',
     'about-eyebrow': 'About me',
@@ -157,7 +157,7 @@ const T = {
     'email-subject': 'Contact from your portfolio',
     'email-body': 'Hi Daniel, I saw your portfolio and would like to talk about an opportunity.',
     'modal-copied': 'Copied!',
-    'footer-machine': 'Machine-readable resume',
+    'footer-machine': 'ATS-compatible resume',
     'footer-ai': 'AI-readable profile summary',
   }
 };
