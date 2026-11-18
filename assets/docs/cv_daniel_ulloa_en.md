@@ -8,7 +8,7 @@
 
 ## PROFESSIONAL PROFILE
 
-Full Stack Developer with **8+ years of professional experience** building web and mobile applications for the financial and telecommunications sectors in Chile. Specialized in **Angular, React and Ionic** on the frontend, with backend experience in **Node.js and Python**. In personal projects I design **video and audio streaming architectures**, modular services and automated deployment pipelines. I work autonomously in Scrum teams and integrate AI tools to shorten development cycles.
+Full Stack Developer with **6+ years of professional experience** building web and mobile applications for the financial and telecommunications sectors in Chile. Specialized in **Angular, React and Ionic** on the frontend, with backend experience in **Node.js and Python**. In personal projects I design **video and audio streaming architectures**, modular services and automated deployment pipelines. I work autonomously in Scrum teams and integrate AI tools to shorten development cycles.
 
 ---
 
@@ -17,7 +17,7 @@ Full Stack Developer with **8+ years of professional experience** building web a
 **Frontend:** Angular · React · React Native · Ionic · RxJS · TypeScript · JavaScript · HTML5 · CSS3 · Sass · Jasmine  
 **Backend:** Node.js · Express · NestJS · Python · FastAPI · Go · Bun · Elysia · Java · Spring Boot  
 **Database:** PostgreSQL · SQLite · MySQL · MongoDB  
-**DevOps:** Docker · Docker Compose · Nginx · GitHub Actions · VPS · Cloudflare · Kubernetes · Git · GitHub  
+**DevOps:** Docker · Docker Compose · Nginx · GitHub Actions · VPS · Cloudflare · Git · GitHub  
 **AI & Productivity:** GitHub Copilot · Claude Code · OpenAI Codex · OpenCode  
 **Languages:** Spanish (native) · English (intermediate)
 
@@ -79,5 +79,9 @@ Universidad Bernardo O'Higgins — 2009 – 2013
 
 ## CERTIFICATIONS
 
+- **Claude Platform 101** — Anthropic (Claude Academy), Nov. 2026  
+  [Verify credential](https://academy.claude.com/badges/d2f17206-b168-4890-8088-0a5075647cc5)
+- **Claude 101** — Anthropic (Claude Academy), Nov. 2026  
+  [Verify credential](https://academy.claude.com/badges/6c52b31f-fba8-4679-9887-740cdfd6da76)
 - **Scrum Foundations Professional Certificate (SFPC)** — CertiProf, Jun. 2020  
   ID: FLCLWWTPDW-SSFDSQGG-WHKNQTBTKB

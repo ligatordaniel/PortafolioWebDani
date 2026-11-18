@@ -37,8 +37,8 @@ output = output
   .replace('<title>Daniel Ulloa — Desarrollador Full Stack</title>',
     '<title>Daniel Ulloa — Full Stack Developer</title>')
   .replace(
-    'content="Full Stack Developer con 8+ años en Angular, React, Ionic y Node.js para proyectos FinTech y Telco en Chile. Disponible para nuevas oportunidades."',
-    'content="Full Stack Developer with 8+ years of experience in Angular, React, Ionic and Node.js across FinTech and telecommunications projects in Chile. Open to new opportunities."'
+    'content="Full Stack Developer con 6+ años en Angular, React, Ionic y Node.js para proyectos FinTech y Telco en Chile. Disponible para nuevas oportunidades."',
+    'content="Full Stack Developer with 6+ years of experience in Angular, React, Ionic and Node.js across FinTech and telecommunications projects in Chile. Open to new opportunities."'
   )
   .replace('rel="canonical" href="https://ligatordaniel.github.io/PortafolioWebDani/"',
     'rel="canonical" href="https://ligatordaniel.github.io/PortafolioWebDani/en/"')

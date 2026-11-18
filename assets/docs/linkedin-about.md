@@ -16,7 +16,7 @@ Las primeras dos líneas son lo que se ve antes del "ver más" — son el gancho
 
 
 
-Full Stack Developer con 5+ años en el sector financiero y de telecomunicaciones en Chile. Actualmente llevo 4+ años en BMSoluciones como referente del desarrollo de Tarjeta Presto LIDER de Banco BCI.
+Full Stack Developer con 6+ años en el sector financiero y de telecomunicaciones en Chile. Actualmente llevo 4+ años en BMSoluciones como referente del desarrollo de Tarjeta Presto LIDER de Banco BCI.
 
 
 
@@ -54,7 +54,7 @@ IA       → GitHub Copilot · Claude Code · OpenAI Codex
 
 
 
-📍 Scrum certificado (SFPC) · Inglés intermedio · Santiago, Chile
+📍 Scrum certificado (SFPC) · Claude Platform 101 (Anthropic) · Inglés intermedio · Santiago, Chile
 
 
 

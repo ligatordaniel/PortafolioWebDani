@@ -2,11 +2,13 @@
 
 > Professional portfolio and digital resume of Daniel Ulloa, a Full Stack Developer based in Santiago, Chile, with experience in digital banking, telecommunications, mobile-first applications, infrastructure and real-time streaming.
 
-Daniel works primarily with Angular, Ionic, React, React Native, RxJS, TypeScript and Node.js. His experience also includes Express, NestJS, Python and FastAPI, Go, Java and Spring Boot, Bun and Elysia; PostgreSQL, SQLite, MySQL and MongoDB; and Docker, Nginx, Cloudflare, Kubernetes, CI/CD and audio/video streaming infrastructure.
+Daniel works primarily with Angular, Ionic, React, React Native, RxJS, TypeScript and Node.js. His experience also includes Express, NestJS, Python and FastAPI, Go, Java and Spring Boot, Bun and Elysia; PostgreSQL, SQLite, MySQL and MongoDB; and Docker, Nginx, Cloudflare, CI/CD and audio/video streaming infrastructure.
 
 Current professional role: Front-End Software Development Specialist at BMSoluciones since March 2022, working on the Tarjeta Presto LIDER product for Banco BCI. Previous professional experience includes Haibu Solutions, with work for VTR Telecomunicaciones and AFP Habitat, and Enlace360. Independent software projects date from March 2019.
 
 Languages: Spanish (native) and English (intermediate).
+
+Certifications: Claude Platform 101 and Claude 101 from Anthropic Claude Academy (November 2026, verifiable at https://academy.claude.com/badges/d2f17206-b168-4890-8088-0a5075647cc5 and https://academy.claude.com/badges/6c52b31f-fba8-4679-9887-740cdfd6da76); Scrum Foundations Professional Certificate (SFPC) from CertiProf (June 2020).
 
 ## Resume
 

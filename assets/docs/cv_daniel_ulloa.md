@@ -8,7 +8,7 @@
 
 ## PERFIL PROFESIONAL
 
-Desarrollador Full Stack con **8+ años de experiencia profesional** construyendo aplicaciones web y móviles para los sectores financiero y de telecomunicaciones en Chile. Especializado en **Angular, React e Ionic** en frontend, con experiencia backend en **Node.js y Python**. En proyectos propios diseño **arquitecturas de streaming de video y audio**, servicios modulares y pipelines de despliegue automatizados. Trabajo con autonomía en equipos Scrum e integro herramientas de IA para acortar ciclos de desarrollo.
+Desarrollador Full Stack con **6+ años de experiencia profesional** construyendo aplicaciones web y móviles para los sectores financiero y de telecomunicaciones en Chile. Especializado en **Angular, React e Ionic** en frontend, con experiencia backend en **Node.js y Python**. En proyectos propios diseño **arquitecturas de streaming de video y audio**, servicios modulares y pipelines de despliegue automatizados. Trabajo con autonomía en equipos Scrum e integro herramientas de IA para acortar ciclos de desarrollo.
 
 ---
 
@@ -17,7 +17,7 @@ Desarrollador Full Stack con **8+ años de experiencia profesional** construyend
 **Frontend:** Angular · React · React Native · Ionic · RxJS · TypeScript · JavaScript · HTML5 · CSS3 · Sass · Jasmine  
 **Backend:** Node.js · Express · NestJS · Python · FastAPI · Go · Bun · Elysia · Java · Spring Boot  
 **Base de datos:** PostgreSQL · SQLite · MySQL · MongoDB  
-**DevOps:** Docker · Docker Compose · Nginx · GitHub Actions · VPS · Cloudflare · Kubernetes · Git · GitHub  
+**DevOps:** Docker · Docker Compose · Nginx · GitHub Actions · VPS · Cloudflare · Git · GitHub  
 **IA & Productividad:** GitHub Copilot · Claude Code · OpenAI Codex · OpenCode  
 **Idiomas:** Español (nativo) · Inglés (intermedio)
 
@@ -79,5 +79,9 @@ Universidad Bernardo O'Higgins — 2009 – 2013
 
 ## CERTIFICACIONES
 
+- **Claude Platform 101** — Anthropic (Claude Academy), Nov. 2026  
+  [Verificar credencial](https://academy.claude.com/badges/d2f17206-b168-4890-8088-0a5075647cc5)
+- **Claude 101** — Anthropic (Claude Academy), Nov. 2026  
+  [Verificar credencial](https://academy.claude.com/badges/6c52b31f-fba8-4679-9887-740cdfd6da76)
 - **Scrum Foundations Professional Certificate (SFPC)** — CertiProf, Jun. 2020  
   ID: FLCLWWTPDW-SSFDSQGG-WHKNQTBTKB
